@@ -126,7 +126,7 @@ export default function Funding() {
                 </defs>
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <div className="text-3xl lg:text-4xl font-black text-white">$10M</div>
+                <div className="text-3xl lg:text-4xl font-black text-white">$6M</div>
                 <div className="text-xs text-slate-400 mt-1">Seed Round</div>
               </div>
             </div>
@@ -143,7 +143,7 @@ export default function Funding() {
                     <div className="text-xs text-slate-400">{item.value}% of budget</div>
                   </div>
                 </div>
-                <div className="text-lg font-black text-white">${(item.value * 0.1).toFixed(1)}M</div>
+                <div className="text-lg font-black text-white">${(item.value * 0.06).toFixed(1)}M</div>
               </div>
             ))}
           </div>
