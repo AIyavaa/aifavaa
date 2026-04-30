@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { t } from '@/lib/translations';
 
 export default function ConsultationForm() {
+  const { language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,7 +32,7 @@ export default function ConsultationForm() {
     try {
       // 验证必填字段
       if (!formData.name || !formData.email || !formData.company) {
-        toast.error('请填写所有必填字段');
+        toast.error(t('errorMessage', language));
         setIsSubmitting(false);
         return;
       }
@@ -44,7 +47,7 @@ export default function ConsultationForm() {
       });
 
       if (response.ok) {
-        toast.success('感谢您的咨询！我们会尽快与您联系。');
+        toast.success(t('successMessage', language));
         setFormData({
           name: '',
           email: '',
@@ -56,7 +59,7 @@ export default function ConsultationForm() {
         });
       } else {
         // 如果后端不可用，显示备选联系方式
-        toast.success('感谢您的咨询！请直接联系我们：evaforwork@163.com 或 WeChat: Yyyyylyll99');
+        toast.success(t('successMessage', language));
         setFormData({
           name: '',
           email: '',
@@ -69,7 +72,7 @@ export default function ConsultationForm() {
       }
     } catch (error) {
       // 显示备选联系方式
-      toast.success('感谢您的咨询！请直接联系我们：evaforwork@163.com 或 WeChat: Yyyyylyll99');
+      toast.success(t('successMessage', language));
       setFormData({
         name: '',
         email: '',
@@ -90,14 +93,14 @@ export default function ConsultationForm() {
         <div className="mb-12 lg:mb-16 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-blue-200 bg-white/6 border border-white/10 backdrop-blur-sm mb-6">
             <span>💼</span>
-            <span>Investor Consultation</span>
+            <span>{language === 'zh' ? '投资者咨询' : 'Investor Consultation'}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
-            加入 AIyavaa 投资者社群
-            <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mt-4">Let&apos;s build the AI video ecosystem together</div>
+            {t('consultationTitle', language)}
+            <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mt-4">{t('consultationSubtitle', language)}</div>
           </h2>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto">
-            如果您对 AIyavaa 的投资机会感兴趣，或想了解更多关于平台的信息，请填写下方表单。我们的团队会在 24 小时内与您联系。
+            {t('consultationDescription', language)}
           </p>
         </div>
 
@@ -107,28 +110,28 @@ export default function ConsultationForm() {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-bold text-white mb-2">
-                  姓名 <span className="text-red-400">*</span>
+                  {t('name', language)} <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="请输入您的姓名"
+                  placeholder={t('namePlaceholder', language)}
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400/50 focus:bg-white/8 transition-all"
                   required
                 />
               </div>
               <div>
                 <label className="block text-sm font-bold text-white mb-2">
-                  邮箱 <span className="text-red-400">*</span>
+                  {t('email', language)} <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="请输入您的邮箱"
+                  placeholder={t('emailPlaceholder', language)}
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400/50 focus:bg-white/8 transition-all"
                   required
                 />
@@ -139,27 +142,27 @@ export default function ConsultationForm() {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-bold text-white mb-2">
-                  电话
+                  {t('phone', language)}
                 </label>
                 <input
                   type="tel"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="请输入您的电话号码"
+                  placeholder={t('phonePlaceholder', language)}
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400/50 focus:bg-white/8 transition-all"
                 />
               </div>
               <div>
                 <label className="block text-sm font-bold text-white mb-2">
-                  公司名称 <span className="text-red-400">*</span>
+                  {t('company', language)} <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="text"
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  placeholder="请输入您的公司名称"
+                  placeholder={t('companyPlaceholder', language)}
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400/50 focus:bg-white/8 transition-all"
                   required
                 />
@@ -170,20 +173,20 @@ export default function ConsultationForm() {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-bold text-white mb-2">
-                  职位
+                  {t('role', language)}
                 </label>
                 <input
                   type="text"
                   name="role"
                   value={formData.role}
                   onChange={handleChange}
-                  placeholder="例如：投资总监、基金经理"
+                  placeholder={t('rolePlaceholder', language)}
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400/50 focus:bg-white/8 transition-all"
                 />
               </div>
               <div>
                 <label className="block text-sm font-bold text-white mb-2">
-                  您的兴趣
+                  {t('interest', language)}
                 </label>
                 <select
                   name="interest"
@@ -191,11 +194,11 @@ export default function ConsultationForm() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400/50 focus:bg-white/8 transition-all"
                 >
-                  <option value="">请选择</option>
-                  <option value="investment">投资机会</option>
-                  <option value="partnership">商业合作</option>
-                  <option value="product">产品体验</option>
-                  <option value="other">其他</option>
+                  <option value="">{t('selectPlaceholder', language)}</option>
+                  <option value="investment">{t('investmentOpportunity', language)}</option>
+                  <option value="partnership">{t('businessPartnership', language)}</option>
+                  <option value="product">{t('productExperience', language)}</option>
+                  <option value="other">{t('other', language)}</option>
                 </select>
               </div>
             </div>
@@ -203,13 +206,13 @@ export default function ConsultationForm() {
             {/* Message */}
             <div>
               <label className="block text-sm font-bold text-white mb-2">
-                备注信息
+                {t('message', language)}
               </label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="请告诉我们您的想法或问题..."
+                placeholder={t('messagePlaceholder', language)}
                 rows={4}
                 className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400/50 focus:bg-white/8 transition-all resize-none"
               />
@@ -222,19 +225,19 @@ export default function ConsultationForm() {
                 disabled={isSubmitting}
                 className="flex-1 px-6 py-3 rounded-xl font-bold text-sm bg-gradient-to-br from-blue-500/30 to-cyan-500/30 border border-blue-400/30 text-white hover:from-blue-500/40 hover:to-cyan-500/40 hover:border-blue-400/50 transition-all shadow-lg shadow-blue-500/20 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? '提交中...' : '提交咨询'}
+                {isSubmitting ? (language === 'zh' ? '提交中...' : 'Submitting...') : t('submit', language)}
               </button>
               <button
                 type="reset"
                 className="px-6 py-3 rounded-xl font-bold text-sm border border-white/12 text-slate-300 hover:text-white hover:bg-white/5 transition-all hover:-translate-y-0.5"
               >
-                清空
+                {t('clear', language)}
               </button>
             </div>
 
             {/* Contact Info */}
             <div className="mt-8 pt-6 border-t border-white/10">
-              <p className="text-xs text-slate-400 mb-3">或直接联系我们：</p>
+              <p className="text-xs text-slate-400 mb-3">{t('contactUs', language)}</p>
               <div className="flex flex-wrap gap-4 text-sm">
                 <a href="mailto:evaforwork@163.com" className="flex items-center gap-2 text-blue-300 hover:text-blue-200 transition-colors">
                   <span>📧</span>

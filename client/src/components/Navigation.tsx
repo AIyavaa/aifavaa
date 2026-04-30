@@ -1,16 +1,21 @@
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
+
 export default function Navigation() {
+  const { language } = useLanguage();
+
   const navLinks = [
-    { href: '#market', label: 'Market' },
-    { href: '#pain', label: 'Pain Map' },
-    { href: '#architecture', label: 'Architecture' },
-    { href: '#competition', label: 'Competition' },
-    { href: '#business', label: 'Business' },
-    { href: '#roadmap', label: 'Roadmap' },
-    { href: '#funding', label: 'Funding' },
-    { href: '#team', label: 'Team' },
-    { href: '#premium', label: 'Premium Products' },
-    { href: '#consultation', label: 'Consultation' },
-    { href: '#closing', label: 'Closing' },
+    { href: '#market', label: language === 'zh' ? '市场' : 'Market' },
+    { href: '#pain', label: language === 'zh' ? '痛点地图' : 'Pain Map' },
+    { href: '#architecture', label: language === 'zh' ? '架构' : 'Architecture' },
+    { href: '#competition', label: language === 'zh' ? '竞争' : 'Competition' },
+    { href: '#business', label: language === 'zh' ? '商业模式' : 'Business' },
+    { href: '#roadmap', label: language === 'zh' ? '路线图' : 'Roadmap' },
+    { href: '#funding', label: language === 'zh' ? '融资' : 'Funding' },
+    { href: '#team', label: language === 'zh' ? '团队' : 'Team' },
+    { href: '#premium', label: language === 'zh' ? '高级产品' : 'Premium Products' },
+    { href: '#consultation', label: language === 'zh' ? '咨询' : 'Consultation' },
+    { href: '#closing', label: language === 'zh' ? '结尾' : 'Closing' },
   ];
 
   return (
@@ -24,21 +29,26 @@ export default function Navigation() {
             </div>
             <div>
               <div className="text-sm font-black">AIyavaa</div>
-              <div className="text-xs font-semibold text-slate-400 tracking-widest uppercase">Interactive Investor Story</div>
+              <div className="text-xs font-semibold text-slate-400 tracking-widest uppercase">
+                {language === 'zh' ? '投资者故事' : 'Interactive Investor Story'}
+              </div>
             </div>
           </a>
 
           {/* Nav Links */}
-          <div className="hidden lg:flex gap-2 flex-wrap justify-end">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 rounded-full text-xs font-semibold text-slate-400 hover:text-slate-100 transition-all hover:border-white/12 hover:bg-white/5 border border-transparent"
-              >
-                {link.label}
-              </a>
-            ))}
+          <div className="hidden lg:flex gap-3 flex-wrap justify-end items-center">
+            <div className="flex gap-2 flex-wrap">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="px-3 py-2 rounded-full text-xs font-semibold text-slate-400 hover:text-slate-100 transition-all hover:border-white/12 hover:bg-white/5 border border-transparent"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            <LanguageSwitcher />
           </div>
         </div>
       </div>
