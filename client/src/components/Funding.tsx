@@ -22,7 +22,7 @@ export default function Funding() {
             <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mt-4">Strategic capital allocation for platform growth</div>
           </h2>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl">
-            种子轮融资 $10M，重点投入产品开发、创作者激励与品牌客户获取，建立平台的初始网络效应。
+            种子轮融资 $6M，重点投入产品开发、创作者激励与品牌客户获取，建立平台的初始网络效应。
           </p>
         </div>
 

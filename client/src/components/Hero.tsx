@@ -16,7 +16,7 @@ export default function Hero() {
                 <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mt-3">The Unified Entry Point for AI Video</div>
               </h1>
               <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed mt-6">
-                不是再做一个 AI 视频工具，而是把 <strong>用户消费、创作者生产、品牌交易</strong> 与 <strong>模型能力、版权规则、平台治理</strong> 组织成一个可持续增长的生态系统。
+                创作者生态平台 + 工具超级市场 + 内容分发入口
               </p>
             </div>
 
