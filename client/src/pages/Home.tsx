@@ -1,25 +1,56 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { useState } from 'react';
+import Navigation from '@/components/Navigation';
+import Hero from '@/components/Hero';
+import Market from '@/components/Market';
+import PainMap from '@/components/PainMap';
+import Architecture from '@/components/Architecture';
+import Competition from '@/components/Competition';
+import BusinessModel from '@/components/BusinessModel';
+import Roadmap from '@/components/Roadmap';
+import Funding from '@/components/Funding';
+import PremiumProducts from '@/components/PremiumProducts';
+import Closing from '@/components/Closing';
+import Footer from '@/components/Footer';
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
-
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      {/* Grid background overlay */}
+      <div className="fixed inset-0 pointer-events-none z-0 opacity-40">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px)',
+            backgroundSize: '36px 36px',
+            maskImage: 'linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.08))',
+          }}
+        />
+      </div>
+
+      {/* Gradient orbs */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" style={{ left: '15%', top: '15%' }} />
+        <div className="absolute w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl" style={{ right: '15%', top: '12%' }} />
+        <div className="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" style={{ left: '50%', bottom: '20%' }} />
+      </div>
+
+      <div className="relative z-10">
+        <Navigation />
+        <main>
+          <Hero />
+          <Market />
+          <PainMap />
+          <Architecture />
+          <Competition />
+          <BusinessModel />
+          <Roadmap />
+          <Funding />
+          <PremiumProducts />
+          <Closing />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
