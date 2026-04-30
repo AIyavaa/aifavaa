@@ -11,6 +11,7 @@ import Funding from '@/components/Funding';
 import PremiumProducts from '@/components/PremiumProducts';
 import Closing from '@/components/Closing';
 import Team from '@/components/Team';
+import ConsultationForm from '@/components/ConsultationForm';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -49,6 +50,7 @@ export default function Home() {
           <Funding />
           <Team />
           <PremiumProducts />
+          <ConsultationForm />
           <Closing />
         </main>
         <Footer />

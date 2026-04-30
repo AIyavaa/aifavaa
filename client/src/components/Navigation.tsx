@@ -9,6 +9,7 @@ export default function Navigation() {
     { href: '#funding', label: 'Funding' },
     { href: '#team', label: 'Team' },
     { href: '#premium', label: 'Premium Products' },
+    { href: '#consultation', label: 'Consultation' },
     { href: '#closing', label: 'Closing' },
   ];
 
