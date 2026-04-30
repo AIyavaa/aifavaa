@@ -7,6 +7,7 @@ export default function Navigation() {
     { href: '#business', label: 'Business' },
     { href: '#roadmap', label: 'Roadmap' },
     { href: '#funding', label: 'Funding' },
+    { href: '#team', label: 'Team' },
     { href: '#premium', label: 'Premium Products' },
     { href: '#closing', label: 'Closing' },
   ];

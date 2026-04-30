@@ -10,6 +10,7 @@ import Roadmap from '@/components/Roadmap';
 import Funding from '@/components/Funding';
 import PremiumProducts from '@/components/PremiumProducts';
 import Closing from '@/components/Closing';
+import Team from '@/components/Team';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -46,6 +47,7 @@ export default function Home() {
           <BusinessModel />
           <Roadmap />
           <Funding />
+          <Team />
           <PremiumProducts />
           <Closing />
         </main>
