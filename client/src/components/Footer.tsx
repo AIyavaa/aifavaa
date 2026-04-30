@@ -40,10 +40,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-white mb-4">联系我们</h4>
             <ul className="space-y-2 text-xs sm:text-sm text-slate-400">
-              <li>Email: hello@aiyavaa.com</li>
+              <li>Email: evaforwork@163.com</li>
               <li>Website: www.aiyavaa.com</li>
-              <li>WeChat: aiyavaa_official</li>
-              <li>Twitter: @aiyavaa</li>
+              <li>WeChat: Yyyyylyll99</li>
+              <li>whatsapp: +65 93463156</li>
             </ul>
           </div>
         </div>
