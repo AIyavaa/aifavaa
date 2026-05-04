@@ -1,3 +1,5 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+const { language } = useLanguage();
 export default function PremiumProducts() {
   const products = [
     {

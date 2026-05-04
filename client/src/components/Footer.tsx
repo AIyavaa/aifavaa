@@ -1,3 +1,5 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+const { language } = useLanguage();
 export default function Footer() {
   return (
     <footer className="relative py-12 lg:py-16 border-t border-white/10">

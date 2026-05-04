@@ -1,3 +1,5 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+const { language } = useLanguage();
 export default function Closing() {
   return (
     <section id="closing" className="relative py-20 lg:py-28 pb-32 lg:pb-40">
