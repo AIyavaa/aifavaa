@@ -1,39 +1,11 @@
-import { useLanguage } from '@/contexts/LanguageContext';
-
 export default function Funding() {
-  const { language } = useLanguage();
-
   const fundingData = [
-    {
-      label: language === 'zh' ? '产品与技术' : 'Product & Technology',
-      value: 35,
-      color: 'from-blue-400 to-blue-600',
-    },
-    {
-      label: language === 'zh' ? '市场与运营' : 'Marketing & Operations',
-      value: 25,
-      color: 'from-cyan-400 to-cyan-600',
-    },
-    {
-      label: language === 'zh' ? '创作者激励' : 'Creator Incentives',
-      value: 18,
-      color: 'from-purple-400 to-purple-600',
-    },
-    {
-      label: language === 'zh' ? '品牌客户获取' : 'Brand Customer Acquisition',
-      value: 12,
-      color: 'from-green-400 to-green-600',
-    },
-    {
-      label: language === 'zh' ? '国际化扩展' : 'International Expansion',
-      value: 6,
-      color: 'from-orange-400 to-orange-600',
-    },
-    {
-      label: language === 'zh' ? '运营储备' : 'Operating Reserve',
-      value: 4,
-      color: 'from-pink-400 to-pink-600',
-    },
+    { label: '产品与技术', value: 35, color: 'from-blue-400 to-blue-600' },
+    { label: '市场与运营', value: 25, color: 'from-cyan-400 to-cyan-600' },
+    { label: '创作者激励', value: 18, color: 'from-purple-400 to-purple-600' },
+    { label: '品牌客户获取', value: 12, color: 'from-green-400 to-green-600' },
+    { label: '国际化扩展', value: 6, color: 'from-orange-400 to-orange-600' },
+    { label: '运营储备', value: 4, color: 'from-pink-400 to-pink-600' },
   ];
 
   return (
@@ -43,20 +15,14 @@ export default function Funding() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-blue-200 bg-white/6 border border-white/10 backdrop-blur-sm mb-6">
             <span>07</span>
             <span>/</span>
-            <span>{language === 'zh' ? '融资计划' : 'Funding Plan'}</span>
+            <span>Funding Plan</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4 max-w-3xl">
-            {language === 'zh'
-              ? '融资计划：$6M 种子轮，聚焦生态构建'
-              : 'Funding Plan: $6M Seed Round Focused on Ecosystem Building'}
-            <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mt-4">
-              {language === 'zh' ? '战略资本配置促进平台增长' : 'Strategic capital allocation for platform growth'}
-            </div>
+            融资计划：$10M 种子轮，聚焦生态构建
+            <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mt-4">Strategic capital allocation for platform growth</div>
           </h2>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl">
-            {language === 'zh'
-              ? '种子轮融资 $6M，重点投入产品开发、创作者激励与品牌客户获取，建立平台的初始网络效应。'
-              : 'Seed round funding of $6M focused on product development, creator incentives, and brand customer acquisition to establish the platform\'s initial network effects.'}
+            种子轮融资 $6M，重点投入产品开发、创作者激励与品牌客户获取，建立平台的初始网络效应。
           </p>
         </div>
 
@@ -161,7 +127,7 @@ export default function Funding() {
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <div className="text-3xl lg:text-4xl font-black text-white">$6M</div>
-                <div className="text-xs text-slate-400 mt-1">{language === 'zh' ? '种子轮' : 'Seed Round'}</div>
+                <div className="text-xs text-slate-400 mt-1">Seed Round</div>
               </div>
             </div>
           </div>
@@ -169,17 +135,12 @@ export default function Funding() {
           {/* Legend */}
           <div className="space-y-3">
             {fundingData.map((item, i) => (
-              <div
-                key={i}
-                className="bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-lg p-4 flex items-center justify-between"
-              >
+              <div key={i} className="bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-lg p-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className={`w-3 h-3 rounded-full bg-gradient-to-br ${item.color}`} />
                   <div>
                     <div className="font-bold text-white text-sm">{item.label}</div>
-                    <div className="text-xs text-slate-400">
-                      {item.value}% {language === 'zh' ? '预算' : 'of budget'}
-                    </div>
+                    <div className="text-xs text-slate-400">{item.value}% of budget</div>
                   </div>
                 </div>
                 <div className="text-lg font-black text-white">${(item.value * 0.06).toFixed(1)}M</div>
@@ -191,21 +152,9 @@ export default function Funding() {
         {/* Key Metrics */}
         <div className="mt-12 lg:mt-16 grid md:grid-cols-3 gap-6 lg:gap-7">
           {[
-            {
-              label: language === 'zh' ? '预期 18 个月内达成' : 'Expected within 18 months',
-              value: 'DAU 10W+',
-              desc: language === 'zh' ? '日活用户' : 'Daily Active Users',
-            },
-            {
-              label: language === 'zh' ? '创作者网络规模' : 'Creator Network Size',
-              value: '1W+',
-              desc: language === 'zh' ? '专业与兼职创作者' : 'Professional & Part-time Creators',
-            },
-            {
-              label: language === 'zh' ? '品牌客户数' : 'Brand Customers',
-              value: '100+',
-              desc: language === 'zh' ? '年费合同客户' : 'Annual Contract Customers',
-            },
+            { label: '预期 18 个月内达成', value: 'DAU 10W+', desc: '日活用户' },
+            { label: '创作者网络规模', value: '1W+', desc: '专业与兼职创作者' },
+            { label: '品牌客户数', value: '100+', desc: '年费合同客户' },
           ].map((metric, i) => (
             <div key={i} className="bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-2xl p-6 lg:p-8 text-center">
               <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">{metric.label}</div>

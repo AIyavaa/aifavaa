@@ -1,7 +1,4 @@
-import { useLanguage } from '@/contexts/LanguageContext';
-
 export default function Competition() {
-  const { language } = useLanguage();
   const competitors = [
     { name: 'YouTube', strength: 3, distribution: 3, creator: 3, brand: 3, interaction: 3, copyright: 3, ecosystem: 3 },
     { name: 'Runway / Pika', strength: 1, distribution: 1, creator: 2, brand: 1, interaction: 2, copyright: 1, ecosystem: 1 },

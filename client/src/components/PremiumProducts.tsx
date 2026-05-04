@@ -1,7 +1,4 @@
-import { useLanguage } from '@/contexts/LanguageContext';
-
 export default function PremiumProducts() {
-  const { language } = useLanguage();
   const products = [
     {
       title: 'AI 视频生成工作室',

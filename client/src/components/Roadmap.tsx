@@ -1,5 +1,3 @@
-import { useLanguage } from "@/contexts/LanguageContext";
-const { language } = useLanguage();
 import { useState } from 'react';
 
 export default function Roadmap() {

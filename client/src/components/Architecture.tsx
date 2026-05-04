@@ -1,7 +1,4 @@
-import { useLanguage } from '@/contexts/LanguageContext';
-
 export default function Architecture() {
-  const { language } = useLanguage();
   const layers = [
     { title: '用户消费中心', desc: '发现、互动、支付、社区' },
     { title: '创作者生产中心', desc: '创作、发布、变现、资产沉淀' },
