@@ -18,7 +18,7 @@ export default function Funding() {
             <span>Funding Plan</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4 max-w-3xl">
-            融资计划：$10M 种子轮，聚焦生态构建
+            融资计划：$6M 种子轮，聚焦生态构建
             <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mt-4">Strategic capital allocation for platform growth</div>
           </h2>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl">
