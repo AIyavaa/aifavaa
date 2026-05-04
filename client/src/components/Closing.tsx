@@ -1,35 +1,89 @@
 export default function Closing() {
   return (
-    <section id="closing" className="relative py-20 lg:py-28 pb-32 lg:pb-40">
+    <section id="closing" className="relative py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-3xl p-8 lg:p-12 relative overflow-hidden">
-          <div className="absolute -right-20 -top-20 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl" />
-          <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl" />
-          <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-blue-200 bg-white/6 border border-white/10 backdrop-blur-sm mb-8">
-              <span>09</span>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-blue-200 bg-white/6 border border-white/10 backdrop-blur-sm mb-6">
+              <span>11</span>
               <span>/</span>
-              <span>Closing</span>
+              <span>Investment Thesis</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight mb-8 max-w-4xl">
-              AI 视频的下半场，属于掌握生态的平台。
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
+              Why Now? Why AIyavaa?
             </h2>
-            <p className="text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed mb-8">
-              模型能力会不断进步，但永远无法自动变现。AIyavaa 的使命是把 AI 能力转化为可持续的商业价值，通过平台、规则与激励，连接所有参与者，共同构建 AI 视频生态的未来。
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#hero"
-                className="px-6 py-3 rounded-xl font-bold text-sm bg-gradient-to-br from-blue-500/30 to-cyan-500/30 border border-blue-400/30 text-white hover:from-blue-500/40 hover:to-cyan-500/40 hover:border-blue-400/50 transition-all shadow-lg shadow-blue-500/20 hover:-translate-y-0.5"
-              >
-                了解更多
-              </a>
-              <a
-                href="#funding"
-                className="px-6 py-3 rounded-xl font-bold text-sm border border-white/12 text-slate-300 hover:text-white hover:bg-white/5 transition-all hover:-translate-y-0.5"
-              >
-                查看融资计划
-              </a>
+            <div className="space-y-4 mb-8">
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                <strong>Market Timing:</strong> AI models are mature, video consumption is exploding, creator supply is growing, and brand budgets are migrating—all four forces are converging.
+              </p>
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                <strong>Team:</strong> Founders with cross-border startup experience, content production expertise, high-growth platform operations, and AI strategy vision.
+              </p>
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                <strong>Capital Efficiency:</strong> $6M seed round to build core infrastructure, validate business model, and reach 100K+ DAU within 18 months.
+              </p>
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                <strong>Market Size:</strong> AI video market growing from $3.86B to $42.29B (2024-2030). Platform layer is the last trillion-dollar opportunity.
+              </p>
+            </div>
+          </div>
+
+          {/* Right */}
+          <div className="space-y-6">
+            <div className="bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-2xl p-8">
+              <h3 className="text-2xl font-black text-white mb-6">Investment Returns</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-blue-500/30 border border-blue-400/50 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-black">18M</span>
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-slate-400 uppercase">Series A Target</div>
+                    <div className="text-xl font-black text-white">$20M+ at 3-5x valuation</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-cyan-500/30 border border-cyan-400/50 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-black">24M</span>
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-slate-400 uppercase">Series B Target</div>
+                    <div className="text-xl font-black text-white">$100M+ at 10x+ valuation</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-purple-500/30 border border-purple-400/50 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-black">36M</span>
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-slate-400 uppercase">Exit Target</div>
+                    <div className="text-xl font-black text-white">$1B+ market cap (IPO/M&A)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-500/10 to-cyan-500/10 border border-green-400/30 backdrop-blur-xl rounded-2xl p-8">
+              <h3 className="text-xl font-black text-white mb-4">Key Metrics (18 Months)</h3>
+              <ul className="space-y-3">
+                <li className="flex gap-3 text-sm text-slate-300">
+                  <span className="text-green-400 font-bold">✓</span>
+                  <span>DAU: 100K+</span>
+                </li>
+                <li className="flex gap-3 text-sm text-slate-300">
+                  <span className="text-green-400 font-bold">✓</span>
+                  <span>Creators: 10K+</span>
+                </li>
+                <li className="flex gap-3 text-sm text-slate-300">
+                  <span className="text-green-400 font-bold">✓</span>
+                  <span>Brand Customers: 100+</span>
+                </li>
+                <li className="flex gap-3 text-sm text-slate-300">
+                  <span className="text-green-400 font-bold">✓</span>
+                  <span>Monthly Revenue: $500K+</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

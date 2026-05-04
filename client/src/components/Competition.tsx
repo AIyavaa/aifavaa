@@ -7,14 +7,14 @@ export default function Competition() {
   ];
 
   const categories = [
-    '生成能力',
-    '内容分发能力',
-    '创作者沉淀能力',
-    '用户互动 / 共创',
-    '品牌需求承接',
-    '交易闭环能力',
-    '版权 / 规则保障',
-    '平台生态整合',
+    'Generation Capability',
+    'Content Distribution',
+    'Creator Retention',
+    'User Interaction & Co-creation',
+    'Brand Demand Fulfillment',
+    'Transaction Closure',
+    'Copyright & Rule Protection',
+    'Platform Ecosystem Integration',
   ];
 
   const renderScore = (score: number) => {
@@ -40,11 +40,11 @@ export default function Competition() {
             <span>Competition Analysis</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4 max-w-3xl">
-            竞争格局：没有人在做"平台"
+            Competitive Landscape: No One Is Building a Platform
             <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mt-4">The white space is in platform integration</div>
           </h2>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl">
-            YouTube 强于生态整合，Runway/Pika 强于生成能力，TikTok Shop 强于交易，但没有人同时掌握生成、分发、创作者、品牌与交易。
+            YouTube excels at ecosystem integration, Runway/Pika at generation capability, TikTok Shop at transactions, but no one simultaneously controls generation, distribution, creators, brands, and transactions.
           </p>
         </div>
 

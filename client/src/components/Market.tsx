@@ -1,9 +1,9 @@
 export default function Market() {
   const opportunities = [
-    { label: 'AI to global economy by 2030', value: '$15.7T', desc: '智能经济总盘子', detail: 'AI 正在重构内容生产、营销分发与消费交易方式。' },
-    { label: 'Creator economy by 2027', value: '$480B', desc: '创作者经济扩容', detail: 'AI 视频生产者将从少数专业团队扩展到更广泛的创作者群体。' },
-    { label: 'AI Video market 2024 → 2030', value: '$3.86B → $42.29B', desc: 'AI 视频产业进入增长通道', detail: '视频内容生产与消费的成本结构被彻底改写。' },
-    { label: 'YouTube Shorts daily views', value: '200B+', desc: '视频消费需求已被验证', detail: '短视频已成为主流内容消费形式，AI 生成视频有巨大市场。' },
+    { label: 'AI to global economy by 2030', value: '$15.7T', desc: 'Global AI Economy', detail: 'AI is restructuring content production, marketing distribution, and consumer transactions.' },
+    { label: 'Creator economy by 2027', value: '$480B', desc: 'Creator Economy Expansion', detail: 'AI video producers will expand from a small number of professional teams to a broader creator community.' },
+    { label: 'AI Video market 2024 → 2030', value: '$3.86B → $42.29B', desc: 'AI Video Industry Growth', detail: 'The cost structure of video content production and consumption is being fundamentally transformed.' },
+    { label: 'YouTube Shorts daily views', value: '200B+', desc: 'Video Consumption Verified', detail: 'Short videos have become the mainstream content consumption format, with huge market potential for AI-generated videos.' },
   ];
 
   return (

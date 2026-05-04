@@ -1,43 +1,42 @@
 export default function PainMap() {
   const painPoints = [
     {
-      title: '用户 / User',
-      desc: '视频消费需求爆发，但内容质量参差不齐',
+      title: 'Users',
+      desc: 'Video consumption is exploding, but content quality is inconsistent',
       points: [
-        '短视频平台内容同质化严重，用户需要更高质量、更个性化的内容',
-        '现有 AI 视频工具生成的内容缺乏情感连接与审美品味',
-        '用户渴望参与内容创作过程，但工具门槛太高',
+        'Short video platforms have homogeneous content; users need higher quality and more personalized content',
+        'Existing AI video tools produce content lacking emotional connection and aesthetic taste',
+        'Users want to participate in content creation, but the tool barrier is too high',
       ],
     },
     {
-      title: '创作者 / Creator',
-      desc: '生产力工具众多，但缺乏变现渠道与生态支撑',
+      title: 'Creators',
+      desc: 'Many productivity tools exist, but lack monetization channels and ecosystem support',
       points: [
-        'AI 工具降低了创作门槛，但创作者仍难以获得稳定收入',
-        '缺乏专业的内容交易市场，创作者无法直接对接品牌需求',
-        '版权保护不足，创作资产无法沉淀与复用',
+        'AI tools lower creation barriers, but creators still struggle to earn stable income',
+        'Lack of professional content trading markets; creators cannot directly connect with brand needs',
+        'Insufficient copyright protection; creative assets cannot be accumulated and reused',
       ],
     },
     {
-      title: '品牌 / Brand',
-      desc: '营销需求迫切，但采购链路复杂且成本高',
+      title: 'Brands',
+      desc: 'Marketing needs are urgent, but procurement workflows are complex and costly',
       points: [
-        '传统视频制作周期长、成本高，难以满足快速迭代需求',
-        '缺乏标准化的 AI 视频采购渠道，品牌需要自己组织资源',
-        '难以评估创作者质量，无法建立长期合作关系',
+        'Traditional video production takes time and costs, making rapid iteration difficult',
+        'Lack of standardized AI video procurement channels; brands must organize resources themselves',
+        'Difficult to assess creator quality; cannot establish long-term partnerships',
       ],
     },
     {
-      title: '模型方 / Model Provider',
-      desc: '能力已成熟，但缺乏应用场景与商业闭环',
+      title: 'Model Providers',
+      desc: 'Capabilities are mature, but lack application scenarios and commercial closure',
       points: [
-        '模型能力商品化，单纯卖 API 利润空间有限',
-        '缺乏垂直应用场景，难以形成用户粘性',
-        '无法直接触达终端用户，依赖第三方分发',
+        'Model capabilities are commoditized; selling APIs alone has limited profit margins',
+        'Lack of vertical application scenarios; difficult to build user stickiness',
+        'Cannot directly reach end users; dependent on third-party distribution',
       ],
     },
   ];
-
   return (
     <section id="pain" className="relative py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6">
@@ -48,14 +47,13 @@ export default function PainMap() {
             <span>Pain Map</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4 max-w-3xl">
-            四个角色的核心痛点：平台缺位
+            Four Key Pain Points: The Missing Platform
             <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mt-4">The missing middle in AI video ecosystem</div>
           </h2>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl">
-            用户、创作者、品牌、模型方各有所需，但缺乏一个统一的平台来连接所有参与者。
+            Users, creators, brands, and model providers all have needs, but lack a unified platform to connect all participants.
           </p>
         </div>
-
         <div className="grid md:grid-cols-2 gap-6 lg:gap-7">
           {painPoints.map((pain, i) => (
             <div
