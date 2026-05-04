@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { t } from '@/lib/translations';
+import { trpc } from '@/lib/trpc';
 
 export default function ConsultationForm() {
   const { language } = useLanguage();
@@ -17,6 +18,18 @@ export default function ConsultationForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const submitMutation = trpc.consultation.submit.useMutation({
+    onSuccess: () => {
+      toast.success(language === 'zh' ? '提交成功！我们将在 24 小时内与您联系。' : 'Submitted! We will contact you within 24 hours.');
+      setFormData({ name: '', email: '', phone: '', company: '', role: '', interest: '', message: '' });
+      setIsSubmitting(false);
+    },
+    onError: () => {
+      toast.error(language === 'zh' ? '提交失败，请直接通过邮件联系我们。' : 'Submission failed. Please contact us directly via email.');
+      setIsSubmitting(false);
+    },
+  });
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -27,64 +40,19 @@ export default function ConsultationForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      // 验证必填字段
-      if (!formData.name || !formData.email || !formData.company) {
-        toast.error(t('errorMessage', language));
-        setIsSubmitting(false);
-        return;
-      }
-
-      // 发送邮件到您的邮箱
-      const response = await fetch('/api/send-consultation', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        toast.success(t('successMessage', language));
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          role: '',
-          interest: '',
-          message: '',
-        });
-      } else {
-        // 如果后端不可用，显示备选联系方式
-        toast.success(t('successMessage', language));
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          role: '',
-          interest: '',
-          message: '',
-        });
-      }
-    } catch (error) {
-      // 显示备选联系方式
-      toast.success(t('successMessage', language));
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        role: '',
-        interest: '',
-        message: '',
-      });
-    } finally {
-      setIsSubmitting(false);
+    if (!formData.name || !formData.email || !formData.company) {
+      toast.error(t('errorMessage', language));
+      return;
     }
+    setIsSubmitting(true);
+    submitMutation.mutate({
+      name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      position: formData.role || undefined,
+      investmentStage: formData.interest || undefined,
+      message: formData.message || undefined,
+    });
   };
 
   return (

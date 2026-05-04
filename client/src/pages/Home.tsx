@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Market from '@/components/Market';
