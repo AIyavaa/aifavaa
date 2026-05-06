@@ -68,7 +68,7 @@ export default function Navigation() {
           {/* Right side controls */}
           <div className="flex items-center gap-2 sm:gap-3">
             <LanguageSwitcher />
-            <Link href="/platform" className="hidden sm:inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-xs sm:text-sm font-bold hover:opacity-90 transition-opacity">
+            <Link href="/" className="hidden sm:inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-xs sm:text-sm font-bold hover:opacity-90 transition-opacity">
               {platformLabel}
             </Link>
             {/* Hamburger - visible on mobile & tablet */}
@@ -98,7 +98,7 @@ export default function Navigation() {
               ))}
               <div className="mt-3 pt-3 border-t border-white/10">
                 <Link
-                  href="/platform"
+                  href="/"
                   onClick={handleLinkClick}
                   className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-bold hover:opacity-90 transition-opacity"
                 >

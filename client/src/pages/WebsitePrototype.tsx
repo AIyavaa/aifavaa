@@ -462,7 +462,7 @@ function Header({ route, setRoute, lang }: { route: string; setRoute: (r: string
             item.key === "investors" ? (
               <a
                 key={item.key}
-                href="/"
+                href="/investor"
                 className={cls(
                   "rounded-full border px-4 py-2 text-sm transition",
                   "border-transparent text-slate-400 hover:border-white/10 hover:bg-white/5 hover:text-white"
@@ -483,7 +483,7 @@ function Header({ route, setRoute, lang }: { route: string; setRoute: (r: string
               </button>
             )
           ))}
-          <a href="/" className="ml-2 rounded-full border border-indigo-300/30 bg-gradient-to-r from-indigo-500/30 to-cyan-400/20 px-4 py-2 text-sm font-bold text-white transition hover:from-indigo-500/40 hover:to-cyan-400/30">
+          <a href="/investor" className="ml-2 rounded-full border border-indigo-300/30 bg-gradient-to-r from-indigo-500/30 to-cyan-400/20 px-4 py-2 text-sm font-bold text-white transition hover:from-indigo-500/40 hover:to-cyan-400/30">
             {lang === "zh" ? "投资者故事 →" : "Investor Story →"}
           </a>
           <LanguageSwitcher />
@@ -505,7 +505,7 @@ function Header({ route, setRoute, lang }: { route: string; setRoute: (r: string
             <div className="space-y-2 px-4 py-4">
               {NAV.map((item) => (
                 item.key === "investors" ? (
-                  <a key={item.key} href="/" className="flex w-full items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-left">
+                  <a key={item.key} href="/investor" className="flex w-full items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-left">
                     <div className="text-sm font-medium text-white">{item.label}</div>
                     <ChevronRight className="h-4 w-4 text-slate-400" />
                   </a>
@@ -517,7 +517,7 @@ function Header({ route, setRoute, lang }: { route: string; setRoute: (r: string
                 )
               ))}
               <div className="pt-2 flex gap-2">
-                <a href="/" className="flex-1 text-center rounded-2xl border border-indigo-300/30 bg-gradient-to-r from-indigo-500/30 to-cyan-400/20 px-4 py-3 text-sm font-bold text-white">
+                <a href="/investor" className="flex-1 text-center rounded-2xl border border-indigo-300/30 bg-gradient-to-r from-indigo-500/30 to-cyan-400/20 px-4 py-3 text-sm font-bold text-white">
                   {lang === "zh" ? "投资者故事 →" : "Investor Story →"}
                 </a>
                 <LanguageSwitcher />
@@ -586,7 +586,7 @@ function HomePage({ setRoute, lang }: { setRoute: (r: string) => void; lang: Lan
             </div>
             <div className="flex flex-wrap gap-3 pt-2">
               <HeroAction primary onClick={() => setRoute("platform")}>{T.home.cta1}</HeroAction>
-              <a href="/"><HeroAction onClick={() => {}}>{T.home.cta2}</HeroAction></a>
+              <a href="/investor"><HeroAction onClick={() => {}}>{T.home.cta2}</HeroAction></a>
             </div>
           </div>
 
@@ -634,7 +634,7 @@ function HomePage({ setRoute, lang }: { setRoute: (r: string) => void; lang: Lan
                   {persona.chips.map((chip) => (<span key={chip} className="rounded-full border border-indigo-300/20 bg-indigo-300/10 px-3 py-1.5 text-xs text-indigo-100">{chip}</span>))}
                 </div>
                 {activePersona === "investors" ? (
-                  <a href="/"><HeroAction primary onClick={() => {}}>{persona.cta}</HeroAction></a>
+                  <a href="/investor"><HeroAction primary onClick={() => {}}>{persona.cta}</HeroAction></a>
                 ) : (
                   <HeroAction primary onClick={() => setRoute(activePersona)}>{persona.cta}</HeroAction>
                 )}
@@ -674,7 +674,7 @@ function HomePage({ setRoute, lang }: { setRoute: (r: string) => void; lang: Lan
             const NavIcon = icons[routeKey as string];
             if (routeKey === "investors") {
               return (
-                <a key={title as string} href="/" className="text-left">
+                <a key={title as string} href="/investor" className="text-left">
                   <Glass className="h-full p-6 md:p-7 transition hover:-translate-y-1">
                     <div className="mb-4 inline-flex rounded-2xl border border-white/10 bg-white/[0.05] p-3"><NavIcon className="h-5 w-5 text-white" /></div>
                     <div className="text-xl font-semibold tracking-[-0.03em] text-white">{title as string}</div>
