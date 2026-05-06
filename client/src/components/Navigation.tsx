@@ -1,61 +1,66 @@
+import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
+import { Link } from 'wouter';
+
+const navLinks = {
+  zh: [
+    { href: '#hero', label: '首页' },
+    { href: '#market', label: '市场' },
+    { href: '#pain', label: '痛点' },
+    { href: '#architecture', label: '架构' },
+    { href: '#competition', label: '竞争' },
+    { href: '#business', label: '商业' },
+    { href: '#roadmap', label: '路线图' },
+    { href: '#funding', label: '融资' },
+    { href: '#team', label: '团队' },
+    { href: '#consultation', label: '咨询' },
+  ],
+  en: [
+    { href: '#hero', label: 'Home' },
+    { href: '#market', label: 'Market' },
+    { href: '#pain', label: 'Pain Points' },
+    { href: '#architecture', label: 'Architecture' },
+    { href: '#competition', label: 'Competition' },
+    { href: '#business', label: 'Business' },
+    { href: '#roadmap', label: 'Roadmap' },
+    { href: '#funding', label: 'Funding' },
+    { href: '#team', label: 'Team' },
+    { href: '#consultation', label: 'Consult' },
+  ],
+};
 
 export default function Navigation() {
   const { language } = useLanguage();
+  const [scrolled, setScrolled] = useState(false);
+  const links = navLinks[language as 'zh' | 'en'] || navLinks.zh;
+  const platformLabel = language === 'en' ? 'Platform →' : '进入平台 →';
 
-  const navLinks = [
-    { href: '#market', label: language === 'zh' ? '市场' : 'Market' },
-    { href: '#pain', label: language === 'zh' ? '痛点地图' : 'Pain Map' },
-    { href: '#architecture', label: language === 'zh' ? '架构' : 'Architecture' },
-    { href: '#competition', label: language === 'zh' ? '竞争' : 'Competition' },
-    { href: '#business', label: language === 'zh' ? '商业模式' : 'Business' },
-    { href: '#roadmap', label: language === 'zh' ? '路线图' : 'Roadmap' },
-    { href: '#funding', label: language === 'zh' ? '融资' : 'Funding' },
-    { href: '#team', label: language === 'zh' ? '团队' : 'Team' },
-    { href: '#premium', label: language === 'zh' ? '高级产品' : 'Premium Products' },
-    { href: '#consultation', label: language === 'zh' ? '咨询' : 'Consultation' },
-    { href: '#closing', label: language === 'zh' ? '结尾' : 'Closing' },
-  ];
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-2xl bg-slate-950/68 border-b border-white/8">
-      <div className="max-w-7xl mx-auto px-6 py-0">
-        <div className="flex justify-between items-center gap-6 min-h-[72px]">
-          {/* Brand */}
-          <a href="#hero" className="flex items-center gap-3 font-black tracking-wide">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-400 to-cyan-400 shadow-lg shadow-blue-500/30 relative overflow-hidden">
-              <div className="absolute inset-0.5 rounded-lg border border-white/35" />
-            </div>
-            <div>
-              <div className="text-sm font-black">AIyavaa</div>
-              <div className="text-xs font-semibold text-slate-400 tracking-widest uppercase">
-                {language === 'zh' ? '投资者故事' : 'Interactive Investor Story'}
-              </div>
-            </div>
-          </a>
-
-          {/* Nav Links */}
-          <div className="hidden lg:flex gap-3 flex-wrap justify-end items-center">
-            <div className="flex gap-2 flex-wrap">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="px-3 py-2 rounded-full text-xs font-semibold text-slate-400 hover:text-slate-100 transition-all hover:border-white/12 hover:bg-white/5 border border-transparent"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-            <a
-              href="/platform"
-              className="px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-indigo-500/30 to-cyan-400/20 border border-indigo-300/30 hover:from-indigo-500/40 hover:to-cyan-400/30 transition-all"
-            >
-              {language === 'zh' ? '进入平台' : 'Platform'} →
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/90 backdrop-blur-xl border-b border-white/10' : ''}`}>
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#hero" className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-400 shadow-lg shadow-blue-500/30" />
+          <span className="font-black text-white text-lg">AIyavaa</span>
+        </a>
+        <div className="hidden lg:flex items-center gap-6">
+          {links.map((link) => (
+            <a key={link.href} href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors font-medium">
+              {link.label}
             </a>
-            <LanguageSwitcher />
-          </div>
+          ))}
+        </div>
+        <div className="flex items-center gap-3">
+          <LanguageSwitcher />
+          <Link href="/platform" className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-bold hover:opacity-90 transition-opacity">
+            {platformLabel}
+          </Link>
         </div>
       </div>
     </nav>
