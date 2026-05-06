@@ -75,7 +75,7 @@ export default function Roadmap() {
 
   return (
     <section id="roadmap" className="relative py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="mb-12 lg:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-blue-200 bg-white/6 border border-white/10 backdrop-blur-sm mb-6">
             <span>{T.badge}</span>
@@ -93,7 +93,7 @@ export default function Roadmap() {
             return (
               <div key={i} className={`${c.bg} border ${c.border} backdrop-blur-xl rounded-2xl overflow-hidden transition-all`}>
                 <button
-                  className="w-full flex items-center justify-between p-6 lg:p-8 text-left"
+                  className="w-full flex items-center justify-between p-4 sm:p-6 lg:p-8 text-left"
                   onClick={() => setExpanded(isOpen ? null : i)}
                 >
                   <div className="flex items-center gap-4">
@@ -106,7 +106,7 @@ export default function Roadmap() {
                   <span className={`text-2xl text-slate-400 transition-transform ${isOpen ? 'rotate-45' : ''}`}>+</span>
                 </button>
                 {isOpen && (
-                  <div className="px-6 lg:px-8 pb-6 lg:pb-8">
+                  <div className="px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8">
                     <ul className="space-y-3">
                       {phase.milestones.map((m, j) => (
                         <li key={j} className="flex gap-3 text-sm text-slate-300">

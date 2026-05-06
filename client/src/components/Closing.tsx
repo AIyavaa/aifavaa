@@ -59,7 +59,7 @@ export default function Closing() {
 
   return (
     <section id="closing" className="relative py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-blue-200 bg-white/6 border border-white/10 backdrop-blur-sm mb-6">
@@ -71,13 +71,13 @@ export default function Closing() {
             <div className="space-y-4 mb-8">
               {T.reasons.map((r, i) => (
                 <p key={i} className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                  <strong>{r.label}：</strong>{r.desc}
+                  <strong>{r.label}{language === 'zh' ? '：' : ': '}</strong>{r.desc}
                 </p>
               ))}
             </div>
           </div>
           <div className="space-y-6">
-            <div className="bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-2xl p-5 sm:p-8">
               <h3 className="text-2xl font-black text-white mb-6">{T.returns.title}</h3>
               <div className="space-y-4">
                 {T.returns.items.map((item, i) => {
@@ -96,7 +96,7 @@ export default function Closing() {
                 })}
               </div>
             </div>
-            <div className="bg-gradient-to-br from-green-500/10 to-cyan-500/10 border border-green-400/30 backdrop-blur-xl rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-green-500/10 to-cyan-500/10 border border-green-400/30 backdrop-blur-xl rounded-2xl p-5 sm:p-8">
               <h3 className="text-xl font-black text-white mb-4">{T.metrics.title}</h3>
               <ul className="space-y-3">
                 {T.metrics.items.map((item, i) => (

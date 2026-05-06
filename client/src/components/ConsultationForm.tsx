@@ -57,7 +57,7 @@ export default function ConsultationForm() {
 
   return (
     <section id="consultation" className="relative py-20 lg:py-28">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="mb-12 lg:mb-16 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-blue-200 bg-white/6 border border-white/10 backdrop-blur-sm mb-6">
             <span>💼</span>
@@ -72,7 +72,7 @@ export default function ConsultationForm() {
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-2xl p-8 lg:p-10">
+        <div className="bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-2xl p-5 sm:p-8 lg:p-10">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name & Email Row */}
             <div className="grid md:grid-cols-2 gap-6">

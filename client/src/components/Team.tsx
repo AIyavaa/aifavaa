@@ -80,7 +80,7 @@ export default function Team() {
 
   return (
     <section id="team" className="relative py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="mb-12 lg:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-blue-200 bg-white/6 border border-white/10 backdrop-blur-sm mb-6">
             <span>{T.badge}</span>

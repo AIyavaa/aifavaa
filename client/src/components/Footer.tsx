@@ -30,7 +30,7 @@ export default function Footer() {
 
   return (
     <footer className="relative py-12 lg:py-16 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-4 gap-8 lg:gap-10 mb-12 lg:mb-16">
           <div>
             <div className="flex items-center gap-3 mb-4">

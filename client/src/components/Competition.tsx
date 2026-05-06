@@ -58,7 +58,7 @@ export default function Competition() {
 
   return (
     <section id="competition" className="relative py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="mb-12 lg:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-blue-200 bg-white/6 border border-white/10 backdrop-blur-sm mb-6">
             <span>{T.badge}</span>
@@ -70,7 +70,7 @@ export default function Competition() {
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl">{T.desc}</p>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full text-sm min-w-[500px]">
             <thead>
               <tr className="border-b border-white/10">
                 <th className="text-left py-3 px-4 font-bold text-white">{T.tableHeader}</th>

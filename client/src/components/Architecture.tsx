@@ -69,7 +69,7 @@ export default function Architecture() {
 
   return (
     <section id="architecture" className="relative py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="mb-12 lg:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-blue-200 bg-white/6 border border-white/10 backdrop-blur-sm mb-6">
             <span>{T.badge}</span>
@@ -81,7 +81,7 @@ export default function Architecture() {
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl">{T.desc}</p>
         </div>
         <div className="grid lg:grid-cols-[1.08fr_0.92fr] gap-8 lg:gap-10 items-start">
-          <div className="bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-2xl p-8 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-2xl p-5 sm:p-8 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent" />
             <div className="relative z-10 space-y-3">
               {T.layers.map((layer, i) => (

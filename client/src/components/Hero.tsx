@@ -6,7 +6,7 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative py-20 lg:py-0 lg:min-h-[calc(100vh-72px)] flex items-center">
-      <div className="max-w-7xl mx-auto px-6 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
         <div className="grid lg:grid-cols-[1.12fr_0.88fr] gap-7 lg:gap-8 items-stretch">
           {/* Left */}
           <div className="flex flex-col justify-center gap-6 lg:gap-7">
