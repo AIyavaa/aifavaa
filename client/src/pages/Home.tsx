@@ -38,7 +38,7 @@ export default function Home() {
 
       <div className="relative z-10">
         <Navigation />
-        <main>
+        <main className="pt-16 sm:pt-16">
           <Hero />
           <Market />
           <PainMap />
