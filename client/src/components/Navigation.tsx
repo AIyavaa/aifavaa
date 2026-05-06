@@ -48,6 +48,12 @@ export default function Navigation() {
                 </a>
               ))}
             </div>
+            <a
+              href="/platform"
+              className="px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-indigo-500/30 to-cyan-400/20 border border-indigo-300/30 hover:from-indigo-500/40 hover:to-cyan-400/30 transition-all"
+            >
+              {language === 'zh' ? '进入平台' : 'Platform'} →
+            </a>
             <LanguageSwitcher />
           </div>
         </div>
