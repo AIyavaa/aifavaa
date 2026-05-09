@@ -38,16 +38,16 @@ const content = {
 };
 
 const competitors = [
+  { name: 'AIyavaa', strength: 3, distribution: 3, creator: 3, brand: 3, interaction: 3, copyright: 3, ecosystem: 3, highlight: true },
   { name: 'YouTube', strength: 3, distribution: 3, creator: 3, brand: 3, interaction: 3, copyright: 3, ecosystem: 3 },
-  { name: 'Runway / Pika', strength: 1, distribution: 1, creator: 2, brand: 1, interaction: 2, copyright: 1, ecosystem: 1 },
+  { name: 'Runway / Pika', strength: 3, distribution: 1, creator: 2, brand: 1, interaction: 2, copyright: 1, ecosystem: 1 },
   { name: 'TikTok Shop', strength: 2, distribution: 3, creator: 2, brand: 2, interaction: 2, copyright: 2, ecosystem: 1 },
-  { name: 'AIyavaa', strength: 1, distribution: 2, creator: 2, brand: 2, interaction: 2, copyright: 1, ecosystem: 1 },
 ];
 
-const renderScore = (score: number) => (
+const renderScore = (score: number, highlight?: boolean) => (
   <div className="flex gap-1 justify-center">
     {[1, 2, 3].map((i) => (
-      <div key={i} className={`w-2 h-2 rounded-full ${i <= score ? 'bg-blue-400' : 'bg-white/20'}`} />
+      <div key={i} className={`w-2.5 h-2.5 rounded-full ${i <= score ? (highlight ? 'bg-cyan-400' : 'bg-blue-400') : 'bg-white/20'}`} />
     ))}
   </div>
 );
@@ -75,7 +75,14 @@ export default function Competition() {
               <tr className="border-b border-white/10">
                 <th className="text-left py-3 px-4 font-bold text-white">{T.tableHeader}</th>
                 {competitors.map((comp) => (
-                  <th key={comp.name} className="text-center py-3 px-4 font-bold text-white">{comp.name}</th>
+                  <th key={comp.name} className={`text-center py-3 px-4 font-bold ${'highlight' in comp && comp.highlight ? 'text-cyan-300' : 'text-white'}`}>
+                    {'highlight' in comp && comp.highlight ? (
+                      <span className="inline-flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 inline-block" />
+                        {comp.name}
+                      </span>
+                    ) : comp.name}
+                  </th>
                 ))}
               </tr>
             </thead>
@@ -84,8 +91,11 @@ export default function Competition() {
                 <tr key={i} className="border-b border-white/5 hover:bg-white/5 transition-all">
                   <td className="py-3 px-4 font-semibold text-slate-300">{cat}</td>
                   {competitors.map((comp) => (
-                    <td key={comp.name} className="text-center py-3 px-4">
-                      {renderScore(i === 0 ? comp.strength : i === 1 ? comp.distribution : i === 2 ? comp.creator : i === 3 ? comp.interaction : i === 4 ? comp.brand : i === 5 ? comp.ecosystem : i === 6 ? comp.copyright : comp.ecosystem)}
+                    <td key={comp.name} className={`text-center py-3 px-4 ${'highlight' in comp && comp.highlight ? 'bg-cyan-500/5' : ''}`}>
+                      {renderScore(
+                        i === 0 ? comp.strength : i === 1 ? comp.distribution : i === 2 ? comp.creator : i === 3 ? comp.interaction : i === 4 ? comp.brand : i === 5 ? comp.ecosystem : i === 6 ? comp.copyright : comp.ecosystem,
+                        'highlight' in comp && comp.highlight
+                      )}
                     </td>
                   ))}
                 </tr>
