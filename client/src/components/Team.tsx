@@ -20,24 +20,28 @@ const content = {
       },
       {
         name: '尹璐 EVA',
-        role: '创始人兼 CEO',
+        role: '创始人兼 CEO · 首席架构师',
         color: 'blue',
         highlights: [
           '跨文化创业者，管理咨询背景',
           '菲律宾本地生活互联网创业，从零到一验证完整闭环',
           '东南亚产业投资与文化出海，发起"南洋论坛"',
           '融合新加坡战略视野、东南亚在地化洞察与中国互联网方法论',
-        ],
-      },
-      {
-        name: '尹璐',
-        role: '联合创始人 · 首席架构师',
-        color: 'cyan',
-        highlights: [
           '平台底层架构与技术路线设计',
           '多模型调度与 AI 原生视频生产链路搭建',
           '推动 AIyavaa 技术体系从原型走向规模化',
           '将前沿 AI 能力转化为可落地的产品体验',
+        ],
+      },
+      {
+        name: '涛哥',
+        role: '联合创始人 · 技术合伙人',
+        color: 'cyan',
+        highlights: [
+          '资深技术人员，深耕互联网产品与工程领域多年',
+          '主导过多个大型平台的后端架构设计与落地',
+          '对 AI 工程化落地与工程效率有深度实践',
+          '为 AIyavaa 技术平台的稳定性与可扩展性提供核心保障',
         ],
       },
       {
@@ -94,24 +98,28 @@ const content = {
       },
       {
         name: 'Eva Yin',
-        role: 'Founder & CEO',
+        role: 'Founder & CEO · Chief Architect',
         color: 'blue',
         highlights: [
           'Cross-cultural entrepreneur with management consulting background',
           'Built Philippines local life internet startup from 0 to 1, validating full product-market loop',
           'Southeast Asia industry investment and cultural expansion, founded "Nanyang Forum"',
           'Integrates Singapore strategic vision, SEA localization insights, and China internet methodology',
-        ],
-      },
-      {
-        name: 'Yin Lu',
-        role: 'Co-Founder & Chief Architect',
-        color: 'cyan',
-        highlights: [
           'Platform underlying architecture and technical roadmap design',
           'Multi-model scheduling and AI-native video production pipeline',
           'Driving AIyavaa\'s tech stack from prototype to scale',
           'Translating cutting-edge AI capabilities into deployable product experiences',
+        ],
+      },
+      {
+        name: 'Tao Ge',
+        role: 'Co-Founder & Technical Partner',
+        color: 'cyan',
+        highlights: [
+          'Senior engineer with deep expertise in internet products and platform engineering',
+          'Led backend architecture design and delivery for multiple large-scale platforms',
+          'Deep hands-on experience in AI engineering deployment and engineering efficiency',
+          'Provides core guarantees for AIyavaa platform stability and scalability',
         ],
       },
       {
