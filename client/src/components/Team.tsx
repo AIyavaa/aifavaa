@@ -35,13 +35,13 @@ const content = {
       },
       {
         name: '涛哥',
-        role: '联合创始人 · 技术合伙人',
+        role: '联合创始人 · 战略合伙人',
         color: 'cyan',
         highlights: [
-          '资深技术人员，深耕互联网产品与工程领域多年',
-          '主导过多个大型平台的后端架构设计与落地',
-          '对 AI 工程化落地与工程效率有深度实践',
-          '为 AIyavaa 技术平台的稳定性与可扩展性提供核心保障',
+          '前腾讯战略部"泛娱乐+IP"概念首度普及者，定义行业框架的前瞻视野',
+          '360 操盘年利润 10 亿级业务，兼具产业深度与商业化能力',
+          '2023 年底开始人工智能投资与战略设计',
+          '为 AIyavaa 提供战略定位、产业资源与 AI 时代商业架构支撑',
         ],
       },
       {
@@ -113,13 +113,13 @@ const content = {
       },
       {
         name: 'Tao Ge',
-        role: 'Co-Founder & Technical Partner',
+        role: 'Co-Founder & Strategic Partner',
         color: 'cyan',
         highlights: [
-          'Senior engineer with deep expertise in internet products and platform engineering',
-          'Led backend architecture design and delivery for multiple large-scale platforms',
-          'Deep hands-on experience in AI engineering deployment and engineering efficiency',
-          'Provides core guarantees for AIyavaa platform stability and scalability',
+          'Former Tencent Strategy Division — first to popularize the "Pan-Entertainment + IP" concept, defining the industry framework',
+          'Led 360 business units generating over RMB 1 billion in annual profit, combining deep industry expertise with commercialization capability',
+          'Began AI investment and strategic design in late 2023',
+          'Provides strategic positioning, industry resources, and AI-era business architecture for AIyavaa',
         ],
       },
       {
