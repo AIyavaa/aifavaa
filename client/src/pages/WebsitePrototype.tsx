@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import AIyavaaLogo from "@/components/AIyavaaLogo";
 
 // ─── i18n ────────────────────────────────────────────────────────────────────
 
@@ -447,14 +448,8 @@ function Header({ route, setRoute, lang }: { route: string; setRoute: (r: string
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
       <div className="mx-auto flex min-h-[74px] w-full max-w-[1440px] items-center justify-between gap-4 px-4 md:px-6 xl:px-8">
-        <button onClick={() => setRoute("home")} className="flex items-center gap-3 text-left">
-          <div className="relative h-10 w-10 rounded-2xl bg-gradient-to-br from-indigo-400 to-cyan-300 shadow-[0_0_28px_rgba(126,165,255,0.35)]">
-            <div className="absolute inset-0.5 rounded-[14px] border border-white/25" />
-          </div>
-          <div>
-            <div className="font-semibold tracking-[0.02em] text-white">{T.brand}</div>
-            <div className="text-[11px] uppercase tracking-[0.16em] text-slate-500">{T.brandSub}</div>
-          </div>
+        <button onClick={() => setRoute("home")} className="flex items-center">
+          <AIyavaaLogo variant="dark" size="md" />
         </button>
 
         <nav className="hidden items-center gap-2 xl:flex">

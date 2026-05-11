@@ -10,8 +10,6 @@ import Roadmap from '@/components/Roadmap';
 import Team from '@/components/Team';
 import PremiumProducts from '@/components/PremiumProducts';
 import HowWeDoIt from '@/components/HowWeDoIt';
-import LogoBrand from '@/components/LogoBrand';
-import Closing from '@/components/Closing';
 import Footer from '@/components/Footer';
 
 export default function InvestorStory() {
@@ -60,10 +58,6 @@ export default function InvestorStory() {
           <HowWeDoIt />
           {/* 创始团队 */}
           <Team />
-          {/* 品牌视觉 */}
-          <LogoBrand />
-          {/* 结语 */}
-          <Closing />
         </main>
         <Footer />
       </div>

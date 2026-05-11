@@ -3,6 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Link } from 'wouter';
 import { Menu, X } from 'lucide-react';
+import AIyavaaLogo from './AIyavaaLogo';
 
 const navLinks = {
   zh: [
@@ -55,9 +56,8 @@ export default function Navigation() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || menuOpen ? 'bg-slate-900/95 backdrop-blur-xl border-b border-white/10' : ''}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-2 sm:gap-3" onClick={handleLinkClick}>
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-400 shadow-lg shadow-blue-500/30 flex-shrink-0" />
-            <span className="font-black text-white text-base sm:text-lg">AIyavaa</span>
+          <a href="#hero" className="flex items-center" onClick={handleLinkClick}>
+            <AIyavaaLogo variant="dark" size="sm" />
           </a>
 
           {/* Desktop nav links */}
