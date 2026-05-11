@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { brandText } from '@/lib/brandText';
 
 const content = {
   zh: {
@@ -122,7 +123,7 @@ export default function PremiumProducts() {
             {T.title}
             <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mt-4">{T.subtitle}</div>
           </h2>
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl">{T.desc}</p>
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl">{brandText(T.desc)}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
@@ -133,7 +134,7 @@ export default function PremiumProducts() {
             >
               <div className="text-3xl mb-3">{product.icon}</div>
               <h3 className="text-xl font-black text-white mb-2">{product.title}</h3>
-              <p className="text-sm text-slate-400 mb-4">{product.desc}</p>
+              <p className="text-sm text-slate-400 mb-4">{brandText(product.desc)}</p>
               <ul className="space-y-2">
                 {product.features.map((feature, j) => (
                   <li key={j} className="flex gap-2 text-sm text-slate-300">

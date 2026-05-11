@@ -1,5 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import AIyavaaLogo from './AIyavaaLogo';
+import { brandText } from '@/lib/brandText';
 
 const content = {
   zh: {
@@ -163,7 +164,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/8 pt-7 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-slate-500">{T.copyright}</p>
+          <p className="text-xs text-slate-500">{brandText(T.copyright)}</p>
           <div className="flex items-center gap-6 text-xs text-slate-500">
             <a href="#" className="hover:text-slate-300 transition-colors">{T.privacy}</a>
             <a href="#" className="hover:text-slate-300 transition-colors">{T.terms}</a>

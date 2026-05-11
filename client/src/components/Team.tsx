@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { brandText } from '@/lib/brandText';
 
 const content = {
   zh: {
@@ -183,7 +184,7 @@ export default function Team() {
             {T.title}
             <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mt-4">{T.subtitle}</div>
           </h2>
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl">{T.desc}</p>
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl">{brandText(T.desc)}</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import BrandName from '@/components/BrandName';
 
 const content = {
   zh: {
@@ -94,7 +95,7 @@ export default function Competition() {
                     {'highlight' in comp && comp.highlight ? (
                       <span className="inline-flex items-center gap-1.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 inline-block" />
-                        {comp.name}
+                        <BrandName />
                       </span>
                     ) : comp.name}
                   </th>

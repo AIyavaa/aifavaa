@@ -22,6 +22,7 @@ import {
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import AIyavaaLogo from "@/components/AIyavaaLogo";
+import { brandText } from '@/lib/brandText';
 
 // ─── i18n ────────────────────────────────────────────────────────────────────
 
@@ -537,8 +538,8 @@ function SectionHero({ eyebrow, title, desc, actions = [] }: {
       <div className="absolute left-[-70px] bottom-[-90px] h-72 w-72 rounded-full bg-cyan-300/10 blur-3xl" />
       <div className="relative z-10">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-4 max-w-5xl text-4xl font-semibold leading-tight tracking-[-0.05em] text-white md:text-6xl">{title}</h1>
-        <p className="mt-5 max-w-3xl text-base leading-8 text-slate-400 md:text-lg">{desc}</p>
+        <h1 className="mt-4 max-w-5xl text-4xl font-semibold leading-tight tracking-[-0.05em] text-white md:text-6xl">{brandText(title)}</h1>
+        <p className="mt-5 max-w-3xl text-base leading-8 text-slate-400 md:text-lg">{brandText(desc)}</p>
         {actions.length > 0 && (
           <div className="mt-7 flex flex-wrap gap-3">
             {actions.map((action) => (
@@ -577,7 +578,7 @@ function HomePage({ setRoute, lang }: { setRoute: (r: string) => void; lang: Lan
             <div>
               <h1 className="max-w-5xl text-5xl font-semibold leading-[0.96] tracking-[-0.065em] text-white md:text-7xl xl:text-[92px]">{T.home.h1}</h1>
               <div className="mt-8 max-w-3xl text-[28px] font-semibold leading-[1.35] tracking-[-0.04em] text-white md:text-[38px]">{T.home.h1sub}</div>
-              <p className="mt-4 max-w-3xl text-base leading-8 text-slate-400 md:text-xl">{T.home.desc}</p>
+              <p className="mt-4 max-w-3xl text-base leading-8 text-slate-400 md:text-xl">{brandText(T.home.desc)}</p>
             </div>
             <div className="flex flex-wrap gap-3 pt-2">
               <HeroAction primary onClick={() => setRoute("platform")}>{T.home.cta1}</HeroAction>
@@ -589,7 +590,7 @@ function HomePage({ setRoute, lang }: { setRoute: (r: string) => void; lang: Lan
             <Glass className="p-6 md:p-7">
               <Eyebrow>{T.home.narrativeEyebrow}</Eyebrow>
               <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">{T.home.narrativeTitle}</h3>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400 md:text-base">{T.home.narrativeDesc}</p>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400 md:text-base">{brandText(T.home.narrativeDesc)}</p>
             </Glass>
             <Glass className="p-6 md:p-7">
               <Eyebrow>{T.home.signalsEyebrow}</Eyebrow>
@@ -710,8 +711,8 @@ function PlatformPage({ setRoute, lang }: { setRoute: (r: string) => void; lang:
       <section className="px-6 py-16 md:px-10 md:py-20">
         <div className="mb-8">
           <Eyebrow>{T.bandEyebrow}</Eyebrow>
-          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl">{T.bandTitle}</h2>
-          <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-400 md:text-base">{T.bandDesc}</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl">{brandText(T.bandTitle)}</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-400 md:text-base">{brandText(T.bandDesc)}</p>
         </div>
         <div className="grid gap-5 xl:grid-cols-[1.08fr_0.92fr]">
           <Glass className="p-6 md:p-8 xl:p-10">

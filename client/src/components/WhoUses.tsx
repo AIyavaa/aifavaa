@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { brandText } from '@/lib/brandText';
 
 const content = {
   zh: {
@@ -106,7 +107,7 @@ export default function WhoUses() {
             {T.title}
             <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mt-4">{T.subtitle}</div>
           </h2>
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl">{T.desc}</p>
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl">{brandText(T.desc)}</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -117,7 +118,7 @@ export default function WhoUses() {
             >
               <div className="text-3xl mb-4">{group.icon}</div>
               <h3 className="text-lg font-black text-white mb-2">{group.title}</h3>
-              <p className="text-sm text-slate-400 leading-relaxed mb-4">{group.desc}</p>
+              <p className="text-sm text-slate-400 leading-relaxed mb-4">{brandText(group.desc)}</p>
               <div className="flex flex-wrap gap-1.5">
                 {group.tags.map((tag, j) => (
                   <span
