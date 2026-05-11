@@ -1,152 +1,183 @@
+import { useState, useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { t } from '@/lib/translations';
+
+const DEMO_VIDEOS = [
+  'https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4',
+  'https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4',
+];
 
 export default function Hero() {
   const { language } = useLanguage();
+  const [inputValue, setInputValue] = useState('');
+  const [isListening, setIsListening] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const recognitionRef = useRef<any>(null);
+
+  const zh = language === 'zh';
+
+  const handleVoice = () => {
+    if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+      alert(zh ? '您的浏览器不支持语音输入' : 'Your browser does not support voice input');
+      return;
+    }
+    if (isListening) {
+      recognitionRef.current?.stop();
+      setIsListening(false);
+      return;
+    }
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.lang = zh ? 'zh-CN' : 'en-US';
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.onresult = (e: any) => {
+      setInputValue(e.results[0][0].transcript);
+      setIsListening(false);
+    };
+    recognition.onerror = () => setIsListening(false);
+    recognition.onend = () => setIsListening(false);
+    recognitionRef.current = recognition;
+    recognition.start();
+    setIsListening(true);
+  };
+
+  const handleGenerate = () => {
+    if (!inputValue.trim()) return;
+    setIsGenerating(true);
+    setTimeout(() => setIsGenerating(false), 3000);
+  };
+
+  const stats = [
+    { num: '100+', label: zh ? '集成模型' : 'AI Models' },
+    { num: '500+', label: zh ? '视频工具' : 'Video Tools' },
+    { num: '10,000+', label: zh ? '优质内容' : 'Quality Videos' },
+  ];
 
   return (
-    <section id="hero" className="relative py-20 lg:py-0 lg:min-h-[calc(100vh-72px)] flex items-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
-        <div className="grid lg:grid-cols-[1.12fr_0.88fr] gap-7 lg:gap-8 items-stretch">
-          {/* Left */}
-          <div className="flex flex-col justify-center gap-6 lg:gap-7">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-blue-200 bg-white/6 border border-white/10 backdrop-blur-sm mb-6">
-                <span>🎬</span>
-                <span>{language === 'zh' ? 'AI 视频生态平台' : 'AI Video Ecosystem Platform'}</span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-tight text-white mb-4">
-                AIyavaa：<br />
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  {t('heroTitle', language)}
-                </span>
-                <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mt-3">
-                  {language === 'zh' ? 'The Unified Entry Point for AI Video' : 'AI Video Ecosystem Platform'}
-                </div>
-              </h1>
-              <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed mt-6">
-                {t('heroDescription', language)}
-              </p>
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* Video Background Strip - Top */}
+      <div className="absolute inset-x-0 top-0 h-[28%] overflow-hidden pointer-events-none z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/40 to-slate-950 z-10" />
+        <video
+          autoPlay muted loop playsInline
+          className="w-full h-full object-cover opacity-50"
+          src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4"
+        />
+        {/* AI video cards overlay */}
+        <div className="absolute inset-0 z-20 flex items-center gap-3 px-4 overflow-hidden">
+          {[
+            { label: zh ? '城市夜景 · 科技感' : 'City Night · Tech Vibe', time: '0:05' },
+            { label: zh ? '创意工作室 · 动态' : 'Creative Studio · Motion', time: '0:05' },
+            { label: zh ? '品牌广告 · 极简' : 'Brand Ad · Minimal', time: '0:05' },
+            { label: zh ? '互动剧情 · 沉浸' : 'Interactive Story · Immersive', time: '0:05' },
+          ].map((v, i) => (
+            <div key={i} className="flex-shrink-0 w-28 sm:w-36 h-16 sm:h-20 rounded-xl border border-white/20 bg-black/40 backdrop-blur-sm flex flex-col justify-end p-2 overflow-hidden relative">
+              <div className="absolute top-1.5 right-1.5 bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">LIVE</div>
+              <div className="text-white text-[10px] font-semibold leading-tight truncate">{v.label}</div>
+              <div className="text-slate-400 text-[9px]">{v.time}</div>
             </div>
+          ))}
+        </div>
+      </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="#market"
-                className="px-6 py-3 rounded-xl font-bold text-sm bg-gradient-to-br from-blue-500/30 to-cyan-500/30 border border-blue-400/30 text-white hover:from-blue-500/40 hover:to-cyan-500/40 hover:border-blue-400/50 transition-all shadow-lg shadow-blue-500/20 hover:-translate-y-0.5"
-              >
-                {t('exploreBtn', language)}
-              </a>
-              <a
-                href="#funding"
-                className="px-6 py-3 rounded-xl font-bold text-sm border border-white/12 text-slate-300 hover:text-white hover:bg-white/5 transition-all hover:-translate-y-0.5"
-              >
-                {t('fundingBtn', language)}
-              </a>
+      {/* Video Background Strip - Bottom */}
+      <div className="absolute inset-x-0 bottom-0 h-[22%] overflow-hidden pointer-events-none z-0">
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/40 to-slate-950 z-10" />
+        <video
+          autoPlay muted loop playsInline
+          className="w-full h-full object-cover opacity-40"
+          src="https://videos.pexels.com/video-files/4625472/4625472-uhd_2560_1440_25fps.mp4"
+        />
+        <div className="absolute inset-0 z-20 flex items-center gap-3 px-4 overflow-hidden">
+          {[
+            { label: zh ? '美食探店 · 4K' : 'Food Discovery · 4K', time: '0:05' },
+            { label: zh ? '旅行 Vlog · 航拍' : 'Travel Vlog · Aerial', time: '0:05' },
+            { label: zh ? '科技评测 · 专业' : 'Tech Review · Pro', time: '0:05' },
+            { label: zh ? '音乐 MV · 创意' : 'Music MV · Creative', time: '0:05' },
+          ].map((v, i) => (
+            <div key={i} className="flex-shrink-0 w-28 sm:w-36 h-16 sm:h-20 rounded-xl border border-white/20 bg-black/40 backdrop-blur-sm flex flex-col justify-end p-2 overflow-hidden relative">
+              <div className="absolute top-1.5 right-1.5 bg-cyan-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">AI</div>
+              <div className="text-white text-[10px] font-semibold leading-tight truncate">{v.label}</div>
+              <div className="text-slate-400 text-[9px]">{v.time}</div>
             </div>
+          ))}
+        </div>
+      </div>
 
-            {/* Investment Thesis Card */}
-            <div className="bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-2xl p-6 lg:p-8">
-              <div className="text-xs font-bold uppercase tracking-wider text-blue-200 mb-3">
-                {t('coreThesis', language)}
-              </div>
-              <h3 className="text-xl sm:text-2xl font-black text-white leading-tight mb-3">
-                {t('coreThesisText', language)}
-              </h3>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                {language === 'zh'
-                  ? '随着模型能力商品化、创作链路变长、品牌需求走向规模化，真正的长期价值将属于掌握供给、交易、规则与数据飞轮的平台。'
-                  : 'As model capabilities become commoditized, creation workflows lengthen, and brand demands scale, true long-term value will belong to platforms that master supply, transactions, rules, and data flywheels.'}
-              </p>
-            </div>
+      {/* Center Content */}
+      <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 w-full max-w-3xl mx-auto py-32">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-cyan-200 bg-cyan-500/10 border border-cyan-400/20 backdrop-blur-sm mb-6">
+          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+          <span>{zh ? '全网首发 · AI 原生视频内容平台' : 'World First · AI-Native Video Content Platform'}</span>
+        </div>
+
+        {/* Main Title */}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white mb-3">
+          {zh ? (
+            <>AI<span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">yavaa</span></>
+          ) : (
+            <>AI<span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">yavaa</span></>
+          )}
+        </h1>
+
+        {/* Subtitle */}
+        <p className="text-lg sm:text-xl font-semibold text-slate-300 mb-8">
+          {zh ? '开启 AGI 新纪元' : 'Entering the AGI New Era'}
+        </p>
+
+        {/* Input Box */}
+        <div className="w-full max-w-2xl mb-6">
+          <div className="relative flex items-center bg-white/8 border border-white/20 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/10 focus-within:border-cyan-400/50 transition-all">
+            <input
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleGenerate()}
+              placeholder={zh ? '描述你想要的视频，AI 帮你生成 5 秒精彩...' : 'Describe your video idea, AI generates a 5-second clip...'}
+              className="flex-1 bg-transparent text-white placeholder-slate-500 px-5 py-4 text-sm sm:text-base outline-none"
+            />
+            {/* Voice Button */}
+            <button
+              onClick={handleVoice}
+              className={`flex-shrink-0 mx-1 p-3 rounded-xl transition-all ${
+                isListening
+                  ? 'bg-red-500/30 border border-red-400/50 text-red-300 animate-pulse'
+                  : 'bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:bg-white/10'
+              }`}
+              title={zh ? '语音输入' : 'Voice input'}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+              </svg>
+            </button>
+            {/* Generate Button */}
+            <button
+              onClick={handleGenerate}
+              disabled={isGenerating || !inputValue.trim()}
+              className="flex-shrink-0 mx-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-bold hover:from-cyan-400 hover:to-blue-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-cyan-500/20"
+            >
+              {isGenerating
+                ? (zh ? '生成中...' : 'Generating...')
+                : (zh ? '生成视频' : 'Generate')}
+            </button>
           </div>
+          <p className="text-xs text-slate-500 mt-2 text-center">
+            {zh
+              ? '无需登录即可生成 · 调用全网最优 AI 路径 · 5 秒视频即时呈现'
+              : 'No login required · Best AI path matching · 5-second video instantly'}
+          </p>
+        </div>
 
-          {/* Right - Market Signals */}
-          <div className="grid grid-rows-2 gap-6 lg:gap-5 lg:self-center">
-            {/* Market Signals Card */}
-            <div className="relative bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-2xl p-6 lg:p-7 overflow-hidden">
-              <div className="absolute w-56 h-56 bg-blue-500/20 rounded-full blur-3xl -right-20 -top-20" />
-              <div className="relative z-10">
-                <div className="text-xs font-bold uppercase tracking-wider text-blue-200 mb-3">
-                  {t('marketSignals', language)}
-                </div>
-                <h3 className="text-xl sm:text-2xl font-black text-white leading-tight mb-4">
-                  {language === 'zh' ? '四个信号同时成立，平台窗口正在打开' : 'Four signals align, platform window is opening'}
-                </h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    {
-                      label: language === 'zh' ? 'AI 对全球经济的贡献 2030' : 'AI to global economy by 2030',
-                      value: '$15.7T',
-                      desc: language === 'zh' ? '智能经济总盘子' : 'Intelligence economy total',
-                    },
-                    {
-                      label: language === 'zh' ? '创作者经济 2027' : 'Creator economy by 2027',
-                      value: '$480B',
-                      desc: language === 'zh' ? '创作者经济持续扩张' : 'Creator economy expansion',
-                    },
-                    {
-                      label: language === 'zh' ? 'AI 视频市场 2024 → 2030' : 'AI Video market 2024 → 2030',
-                      value: '$3.86B → $42.29B',
-                      desc: language === 'zh' ? 'AI 视频产业进入增长通道' : 'AI video enters growth phase',
-                    },
-                    {
-                      label: language === 'zh' ? 'YouTube Shorts 日均浏览' : 'YouTube Shorts daily views',
-                      value: '200B+',
-                      desc: language === 'zh' ? '视频消费需求已被验证' : 'Video consumption verified',
-                    },
-                  ].map((stat, i) => (
-                    <div key={i} className="bg-white/5 border border-white/8 rounded-lg p-3">
-                      <div className="text-xs text-slate-400 mb-1">{stat.label}</div>
-                      <div className="text-lg sm:text-xl font-black text-white mb-1">{stat.value}</div>
-                      <div className="text-xs text-slate-400">{stat.desc}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+        {/* Stats */}
+        <div className="flex items-center gap-4 sm:gap-8 flex-wrap justify-center">
+          {stats.map((s, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <span className="text-lg sm:text-xl font-black text-cyan-400">{s.num}</span>
+              <span className="text-xs sm:text-sm text-slate-400">{s.label}</span>
+              {i < stats.length - 1 && <span className="text-slate-700 ml-2 sm:ml-4">·</span>}
             </div>
-
-            {/* Platform Overview Card */}
-            <div className="relative bg-gradient-to-br from-white/9 to-white/5 border border-white/14 backdrop-blur-xl rounded-2xl p-6 lg:p-7">
-              <div className="text-xs font-bold uppercase tracking-wider text-blue-200 mb-3">
-                {language === 'zh' ? 'AIyavaa 一览' : 'AIyavaa in one view'}
-              </div>
-              <h3 className="text-xl sm:text-2xl font-black text-white leading-tight mb-4">
-                {language === 'zh' ? '统一连接模型、创作者、品牌与用户' : 'Unified connection of models, creators, brands, and users'}
-              </h3>
-              <div className="grid grid-cols-3 gap-2 text-center">
-                {[
-                  {
-                    label: language === 'zh' ? '用户消费中心' : 'User Consumption',
-                    sub: 'Discover / Interact / Pay',
-                  },
-                  { label: 'AIyavaa', sub: 'Platform + Rule Engine', highlight: true },
-                  { label: language === 'zh' ? '品牌交易中心' : 'Brand Trading', sub: 'Request / Buy / Rebuy' },
-                  { label: language === 'zh' ? '模型能力中台' : 'Model Hub', sub: 'Route / Orchestrate' },
-                  {
-                    label: language === 'zh' ? '管理大脑中台' : 'Management Hub',
-                    sub: 'Match / Govern / Optimize',
-                  },
-                  {
-                    label: language === 'zh' ? '创作者生产中心' : 'Creator Production',
-                    sub: 'Create / Publish / Monetize',
-                  },
-                ].map((node, i) => (
-                  <div
-                    key={i}
-                    className={`py-3 px-2 rounded-lg text-center text-xs sm:text-sm font-bold ${
-                      node.highlight
-                        ? 'bg-gradient-to-br from-blue-500/30 to-purple-500/30 border border-blue-400/50'
-                        : 'bg-white/6 border border-white/9'
-                    }`}
-                  >
-                    <div className="text-white">{node.label}</div>
-                    <div className="text-xs text-slate-400 mt-1">{node.sub}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

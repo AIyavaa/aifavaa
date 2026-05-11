@@ -3,7 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const content = {
   zh: {
-    badge: '05 / 商业模式',
+    badge: '06 / 商业模式',
     title: '卖给谁、怎么卖、何时盈利：从项目驱动到平台驱动',
     subtitle: 'Multi-revenue engine across four sides',
     desc: 'AIyavaa 同时具备内容平台、创作者经济平台、交易平台和企业服务平台四重属性，收入来源多元，结构升级空间充足。',
@@ -41,7 +41,7 @@ const content = {
     ],
   },
   en: {
-    badge: '05 / Business Model',
+    badge: '06 / Business Model',
     title: 'Who to Sell To, How to Sell, When to Profit: From Project-Driven to Platform-Driven',
     subtitle: 'Multi-revenue engine across four sides',
     desc: 'AIyavaa simultaneously has four attributes: content platform, creator economy platform, transaction platform, and enterprise service platform, with diverse revenue streams and room for structural upgrades.',

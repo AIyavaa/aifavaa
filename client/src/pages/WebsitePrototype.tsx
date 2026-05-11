@@ -484,7 +484,7 @@ function Header({ route, setRoute, lang }: { route: string; setRoute: (r: string
             )
           ))}
           <a href="/investor" className="ml-2 rounded-full border border-indigo-300/30 bg-gradient-to-r from-indigo-500/30 to-cyan-400/20 px-4 py-2 text-sm font-bold text-white transition hover:from-indigo-500/40 hover:to-cyan-400/30">
-            {lang === "zh" ? "投资者故事 →" : "Investor Story →"}
+            {lang === "zh" ? "我是谁 →" : "Who We Are →"}
           </a>
           <LanguageSwitcher />
         </nav>
@@ -518,7 +518,7 @@ function Header({ route, setRoute, lang }: { route: string; setRoute: (r: string
               ))}
               <div className="pt-2 flex gap-2">
                 <a href="/investor" className="flex-1 text-center rounded-2xl border border-indigo-300/30 bg-gradient-to-r from-indigo-500/30 to-cyan-400/20 px-4 py-3 text-sm font-bold text-white">
-                  {lang === "zh" ? "投资者故事 →" : "Investor Story →"}
+                  {lang === "zh" ? "我是谁 →" : "Who We Are →"}
                 </a>
                 <LanguageSwitcher />
               </div>

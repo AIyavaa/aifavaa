@@ -4,13 +4,14 @@ import Market from '@/components/Market';
 import PainMap from '@/components/PainMap';
 import Architecture from '@/components/Architecture';
 import Competition from '@/components/Competition';
+import WhoUses from '@/components/WhoUses';
 import BusinessModel from '@/components/BusinessModel';
 import Roadmap from '@/components/Roadmap';
-import Funding from '@/components/Funding';
-import PremiumProducts from '@/components/PremiumProducts';
-import Closing from '@/components/Closing';
 import Team from '@/components/Team';
-import ConsultationForm from '@/components/ConsultationForm';
+import PremiumProducts from '@/components/PremiumProducts';
+import HowWeDoIt from '@/components/HowWeDoIt';
+import LogoBrand from '@/components/LogoBrand';
+import Closing from '@/components/Closing';
 import Footer from '@/components/Footer';
 
 export default function InvestorStory() {
@@ -28,28 +29,40 @@ export default function InvestorStory() {
           }}
         />
       </div>
-
       {/* Gradient orbs */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div className="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" style={{ left: '15%', top: '15%' }} />
         <div className="absolute w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl" style={{ right: '15%', top: '12%' }} />
         <div className="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" style={{ left: '50%', bottom: '20%' }} />
       </div>
-
       <div className="relative z-10">
         <Navigation />
         <main className="pt-16 sm:pt-16">
+          {/* 01 Hero - AI 输入框 + 平台标语 */}
           <Hero />
+          {/* 02 市场机会 */}
           <Market />
+          {/* 03 痛点地图 */}
           <PainMap />
+          {/* 04 平台架构 */}
           <Architecture />
+          {/* 05 竞争分析 */}
           <Competition />
+          {/* 06 谁在用 */}
+          <WhoUses />
+          {/* 07 商业模式 */}
           <BusinessModel />
+          {/* 08 发展路径 */}
           <Roadmap />
-          <Funding />
-          <Team />
+          {/* 09 我们是谁（产品+合伙人） */}
           <PremiumProducts />
-          <ConsultationForm />
+          {/* 10 怎么实现（合伙人模式详解） */}
+          <HowWeDoIt />
+          {/* 创始团队 */}
+          <Team />
+          {/* 品牌视觉 */}
+          <LogoBrand />
+          {/* 结语 */}
           <Closing />
         </main>
         <Footer />
