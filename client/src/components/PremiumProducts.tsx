@@ -6,7 +6,7 @@ const content = {
     badge: '09 / 我们是谁',
     title: '我们是谁',
     subtitle: 'What we build and who we are',
-    desc: '我们是平台——AI 时代每一个人的创作伙伴与价值网络。AIyavaa 围绕创作者、品牌、用户三大核心角色，构建四大核心能力。',
+    desc: '不是工具，不是平台，是 AI 时代每一个人的创作伙伴与价值网络。AIyavaa 围绕创作者、品牌、用户三大核心角色，构建四大核心能力。',
     products: [
       {
         icon: '🎬',
@@ -58,7 +58,7 @@ const content = {
     badge: '09 / Who We Are',
     title: 'Who We Are',
     subtitle: 'What we build and who we are',
-    desc: 'We are a platform — the creative partner and value network for everyone in the AI era. AIyavaa builds four core capabilities around creators, brands, and users.',
+    desc: 'Not a tool, not just a platform — we are the creative partner and value network for everyone in the AI era. AIyavaa builds four core capabilities around creators, brands, and users.',
     products: [
       {
         icon: '🎬',
