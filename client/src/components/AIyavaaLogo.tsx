@@ -1,10 +1,8 @@
 /**
  * AIyavaa Brand Logo Component
- * Implements the official AI | YAVAA visual identity:
- * - AI mark: bold geometric "A" triangle + "I" bar
- * - Divider: vertical line
- * - Wordmark: YAVAA in custom tracking
- * Supports dark (default) and light variants.
+ * Official visual identity: AI mark (geometric A triangle + I bar) | YAVAA wordmark
+ * Dark variant: white logo on dark background (default for this site)
+ * Light variant: dark logo on light background
  */
 
 interface AIyavaaLogoProps {
@@ -17,87 +15,94 @@ interface AIyavaaLogoProps {
 
 export default function AIyavaaLogo({ variant = 'dark', size = 'md', className = '' }: AIyavaaLogoProps) {
   const scales = {
-    sm: { mark: 28, font: 13, divH: 20, divW: 1, gap: 8 },
-    md: { mark: 36, font: 16, divH: 26, divW: 1.5, gap: 10 },
-    lg: { mark: 48, font: 22, divH: 34, divW: 2, gap: 14 },
+    sm: { width: 96, height: 28, fontSize: 13, letterSpacing: '0.22em' },
+    md: { width: 120, height: 34, fontSize: 16, letterSpacing: '0.22em' },
+    lg: { width: 160, height: 46, fontSize: 21, letterSpacing: '0.22em' },
   };
   const s = scales[size];
 
-  const textColor = variant === 'light' ? '#0a0c10' : '#ffffff';
-  const dividerColor = variant === 'light' ? 'rgba(0,0,0,0.25)' : 'rgba(255,255,255,0.25)';
+  const logoColor = variant === 'light' ? '#0a0c10' : '#ffffff';
+  const dividerColor = variant === 'light' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.35)';
 
+  // SVG viewBox: 160 wide x 44 tall
+  // AI mark occupies left ~56px, divider ~8px, YAVAA wordmark ~96px
   return (
-    <span
-      className={`inline-flex items-center select-none ${className}`}
-      style={{ gap: s.gap }}
+    <svg
+      width={s.width}
+      height={s.height}
+      viewBox="0 0 160 44"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       aria-label="AIyavaa"
+      className={`select-none ${className}`}
     >
-      {/* AI mark — geometric triangle A + I bar */}
-      <svg
-        width={s.mark}
-        height={s.mark}
-        viewBox="0 0 36 36"
+      {/* ── AI Mark ─────────────────────────────────────── */}
+      {/* A: large geometric triangle — outer stroke only, no crossbar fill */}
+      {/* Left leg of A */}
+      <path
+        d="M4 40 L22 4 L22 4"
+        stroke={logoColor}
+        strokeWidth="5"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        {/* Triangle A shape */}
-        <path
-          d="M4 30 L18 4 L32 30"
-          stroke={textColor}
-          strokeWidth="4.5"
-          strokeLinecap="square"
-          strokeLinejoin="miter"
-          fill="none"
-        />
-        {/* Crossbar of A */}
-        <line
-          x1="10"
-          y1="22"
-          x2="26"
-          y2="22"
-          stroke={textColor}
-          strokeWidth="4.5"
-          strokeLinecap="square"
-        />
-        {/* I bar — right side, slightly offset */}
-        <line
-          x1="29"
-          y1="8"
-          x2="29"
-          y2="30"
-          stroke={textColor}
-          strokeWidth="4.5"
-          strokeLinecap="square"
-        />
-      </svg>
-
-      {/* Divider */}
-      <span
-        style={{
-          display: 'inline-block',
-          width: s.divW,
-          height: s.divH,
-          background: dividerColor,
-          borderRadius: 1,
-          flexShrink: 0,
-        }}
+      />
+      {/* Right leg of A (angled outward) */}
+      <path
+        d="M22 4 L40 40"
+        stroke={logoColor}
+        strokeWidth="5"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        fill="none"
+      />
+      {/* Crossbar of A — at ~55% height */}
+      <line
+        x1="11"
+        y1="27"
+        x2="33"
+        y2="27"
+        stroke={logoColor}
+        strokeWidth="5"
+        strokeLinecap="butt"
+      />
+      {/* I: vertical bar — positioned close to A, slightly taller */}
+      <line
+        x1="46"
+        y1="6"
+        x2="46"
+        y2="40"
+        stroke={logoColor}
+        strokeWidth="5"
+        strokeLinecap="butt"
       />
 
-      {/* Wordmark: YAVAA */}
-      <span
-        style={{
-          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
-          fontWeight: 700,
-          fontSize: s.font,
-          letterSpacing: '0.18em',
-          color: textColor,
-          lineHeight: 1,
-          textTransform: 'uppercase',
-        }}
+      {/* ── Divider ──────────────────────────────────────── */}
+      <line
+        x1="58"
+        y1="6"
+        x2="58"
+        y2="38"
+        stroke={dividerColor}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+
+      {/* ── YAVAA Wordmark ───────────────────────────────── */}
+      <text
+        x="68"
+        y="32"
+        fill={logoColor}
+        fontFamily='"Inter", "Helvetica Neue", Arial, sans-serif'
+        fontSize={s.fontSize}
+        fontWeight="700"
+        letterSpacing={s.letterSpacing}
+        dominantBaseline="auto"
+        textAnchor="start"
+        style={{ textTransform: 'uppercase' }}
       >
         YAVAA
-      </span>
-    </span>
+      </text>
+    </svg>
   );
 }

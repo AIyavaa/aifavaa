@@ -15,10 +15,9 @@ const navLinks = {
     { href: '#who-uses', label: '谁在用' },
     { href: '#business', label: '商业' },
     { href: '#roadmap', label: '路径' },
-    { href: '#premium', label: '我们是谁' },
+    { href: '#premium', label: '首页' },
     { href: '#how-we-do-it', label: '怎么实现' },
     { href: '#team', label: '团队' },
-    { href: '#brand', label: '品牌' },
   ],
   en: [
     { href: '#hero', label: 'Home' },
@@ -29,10 +28,9 @@ const navLinks = {
     { href: '#who-uses', label: 'Who Uses' },
     { href: '#business', label: 'Business' },
     { href: '#roadmap', label: 'Roadmap' },
-    { href: '#premium', label: 'Who We Are' },
+    { href: '#premium', label: 'About Us' },
     { href: '#how-we-do-it', label: 'How We Do It' },
     { href: '#team', label: 'Team' },
-    { href: '#brand', label: 'Brand' },
   ],
 };
 
@@ -72,7 +70,7 @@ export default function Navigation() {
           {/* Right side controls */}
           <div className="flex items-center gap-2 sm:gap-3">
             <LanguageSwitcher />
-            <Link href="/" className="hidden sm:inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-xs sm:text-sm font-bold hover:opacity-90 transition-opacity">
+            <Link href="/platform" className="hidden sm:inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-xs sm:text-sm font-bold hover:opacity-90 transition-opacity">
               {platformLabel}
             </Link>
             {/* Hamburger - visible on mobile & tablet */}
@@ -102,7 +100,7 @@ export default function Navigation() {
               ))}
               <div className="mt-3 pt-3 border-t border-white/10">
                 <Link
-                  href="/"
+                  href="/platform"
                   onClick={handleLinkClick}
                   className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-bold hover:opacity-90 transition-opacity"
                 >

@@ -36,7 +36,7 @@ const t = {
       creators: "创作者",
       users: "用户",
       partners: "生态合作",
-      investors: "投资者",
+      // investors entry removed per user request
     },
     home: {
       eyebrow: "AI 视频生态平台",
@@ -46,25 +46,25 @@ const t = {
       cta1: "进入 AIyavaa",
       cta2: "查看平台",
       narrativeEyebrow: "首页主叙事",
-      narrativeTitle: "平台是底座，产品是抓手，社群是飞轮。",
+      narrativeTitle: "平台是底座，内容是抓手，社群是飞轮。",
       narrativeDesc: "官网不是说明书，而是一条被设计过的理解路径：先让人认同你，再理解你，最后进入属于自己的 AIyavaa。",
       signalsEyebrow: "首页关键信息",
       signals: [
         ["平台身份", "创作、交易、交付与规则平台"],
         ["网站用途", "合作伙伴、用户、品牌、投资人与社群"],
-        ["未来逻辑", "不是固定产品，而是围绕人持续进化"],
+        ["未来逻辑", "不是固定功能，而是围绕人持续进化"],
         ["核心信念", "让想法成为作品，让作品产生价值"],
       ],
       personaEyebrow: "平台服务四类核心角色",
       personaTitle: "平台服务四类核心角色。",
-      productEyebrow: "产品矩阵",
-      productTitle: "四个产品，围绕不同场景与人群。",
+      productEyebrow: "服务矩阵",
+      productTitle: "四个方向，围绕不同场景与人群。",
       continue: "继续进入",
       navCards: [
         ["进入创作者中心", "开始创作、上架、接单与组队", "creators"],
         ["进入平台", "开始观看、创作、组队与共创", "users"],
         ["查看合作", "了解能力、发布需求、获得交付", "partners"],
-        ["进入投资者入口", "查看平台价值、产品矩阵与可投逻辑", "investors"],
+        ["了解我们", "查看平台价值、生态架构与发展路径", "platform"],
       ],
     },
     platform: {
@@ -72,7 +72,7 @@ const t = {
       title: "AIyavaa 是 AI 视频时代的创作、交易、交付与规则平台。",
       desc: "连接用户、创作者、品牌与合作伙伴，让 AI 视频从能生成走向能成交、能交付、能持续进化。",
       cta1: "查看创作者入口",
-      cta2: "进入投资者入口",
+      cta2: "了解更多",
       bandEyebrow: "三中心 + 三中台",
       bandTitle: "平台不是工具集合，而是行业组织系统。",
       bandDesc: "三中心负责人与交易关系，三中台负责能力与秩序。两者结合，AIyavaa 才会从工具层升级为平台层。",
@@ -157,21 +157,21 @@ const t = {
     investors: {
       eyebrow: "投资人",
       title: "看见当下价值，也看见未来路径",
-      desc: "从平台逻辑、产品矩阵到资产沉淀，理解 AIyavaa 的长期可投性。这里看到的不是某个单点产品，而是一个会持续长大的平台。",
+      desc: "从平台架构、生态布局到资产沉淀，了解 AIyavaa 的长期价值。这里看到的不是某个工具，而是一个会持续长大的平台生态。",
       currentEyebrow: "当前 AIyavaa",
       currentTitle: "先看平台结构，再看投资价值。",
-      currentDesc: "投资人第三层页面不应该先看功能，而应该先看到目前 AIyavaa 的网站页面结构、平台价值、产品矩阵与未来扩张路径。",
+      currentDesc: "应该先看平台架构与生态布局，再了解平台价值与未来扩张路径。",
       currentCards: [
-        ["网站页面结构", "首页 / 平台 / 产品 / 解决方案 / 社群 / 投资者", ["结构", "全局"]],
+        ["网站页面结构", "首页 / 平台 / 生态 / 解决方案 / 社群", ["结构", "全局"]],
         ["平台价值", "创作、交易、交付、规则与长期入口", ["平台", "价值"]],
-        ["产品矩阵", "短剧 / 本地生活 / 品牌交易 / 社群增长", ["矩阵", "扩张"]],
+        ["生态矩阵", "短剧 / 本地生活 / 品牌交易 / 社群增长", ["矩阵", "扩张"]],
         ["未来路径", "高溢价产品、关键资产、投资逻辑", ["资产", "可投性"]],
       ],
       whyEyebrow: "投资这个平台的价值",
       whyItems: [
         ["不是单一工具机会", "投的不是单点功能，而是平台层的统一入口。"],
         ["不是普通内容站", "平台同时承接创作、交易、交付与规则。"],
-        ["产品矩阵可扩张", "围绕人和场景，平台不断长出新产品。"],
+        ["生态矩阵可扩张", "围绕人和场景，平台不断拓展新的服务能力。"],
         ["关键资产持续沉淀", "创作者网络、内容与 IP、规则、数据与品牌采购入口。"],
       ],
       assetsEyebrow: "关键资产层",
@@ -188,12 +188,12 @@ const t = {
       users: { title: "用户", lead: "发现更适合你的 AI 视频世界", desc: "看你想看的，发现更懂你的内容。基于兴趣标签与观看偏好，AIyavaa 帮你找到更适合你的 AI 视频，也让你参与改编、互动与共创。", cta: "进入内容世界", chips: ["兴趣推荐", "热门短剧", "互动观看", "改编共创"] },
       creators: { title: "创作者", lead: "表达自己，也连接市场", desc: "在这里创作、上架、接单、组队与合作，让表达不只停留在作品，也延伸到订单、关系与长期价值。", cta: "进入创作者中心", chips: ["创作工具", "作品上架", "商业订单", "组队协作"] },
       partners: { title: "生态合作伙伴", lead: "让能力被接入，让合作被发起", desc: "把你的模型、工具、合作方向、需求与创意提案接入平台，发起共创、组队与协作。不是申请合作，而是加入生态。", cta: "进入生态合作入口", chips: ["模型接入", "工具合作", "共创提案", "需求发布"] },
-      investors: { title: "投资人", lead: "看见当下价值，也看见未来路径", desc: "从平台逻辑、产品矩阵到资产沉淀，理解 AIyavaa 的长期可投性。投的不是某个产品，而是一个会持续长大的平台。", cta: "进入投资者入口", chips: ["平台价值", "产品矩阵", "关键资产", "可投逻辑"] },
+      investors: { title: "合作伙伴", lead: "加入生态，共同成长", desc: "从平台架构、生态布局到资产沉淀，了解 AIyavaa 的长期价值。加入的不是某个工具，而是一个会持续长大的平台生态。", cta: "了解合作方式", chips: ["平台价值", "生态架构", "关键资产", "合作逻辑"] },
     },
     products: [
       { key: "drama", title: "AI 短剧生产工作台", desc: "结构诊断、中英双向原生化、分镜直出、爆款评分与标准化 SOP。", tags: ["剧本诊断", "原生改写", "分镜输出", "爆款评分"] },
       { key: "local", title: "本地生活商家增长控制台", desc: "服务门店和商家内容生产、活动营销、数字人导购与转化增长。", tags: ["活动日历", "商家模板", "数字人导购", "多平台分发"] },
-      { key: "brand", title: "品牌需求与交易中枢", desc: "把品牌采购路径产品化：需求发布、创作者匹配、授权、交付与复购。", tags: ["需求发布", "创作者匹配", "版权授权", "交付验收"] },
+      { key: "brand", title: "品牌需求与交易中枢", desc: "把品牌采购路径标准化：需求发布、创作者匹配、授权、交付与复购。", tags: ["需求发布", "创作者匹配", "版权授权", "交付验收"] },
       { key: "community", title: "内容展示与 OPC 社群层", desc: "内容展示、共创任务、热门创作者与 OPC 社群一起构成增长飞轮。", tags: ["内容流", "共创任务", "社群榜单", "OPC Insights"] },
     ],
   },
@@ -206,7 +206,7 @@ const t = {
       creators: "Creators",
       users: "Users",
       partners: "Partners",
-      investors: "Investors",
+      // investors entry removed per user request
     },
     home: {
       eyebrow: "AI Video Ecosystem Platform",
@@ -216,25 +216,25 @@ const t = {
       cta1: "Enter AIyavaa",
       cta2: "View Platform",
       narrativeEyebrow: "Home Narrative",
-      narrativeTitle: "Platform is the foundation. Products are the hooks. Community is the flywheel.",
+      narrativeTitle: "Platform is the foundation. Content is the hook. Community is the flywheel.",
       narrativeDesc: "The website is not a manual — it's a designed path of understanding: first earn trust, then build comprehension, then guide each visitor into their own AIyavaa.",
       signalsEyebrow: "Key Signals",
       signals: [
         ["Platform Identity", "Creation, transaction, delivery & governance platform"],
         ["Website Purpose", "Partners, users, brands, investors & community"],
-        ["Future Logic", "Not a fixed product — evolves continuously around people"],
+        ["Future Logic", "Not fixed features — evolves continuously around people"],
         ["Core Belief", "Turn ideas into works, and works into value"],
       ],
       personaEyebrow: "Who is AIyavaa for?",
       personaTitle: "The platform serves four core roles.",
-      productEyebrow: "Product Matrix",
-      productTitle: "Four products, each built around different scenarios and audiences.",
+      productEyebrow: "Service Matrix",
+      productTitle: "Four directions, each built around different scenarios and audiences.",
       continue: "Explore",
       navCards: [
         ["Enter Creator Center", "Start creating, listing, taking orders & teaming up", "creators"],
         ["Enter Platform", "Start watching, creating, teaming & co-creating", "users"],
         ["View Partnerships", "Understand capabilities, publish needs, get delivery", "partners"],
-        ["Enter Investor Portal", "View platform value, product matrix & investment logic", "investors"],
+        ["Learn More", "Explore platform value, ecosystem architecture & growth path", "platform"],
       ],
     },
     platform: {
@@ -242,7 +242,7 @@ const t = {
       title: "AIyavaa is the creation, transaction, delivery and governance platform for the AI video era.",
       desc: "Connecting users, creators, brands and partners — moving AI video from 'can generate' to 'can transact, deliver and continuously evolve'.",
       cta1: "View Creator Portal",
-      cta2: "Enter Investor Portal",
+      cta2: "Learn More",
       bandEyebrow: "Three Centers + Three Middle Platforms",
       bandTitle: "The platform is not a toolset — it is an industry organization system.",
       bandDesc: "Three Centers manage people and transaction relationships. Three Middle Platforms manage capabilities and order. Together, AIyavaa upgrades from tool layer to platform layer.",
@@ -358,7 +358,7 @@ const t = {
       users: { title: "Users", lead: "Discover an AI Video World Shaped by Your Interests", desc: "Watch what you want, discover content that truly understands you. AIyavaa helps you find AI videos that fit you — and lets you participate in remixing, interaction and co-creation.", cta: "Enter Content World", chips: ["Interest Recommendations", "Trending Dramas", "Interactive Viewing", "Remix & Co-create"] },
       creators: { title: "Creators", lead: "Express Yourself. Connect with the Market.", desc: "Create, list, take orders, team up and collaborate here. Let your expression extend into orders, relationships and long-term value.", cta: "Enter Creator Center", chips: ["Creative Tools", "List Works", "Commercial Orders", "Team Collaboration"] },
       partners: { title: "Ecosystem Partners", lead: "Connect Capabilities. Launch Collaborations.", desc: "Integrate your models, tools, collaboration directions and proposals into the platform. Launch co-creation and collaboration. Join the ecosystem.", cta: "Enter Partnership Portal", chips: ["Model Integration", "Tool Partnership", "Co-creation Proposals", "Publish Demands"] },
-      investors: { title: "Investors", lead: "See Today's Value. See Tomorrow's Path.", desc: "From platform logic and product matrix to asset accumulation — understand AIyavaa's long-term investability. Investing in a platform that keeps growing.", cta: "Enter Investor Portal", chips: ["Platform Value", "Product Matrix", "Key Assets", "Investment Logic"] },
+      investors: { title: "Partners", lead: "Join the Ecosystem. Grow Together.", desc: "From platform architecture and ecosystem layout to asset accumulation — understand AIyavaa's long-term value. Not joining a single tool, but a growing platform ecosystem.", cta: "Explore Partnership", chips: ["Platform Value", "Ecosystem Architecture", "Key Assets", "Partnership Logic"] },
     },
     products: [
       { key: "drama", title: "AI Short Drama Production Workbench", desc: "Structure diagnosis, bidirectional native localization, storyboard generation, viral scoring and standardized SOP.", tags: ["Script Diagnosis", "Native Rewriting", "Storyboard Output", "Viral Scoring"] },
@@ -443,7 +443,6 @@ function Header({ route, setRoute, lang }: { route: string; setRoute: (r: string
     { key: "creators", label: T.nav.creators },
     { key: "users", label: T.nav.users },
     { key: "partners", label: T.nav.partners },
-    { key: "investors", label: T.nav.investors },
   ];
 
   return (
@@ -455,18 +454,6 @@ function Header({ route, setRoute, lang }: { route: string; setRoute: (r: string
 
         <nav className="hidden items-center gap-2 xl:flex">
           {NAV.map((item) => (
-            item.key === "investors" ? (
-              <a
-                key={item.key}
-                href="/investor"
-                className={cls(
-                  "rounded-full border px-4 py-2 text-sm transition",
-                  "border-transparent text-slate-400 hover:border-white/10 hover:bg-white/5 hover:text-white"
-                )}
-              >
-                {item.label}
-              </a>
-            ) : (
               <button
                 key={item.key}
                 onClick={() => setRoute(item.key)}
@@ -477,10 +464,9 @@ function Header({ route, setRoute, lang }: { route: string; setRoute: (r: string
               >
                 {item.label}
               </button>
-            )
           ))}
-          <a href="/investor" className="ml-2 rounded-full border border-indigo-300/30 bg-gradient-to-r from-indigo-500/30 to-cyan-400/20 px-4 py-2 text-sm font-bold text-white transition hover:from-indigo-500/40 hover:to-cyan-400/30">
-            {lang === "zh" ? "我是谁 →" : "Who We Are →"}
+          <a href="/" className="ml-2 rounded-full border border-indigo-300/30 bg-gradient-to-r from-indigo-500/30 to-cyan-400/20 px-4 py-2 text-sm font-bold text-white transition hover:from-indigo-500/40 hover:to-cyan-400/30">
+            {lang === "zh" ? "首页 →" : "Home →"}
           </a>
           <LanguageSwitcher />
         </nav>
@@ -500,21 +486,14 @@ function Header({ route, setRoute, lang }: { route: string; setRoute: (r: string
           >
             <div className="space-y-2 px-4 py-4">
               {NAV.map((item) => (
-                item.key === "investors" ? (
-                  <a key={item.key} href="/investor" className="flex w-full items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-left">
-                    <div className="text-sm font-medium text-white">{item.label}</div>
-                    <ChevronRight className="h-4 w-4 text-slate-400" />
-                  </a>
-                ) : (
                   <button key={item.key} onClick={() => { setRoute(item.key); setOpen(false); }} className="flex w-full items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-left">
                     <div className="text-sm font-medium text-white">{item.label}</div>
                     <ChevronRight className="h-4 w-4 text-slate-400" />
                   </button>
-                )
               ))}
               <div className="pt-2 flex gap-2">
-                <a href="/investor" className="flex-1 text-center rounded-2xl border border-indigo-300/30 bg-gradient-to-r from-indigo-500/30 to-cyan-400/20 px-4 py-3 text-sm font-bold text-white">
-                  {lang === "zh" ? "我是谁 →" : "Who We Are →"}
+                <a href="/" className="flex-1 text-center rounded-2xl border border-indigo-300/30 bg-gradient-to-r from-indigo-500/30 to-cyan-400/20 px-4 py-3 text-sm font-bold text-white">
+                  {lang === "zh" ? "首页 →" : "Home →"}
                 </a>
                 <LanguageSwitcher />
               </div>
@@ -582,7 +561,7 @@ function HomePage({ setRoute, lang }: { setRoute: (r: string) => void; lang: Lan
             </div>
             <div className="flex flex-wrap gap-3 pt-2">
               <HeroAction primary onClick={() => setRoute("platform")}>{T.home.cta1}</HeroAction>
-              <a href="/investor"><HeroAction onClick={() => {}}>{T.home.cta2}</HeroAction></a>
+              <HeroAction onClick={() => setRoute("platform")}>{T.home.cta2}</HeroAction>
             </div>
           </div>
 
@@ -629,11 +608,7 @@ function HomePage({ setRoute, lang }: { setRoute: (r: string) => void; lang: Lan
                 <div className="flex flex-wrap gap-2">
                   {persona.chips.map((chip) => (<span key={chip} className="rounded-full border border-indigo-300/20 bg-indigo-300/10 px-3 py-1.5 text-xs text-indigo-100">{chip}</span>))}
                 </div>
-                {activePersona === "investors" ? (
-                  <a href="/investor"><HeroAction primary onClick={() => {}}>{persona.cta}</HeroAction></a>
-                ) : (
                   <HeroAction primary onClick={() => setRoute(activePersona)}>{persona.cta}</HeroAction>
-                )}
               </div>
             </motion.div>
           </AnimatePresence>
@@ -666,20 +641,8 @@ function HomePage({ setRoute, lang }: { setRoute: (r: string) => void; lang: Lan
       <section className="px-6 pb-16 md:px-10 md:pb-20">
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {T.home.navCards.map(([title, desc, routeKey]) => {
-            const icons: Record<string, React.ComponentType<{ className?: string }>> = { creators: Wand2, users: Users, partners: HeartHandshake, investors: BarChart3 };
-            const NavIcon = icons[routeKey as string];
-            if (routeKey === "investors") {
-              return (
-                <a key={title as string} href="/investor" className="text-left">
-                  <Glass className="h-full p-6 md:p-7 transition hover:-translate-y-1">
-                    <div className="mb-4 inline-flex rounded-2xl border border-white/10 bg-white/[0.05] p-3"><NavIcon className="h-5 w-5 text-white" /></div>
-                    <div className="text-xl font-semibold tracking-[-0.03em] text-white">{title as string}</div>
-                    <p className="mt-3 text-sm leading-7 text-slate-400">{desc as string}</p>
-                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-slate-200">{T.home.continue} <ArrowRight className="h-4 w-4" /></div>
-                  </Glass>
-                </a>
-              );
-            }
+            const icons: Record<string, React.ComponentType<{ className?: string }>> = { creators: Wand2, users: Users, partners: HeartHandshake, platform: BarChart3 };
+            const NavIcon = icons[routeKey as string] || BarChart3;
             return (
               <button key={title as string} onClick={() => setRoute(routeKey as string)} className="text-left">
                 <Glass className="h-full p-6 md:p-7 transition hover:-translate-y-1">
