@@ -9,13 +9,6 @@ const content = {
     desc: '不需要专业设备，不需要剪辑技能，不需要品牌预算。只要你有想法、有故事、有好奇心，AIyavaa 就是你的舞台。',
     groups: [
       {
-        icon: '🏠',
-        title: '家庭与记忆守护者',
-        desc: '用 AI 把家庭日常、生日纪念、成长瞬间变成有温度的视频故事，让每一段记忆都值得被珍藏和分享。孩子的第一步、家人的笑声、节日的团聚——都可以成为永久的影像记忆。',
-        tags: ['家庭记录', '生日纪念', '成长相册', '日常 vlog', '亲子时光'],
-        highlight: true,
-      },
-      {
         icon: '🔭',
         title: '对 AI 无限好奇的人',
         desc: '想亲手体验 AI 生成视频的魔力，探索技术边界，第一时间尝鲜最新模型。',
@@ -40,6 +33,12 @@ const content = {
         tags: ['编剧', '导演', '故事创作者', '短剧制作'],
       },
       {
+        icon: '🏠',
+        title: '家庭与记忆守护者',
+        desc: '用 AI 把家庭日常、生日纪念、成长瞬间变成有温度的视频故事，让每一段记忆都值得被珍藏和分享。孩子的第一步、家人的笑声、节日的团聚——都可以成为永久的影像记忆。',
+        tags: ['家庭记录', '生日纪念', '成长相册', '日常 vlog', '亲子时光'],
+      },
+      {
         icon: '💼',
         title: '商业合伙人',
         desc: '投资人、生态合作方、品牌代理——共建 AIyavaa 生态，共享平台增长红利，成为 AGI 时代的先行者。',
@@ -53,13 +52,6 @@ const content = {
     subtitle: 'Everyone belongs here',
     desc: 'No professional equipment, no editing skills, no brand budget required. If you have ideas, stories, or curiosity — AIyavaa is your stage.',
     groups: [
-      {
-        icon: '🏠',
-        title: 'Family Memory Keepers',
-        desc: "Use AI to turn everyday family moments, birthday milestones, and childhood memories into warm video stories — every memory worth treasuring and sharing. A child's first steps, a family's laughter, holiday reunions — all become permanent visual memories.",
-        tags: ['Family Records', 'Birthday Memories', 'Growth Albums', 'Daily Vlog', 'Parent-Child Moments'],
-        highlight: true,
-      },
       {
         icon: '🔭',
         title: 'AI Enthusiasts',
@@ -83,6 +75,12 @@ const content = {
         title: 'Storytellers & Filmmakers',
         desc: 'Screenwriters, directors, and story lovers who use AI to rapidly prototype narratives and explore interactive drama and IP series.',
         tags: ['Screenwriters', 'Directors', 'Storytellers', 'Short Drama Producers'],
+      },
+      {
+        icon: '🏠',
+        title: 'Family Memory Keepers',
+        desc: "Use AI to turn everyday family moments, birthday milestones, and childhood memories into warm video stories — every memory worth treasuring and sharing. A child's first steps, a family's laughter, holiday reunions — all become permanent visual memories.",
+        tags: ['Family Records', 'Birthday Memories', 'Growth Albums', 'Daily Vlog', 'Parent-Child Moments'],
       },
       {
         icon: '💼',
@@ -116,17 +114,9 @@ export default function WhoUses() {
           {T.groups.map((group, i) => (
             <div
               key={i}
-              className={`group relative rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 ${
-                (group as any).highlight
-                  ? 'bg-gradient-to-br from-amber-500/12 to-orange-500/6 border border-amber-400/30 hover:border-amber-400/50 sm:col-span-2 lg:col-span-1'
-                  : 'bg-gradient-to-br from-white/7 to-white/3 border border-white/10 hover:border-cyan-400/30'
-              }`}
+              className="group relative rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 bg-gradient-to-br from-white/7 to-white/3 border border-white/10 hover:border-cyan-400/30"
             >
-              {(group as any).highlight && (
-                <div className="absolute top-3 right-3 text-xs font-bold px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/30">
-                  {language === 'zh' ? '❤️ 温情首选' : '❤️ Heartfelt'}
-                </div>
-              )}
+
               <div className="text-3xl mb-4">{group.icon}</div>
               <h3 className="text-lg font-black text-white mb-2">{group.title}</h3>
               <p className="text-sm text-slate-400 leading-relaxed mb-4">{brandText(group.desc)}</p>
@@ -134,11 +124,7 @@ export default function WhoUses() {
                 {group.tags.map((tag, j) => (
                   <span
                     key={j}
-                    className={`text-xs px-2.5 py-1 rounded-full border text-slate-300 ${
-                      (group as any).highlight
-                        ? 'bg-amber-400/10 border-amber-400/20'
-                        : 'bg-white/6 border-white/10'
-                    }`}
+                    className="text-xs px-2.5 py-1 rounded-full border text-slate-300 bg-white/6 border-white/10"
                   >
                     {tag}
                   </span>

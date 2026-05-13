@@ -1,8 +1,7 @@
 /**
  * BrandName — renders "AIyavaa" with brand-accurate styling:
- *   AI   → white, bold
- *   y    → cyan/blue gradient highlight
- *   avaa → white, bold
+ *   AI    → white, bold, uppercase
+ *   yavaa → cyan/blue gradient
  *
  * Usage:
  *   <BrandName />                  — default (inherits font-size)
@@ -24,9 +23,8 @@ export default function BrandName({ className = '' }: BrandNameProps) {
           backgroundClip: 'text',
         }}
       >
-        y
+        yavaa
       </span>
-      <span className="text-white">avaa</span>
     </span>
   );
 }

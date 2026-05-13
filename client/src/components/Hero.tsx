@@ -47,10 +47,23 @@ export default function Hero() {
     setTimeout(() => setIsGenerating(false), 3000);
   };
 
-  const stats = [
-    { num: '100+', label: zh ? '集成模型' : 'AI Models' },
-    { num: '500+', label: zh ? '视频工具' : 'Video Tools' },
-    { num: '10,000+', label: zh ? '优质内容' : 'Quality Videos' },
+  const steps = [
+    {
+      title: zh ? '输入需求' : 'Input Idea',
+      desc: zh ? '文字或语音，平台理解目标与风格。' : 'Text or voice — platform understands your goal and style.',
+    },
+    {
+      title: zh ? '最优路径匹配' : 'Best Path Match',
+      desc: zh ? '自动调用全网模型、工具与数据。' : 'Auto-selects the best models, tools and data across the web.',
+    },
+    {
+      title: zh ? '5秒生成' : '5-Second Generate',
+      desc: zh ? '无需登录，先获得可预览结果。' : 'No login needed — get a preview result instantly.',
+    },
+    {
+      title: zh ? '修改 / 发布' : 'Edit / Publish',
+      desc: zh ? '自然语言修改，发布时进入注册与收益设置。' : 'Natural language edits; register and set monetization on publish.',
+    },
   ];
 
   return (
@@ -169,15 +182,22 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="flex items-center gap-4 sm:gap-8 flex-wrap justify-center">
-          {stats.map((s, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <span className="text-lg sm:text-xl font-black text-cyan-400">{s.num}</span>
-              <span className="text-xs sm:text-sm text-slate-400">{s.label}</span>
-              {i < stats.length - 1 && <span className="text-slate-700 ml-2 sm:ml-4">·</span>}
-            </div>
-          ))}
+        {/* Steps: 从想法到发布 */}
+        <div className="w-full max-w-3xl mt-2">
+          <p className="text-[11px] text-slate-500 text-center mb-3 uppercase tracking-widest">
+            {zh ? '先体验，再注册。用户只在发布、修改、商业化时进入账号与权益系统。' : 'Experience first, register later. Account required only for publishing, editing, or monetization.'}
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {steps.map((step, i) => (
+              <div key={i} className="relative bg-white/5 border border-white/10 rounded-xl p-3 sm:p-4 text-left">
+                {i < steps.length - 1 && (
+                  <span className="hidden sm:block absolute -right-2 top-1/2 -translate-y-1/2 z-10 text-slate-600 text-lg">→</span>
+                )}
+                <p className="text-white text-xs sm:text-sm font-bold mb-1">{step.title}</p>
+                <p className="text-slate-400 text-[11px] sm:text-xs leading-snug">{step.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

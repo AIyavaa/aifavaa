@@ -6,7 +6,7 @@ const content = {
     badge: '08 / 创始团队',
     title: '核心创始团队',
     subtitle: 'Founding team with deep expertise',
-    desc: '六位创始人各具所长，覆盖战略、内容、运营与技术，共同构建 AIyavaa 的核心竞争力。',
+    desc: '七位创始人各具所长，覆盖战略、内容、运营、技术与生态建设，共同构建 AIyavaa 的核心竞争力。',
     contact: '与我们的团队取得联系',
     contactSub: '投资咨询、合作洽谈、媒体采访，欢迎随时联系',
     email: 'eva@aiyavaa.com',
@@ -87,13 +87,25 @@ const content = {
           '构建全球合伙人体系与战略联盟',
         ],
       },
+      {
+        name: '康丽',
+        role: '联合创始人兼生态建设',
+        color: 'rose',
+        photo: null as string | null,
+        highlights: [
+          '擅长 AI 平台生态活动、全球资源链接与合伙人机制建设',
+          '统筹 AI 实验室、赛事活动与产业应用场景的 AI 融合落地',
+          '社群协同、用户信任体系构建与跨境生态连接，具备较强资源整合与组织推动能力',
+          '拥有多年教育产业、用户运营与跨境资源整合经验，持续探索 AI 时代用户生态增长与平台协同模型',
+        ],
+      },
     ],
   },
   en: {
     badge: '08 / Founding Team',
     title: 'Core Founding Team',
     subtitle: 'Founding team with deep expertise',
-    desc: "Six founders with complementary strengths covering strategy, content, operations and technology, collectively building AIyavaa's core competitive advantages.",
+    desc: "Seven founders with complementary strengths covering strategy, content, operations, technology and ecosystem building, collectively building AIyavaa's core competitive advantages.",
     contact: 'Get in touch with our team',
     contactSub: 'Investment inquiries, partnerships, media — we welcome your message',
     email: 'eva@aiyavaa.com',
@@ -174,6 +186,18 @@ const content = {
           'Building global partner systems and strategic alliances',
         ],
       },
+      {
+        name: 'Kang Li',
+        role: 'Co-Founder & Ecosystem Development',
+        color: 'rose',
+        photo: null as string | null,
+        highlights: [
+          'Specializes in AI platform ecosystem events, global resource linking, and partner mechanism building',
+          'Oversees AI Lab, competition events, and AI integration across industrial application scenarios',
+          'Community collaboration, user trust system building, and cross-border ecosystem connection with strong resource integration and organizational capabilities',
+          'Years of experience in education industry, user operations, and cross-border resource integration; continuously exploring AI-era user ecosystem growth and platform collaboration models',
+        ],
+      },
     ],
   },
 };
@@ -218,6 +242,7 @@ export default function Team() {
     teal: { bg: 'from-teal-500/10 to-teal-600/5', border: 'border-teal-400/30', text: 'text-teal-300' },
     purple: { bg: 'from-purple-500/10 to-purple-600/5', border: 'border-purple-400/30', text: 'text-purple-300' },
     green: { bg: 'from-green-500/10 to-green-600/5', border: 'border-green-400/30', text: 'text-green-300' },
+    rose: { bg: 'from-rose-500/10 to-rose-600/5', border: 'border-rose-400/30', text: 'text-rose-300' },
   };
 
   return (
@@ -268,18 +293,14 @@ export default function Team() {
           })}
         </div>
 
-        {/* Contact CTA */}
-        <div className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-2xl bg-white/4 border border-white/10">
-          <div className="text-center sm:text-left">
-            <p className="text-white font-bold text-base">{T.contact}</p>
-            <p className="text-slate-400 text-sm mt-1">{T.contactSub}</p>
-          </div>
+        {/* Email contact */}
+        <div className="mt-10 text-center">
           <a
-            href={`mailto:${T.email}`}
-            className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-500/20 border border-blue-400/30 text-blue-300 font-bold text-sm hover:bg-blue-500/30 transition-colors"
+            href="mailto:eva@aiyavaa.com"
+            className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-blue-300 transition-colors"
           >
             <span>✉</span>
-            <span>{T.email}</span>
+            <span>eva@aiyavaa.com</span>
           </a>
         </div>
       </div>

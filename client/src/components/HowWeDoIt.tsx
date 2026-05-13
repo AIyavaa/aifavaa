@@ -7,7 +7,7 @@ const levels = {
     { level: 'L1', name: '探索合伙人', condition: '注册并上传 1 条视频', perks: '基础创作工具权限 + 平台积分', color: 'slate' },
     { level: 'L2', name: '创作合伙人', condition: '上传 5 条视频', perks: '扩展工具 + 收益分成资格', color: 'blue' },
     { level: 'L3', name: '活跃合伙人', condition: '上传 20 条 / 月活跃', perks: '专属创作模板 + 优先推流', color: 'cyan' },
-    { level: 'L4', name: '分享合伙人', condition: '邀请 10 人注册', perks: '裂变收益 + 社群建立权限', color: 'teal' },
+    { level: 'L4', name: '分享合伙人', condition: '邀请 10 人注册 · 3 人变现 · 分享 20 条内容', perks: '裂变收益 5% + 专属邀请码 + 社群建立权限', color: 'teal' },
     { level: 'L5', name: '社群合伙人', condition: '建立 50 人活跃社群', perks: '社群活动组织权 + 专属徽章', color: 'green' },
     { level: 'L6', name: '品牌合伙人', condition: '完成 3 个品牌合作订单', perks: '品牌资源对接 + 高级变现通道', color: 'yellow' },
     { level: 'L7', name: '创意合伙人', condition: '累计 10000 条优质内容', perks: '创意认证 + 行业奖项提名资格', color: 'orange' },
@@ -19,7 +19,7 @@ const levels = {
     { level: 'L1', name: 'Explorer Partner', condition: 'Register & upload 1 video', perks: 'Basic creation tools + platform credits', color: 'slate' },
     { level: 'L2', name: 'Creator Partner', condition: 'Upload 5 videos', perks: 'Extended tools + revenue share eligibility', color: 'blue' },
     { level: 'L3', name: 'Active Partner', condition: 'Upload 20 videos / monthly active', perks: 'Exclusive templates + priority distribution', color: 'cyan' },
-    { level: 'L4', name: 'Sharing Partner', condition: 'Invite 10 users', perks: 'Referral income + community creation rights', color: 'teal' },
+    { level: 'L4', name: 'Sharing Partner', condition: 'Invite 10 users · 3 monetized · Share 20 videos', perks: '5% referral income + exclusive invite code + community creation rights', color: 'teal' },
     { level: 'L5', name: 'Community Partner', condition: 'Build 50-person active community', perks: 'Event hosting rights + exclusive badge', color: 'green' },
     { level: 'L6', name: 'Brand Partner', condition: 'Complete 3 brand collaboration orders', perks: 'Brand resource access + premium monetization', color: 'yellow' },
     { level: 'L7', name: 'Creative Partner', condition: '10,000 quality content pieces', perks: 'Creative certification + industry award nomination', color: 'orange' },
@@ -115,7 +115,7 @@ const competition = {
 
 const mainContent = {
   zh: {
-    badge: '10 / 怎么实现',
+    badge: '09 / 怎么实现',
     title: '合伙人生态体系',
     subtitle: 'Partner ecosystem — everyone can participate',
     desc: '听到这件事，你就成为合伙人。AIyavaa 构建了一套完整的合伙人成长体系，从 L1 到 L10，每一级都有对应的权益和晋升路径。',
@@ -131,7 +131,7 @@ const mainContent = {
     verticalDesc: '不同行业的创作者，都能在 AIyavaa 找到属于自己的赛道。悬停查看详情。',
   },
   en: {
-    badge: '10 / How We Do It',
+    badge: '09 / How We Do It',
     title: 'Partner Ecosystem',
     subtitle: 'Partner ecosystem — everyone can participate',
     desc: 'Hear about it, become a partner. AIyavaa has built a complete partner growth system — from L1 to L10, each level has corresponding benefits and advancement paths.',
@@ -149,110 +149,6 @@ const mainContent = {
 };
 
 
-const milestones = {
-  zh: {
-    title: '阶段目标：我们如何做到',
-    subtitle: 'How we achieve our goals — phase by phase',
-    phases: [
-      {
-        period: '0 – 6 个月',
-        label: '验证期',
-        color: 'blue',
-        goal: '完成产品 MVP，验证核心用户行为',
-        targets: [
-          '上线 AI 视频生成核心功能，支持 100+ 模型调度',
-          '完成首批 1000 名种子用户招募（合伙人 L1-L3）',
-          '举办首届小规模 AI 视频赛事（100 人），验证赛事模型',
-          '完成新加坡实体注册与合规架构搭建',
-          '获得首批品牌客户 3-5 家，验证 B 端商业模式',
-        ],
-        why: '通过低成本赛事和种子用户快速验证产品方向，用真实数据说话',
-      },
-      {
-        period: '6 – 12 个月',
-        label: '增长期',
-        color: 'cyan',
-        goal: '规模化用户增长，建立合伙人生态雏形',
-        targets: [
-          '注册用户突破 10 万，月活跃创作者 1 万+',
-          '合伙人体系全面上线，L1-L10 级别完整运营',
-          '举办第二届 AI 视频大赛（500 人入围），新加坡线下活动落地',
-          '完成 Pre-A 轮融资，资金支撑全球扩张',
-          '东南亚 3 个国家完成本地化运营（新加坡、马来西亚、菲律宾）',
-          '垂直行业合伙人覆盖 5 个赛道（故事/品牌/教育/科技/美食）',
-        ],
-        why: '合伙人裂变机制是核心增长引擎，每个 L4+ 合伙人带来 10+ 新用户，实现低成本规模化',
-      },
-      {
-        period: '12 – 24 个月',
-        label: '扩张期',
-        color: 'purple',
-        goal: '全球化布局，建立行业标准',
-        targets: [
-          '全球注册用户突破 100 万，月活跃创作者 10 万+',
-          '举办首届全球 AIyavaa 视频创作大赛（1000 人入围），$100 万奖金池',
-          '建立 AIyavaa 影视级标准，推动行业短剧评级与创意认定',
-          '全球百大荣誉合伙人评选，颁奖典礼邀请行业大佬',
-          '完成 A 轮融资，估值目标 $1 亿+',
-          '覆盖全球 10 个国家，建立本地化合伙人分会',
-          '品牌广告收入达到月均 $100 万+',
-        ],
-        why: '赛事品牌效应 + 合伙人生态 + 行业标准三驾马车，构建护城河。赛事每年举办，每届都是新的增长飞轮',
-      },
-    ],
-  },
-  en: {
-    title: 'Phase Targets: How We Get There',
-    subtitle: 'How we achieve our goals — phase by phase',
-    phases: [
-      {
-        period: '0 – 6 Months',
-        label: 'Validation',
-        color: 'blue',
-        goal: 'Complete MVP, validate core user behavior',
-        targets: [
-          'Launch core AI video generation with 100+ model scheduling',
-          'Recruit first 1,000 seed users (Partner L1-L3)',
-          'Host inaugural small-scale AI video contest (100 participants) to validate event model',
-          'Complete Singapore entity registration and compliance structure',
-          'Secure first 3-5 brand clients to validate B2B business model',
-        ],
-        why: 'Low-cost events and seed users rapidly validate product direction — let real data speak',
-      },
-      {
-        period: '6 – 12 Months',
-        label: 'Growth',
-        color: 'cyan',
-        goal: 'Scale user growth, establish partner ecosystem foundation',
-        targets: [
-          'Registered users exceed 100K, monthly active creators 10K+',
-          'Full partner system live with L1-L10 levels fully operational',
-          'Host 2nd AI Video Contest (500 finalists), Singapore live event',
-          'Complete Pre-A funding round to support global expansion',
-          'Localized operations in 3 SEA countries (Singapore, Malaysia, Philippines)',
-          'Vertical industry partners covering 5 tracks (Story/Brand/Education/Tech/Food)',
-        ],
-        why: 'Partner viral mechanics are the core growth engine — each L4+ partner brings 10+ new users, enabling low-cost scale',
-      },
-      {
-        period: '12 – 24 Months',
-        label: 'Expansion',
-        color: 'purple',
-        goal: 'Global footprint, establish industry standards',
-        targets: [
-          'Global registered users exceed 1M, monthly active creators 100K+',
-          'Host inaugural Global AIyavaa Video Creation Contest (1,000 finalists), $1M prize pool',
-          'Establish AIyavaa cinematic standards, drive short drama ratings and creative certification',
-          'Global Top 100 Honor Partner selection, awards ceremony with industry leaders',
-          'Complete Series A funding, target valuation $100M+',
-          'Presence in 10 countries globally, local partner chapters established',
-          'Brand advertising revenue reaches $1M+ monthly average',
-        ],
-        why: 'Three engines: event brand effect + partner ecosystem + industry standards build the moat. Annual contests create a new growth flywheel each year',
-      },
-    ],
-  },
-};
 
 const colorClassMap: Record<string, { bg: string; border: string; text: string; badge: string }> = {
   slate:  { bg: 'from-slate-500/10 to-slate-600/5',   border: 'border-slate-400/25',  text: 'text-slate-300',  badge: 'bg-slate-500/20 text-slate-200' },
@@ -274,7 +170,6 @@ export default function HowWeDoIt() {
   const verts = verticals[language as 'zh' | 'en'] || verticals.zh;
   const comp = competition[language as 'zh' | 'en'] || competition.zh;
   const [expandedLevel, setExpandedLevel] = useState<number | null>(null);
-  const milestoneData = milestones[language as 'zh' | 'en'] || milestones.zh;
 
   return (
     <section id="how-we-do-it" className="relative py-20 lg:py-28">
@@ -412,37 +307,6 @@ export default function HowWeDoIt() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-
-        {/* Phase milestones */}
-        <div>
-          <h3 className="text-2xl font-black text-white mb-2">{milestoneData.title}</h3>
-          <p className="text-slate-400 text-sm mb-8">{milestoneData.subtitle}</p>
-          <div className="space-y-6">
-            {milestoneData.phases.map((ph, i) => {
-              const c = colorClassMap[ph.color] || colorClassMap.blue;
-              return (
-                <div key={i} className={`bg-gradient-to-br ${c.bg} border ${c.border} rounded-2xl p-6 sm:p-8`}>
-                  <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className={`text-xs font-black px-3 py-1.5 rounded-full ${c.badge}`}>{ph.period}</span>
-                    <span className={`text-xs font-bold uppercase tracking-wider ${c.text}`}>{ph.label}</span>
-                  </div>
-                  <h4 className="text-lg font-black text-white mb-4">{ph.goal}</h4>
-                  <ul className="space-y-2 mb-5">
-                    {ph.targets.map((t, j) => (
-                      <li key={j} className="flex gap-2 text-sm text-slate-300">
-                        <span className={`flex-shrink-0 mt-0.5 ${c.text}`}>✓</span>
-                        <span>{brandText(t)}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className={`text-xs font-semibold px-4 py-3 rounded-xl bg-white/5 border border-white/8 ${c.text}`}>
-                    💡 {ph.why}
-                  </div>
-                </div>
-              );
-            })}
           </div>
         </div>
 
