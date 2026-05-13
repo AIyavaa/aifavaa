@@ -16,15 +16,9 @@ const content = {
       },
       {
         icon: '🎨',
-        title: '创意工作者',
-        desc: '设计师、摄影师、插画师、音乐人——把创意变成动态视觉，打破媒介边界。',
-        tags: ['设计师', '摄影师', '音乐人', '插画师'],
-      },
-      {
-        icon: '📱',
-        title: '内容创作者',
-        desc: '博主、UP主、短视频达人，用 AI 提升产量、降低成本、打造个人 IP。',
-        tags: ['博主', 'UP主', '短视频达人', 'KOL'],
+        title: '内容创作者与创意工作者',
+        desc: '博主、UP主、短视频达人、设计师、摄影师、插画师、音乐人、主播——把创意变成动态视觉，打造个人 IP，降低成本提升产量。',
+        tags: ['博主', 'UP主', 'KOL', '设计师', '音乐人', '主播', '插画师'],
       },
       {
         icon: '🏢',
@@ -37,6 +31,12 @@ const content = {
         title: '影视与故事创作者',
         desc: '编剧、导演、故事爱好者，用 AI 快速原型化剧情，探索互动剧、IP 剧新形态。',
         tags: ['编剧', '导演', '故事创作者'],
+      },
+      {
+        icon: '🏠',
+        title: '家庭与记忆守护者',
+        desc: '围绕家庭记录而生——日常生活、生日纪念、成长瞬间，用 AI 把每一段珍贵记忆变成精美视频，让爱与故事永久留存。',
+        tags: ['家庭记录', '生日纪念', '成长相册', '日常 Vlog', '家庭故事'],
       },
       {
         icon: '💼',
@@ -60,15 +60,9 @@ const content = {
       },
       {
         icon: '🎨',
-        title: 'Creative Professionals',
-        desc: 'Designers, photographers, illustrators, musicians — turn creativity into dynamic visuals and break medium boundaries.',
-        tags: ['Designers', 'Photographers', 'Musicians', 'Illustrators'],
-      },
-      {
-        icon: '📱',
-        title: 'Content Creators',
-        desc: 'Bloggers, vloggers, short-video creators — use AI to boost output, reduce costs, and build personal IP.',
-        tags: ['Bloggers', 'Vloggers', 'Short Video Creators', 'KOLs'],
+        title: 'Content Creators & Creative Professionals',
+        desc: 'Bloggers, vloggers, short-video creators, designers, photographers, illustrators, musicians, streamers — turn creativity into dynamic visuals, build personal IP, and scale output.',
+        tags: ['Bloggers', 'KOLs', 'Designers', 'Musicians', 'Streamers', 'Illustrators'],
       },
       {
         icon: '🏢',
@@ -81,6 +75,12 @@ const content = {
         title: 'Storytellers & Filmmakers',
         desc: 'Screenwriters, directors, and story lovers who use AI to rapidly prototype narratives and explore interactive drama.',
         tags: ['Screenwriters', 'Directors', 'Storytellers'],
+      },
+      {
+        icon: '🏠',
+        title: 'Family Memory Keepers',
+        desc: 'Built for family storytelling — daily life, birthdays, milestones. Use AI to transform precious memories into beautiful videos, preserving love and stories forever.',
+        tags: ['Family Records', 'Birthday Memories', 'Growth Albums', 'Daily Vlogs', 'Family Stories'],
       },
       {
         icon: '💼',

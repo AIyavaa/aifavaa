@@ -47,10 +47,16 @@ export default function Hero() {
     setTimeout(() => setIsGenerating(false), 3000);
   };
 
-  const stats = [
-    { num: '100+', label: zh ? '集成模型' : 'AI Models' },
-    { num: '500+', label: zh ? '视频工具' : 'Video Tools' },
-    { num: '10,000+', label: zh ? '优质内容' : 'Quality Videos' },
+  const steps = zh ? [
+    { num: '01', label: '输入需求', desc: '文字或语音，平台理解目标与风格。' },
+    { num: '02', label: '最优路径匹配', desc: '自动调用全网模型、工具与数据。' },
+    { num: '03', label: '5秒生成', desc: '无需登录，先获得可预览结果。' },
+    { num: '04', label: '修改 / 发布', desc: '自然语言修改，发布时进入注册与收益设置。' },
+  ] : [
+    { num: '01', label: 'Input Your Idea', desc: 'Text or voice — the platform understands your goal and style.' },
+    { num: '02', label: 'Best Path Matching', desc: 'Auto-routes through the best global models, tools and data.' },
+    { num: '03', label: '5-Second Generation', desc: 'No login needed — get a previewable result instantly.' },
+    { num: '04', label: 'Edit / Publish', desc: 'Natural language edits; register and set up monetization at publish.' },
   ];
 
   return (
@@ -169,15 +175,27 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="flex items-center gap-4 sm:gap-8 flex-wrap justify-center">
-          {stats.map((s, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <span className="text-lg sm:text-xl font-black text-cyan-400">{s.num}</span>
-              <span className="text-xs sm:text-sm text-slate-400">{s.label}</span>
-              {i < stats.length - 1 && <span className="text-slate-700 ml-2 sm:ml-4">·</span>}
-            </div>
-          ))}
+        {/* Steps: From Idea to Publish */}
+        <div className="w-full max-w-3xl">
+          <div className="flex items-start gap-1 sm:gap-2 justify-center flex-wrap sm:flex-nowrap">
+            {steps.map((s, i) => (
+              <div key={i} className="flex items-start gap-1 sm:gap-2 min-w-0">
+                <div className="flex flex-col items-center min-w-[72px] sm:min-w-[100px] bg-white/6 border border-white/12 rounded-2xl px-3 py-3 text-left">
+                  <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">{s.num}</span>
+                  <span className="text-xs sm:text-sm font-black text-white leading-tight mb-1">{s.label}</span>
+                  <span className="text-[10px] sm:text-xs text-slate-400 leading-snug">{s.desc}</span>
+                </div>
+                {i < steps.length - 1 && (
+                  <div className="flex items-center pt-6 flex-shrink-0">
+                    <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-slate-500 mt-3 text-center">
+            {zh ? '先体验，再注册。用户只在发布、修改、商业化时进入账号与权益系统。' : 'Experience first, register later. Users only enter the account & rights system when publishing, editing, or monetizing.'}
+          </p>
         </div>
       </div>
     </section>

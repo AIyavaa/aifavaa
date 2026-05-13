@@ -6,7 +6,7 @@ const content = {
     badge: '08 / 创始团队',
     title: '核心创始团队',
     subtitle: 'Founding team with deep expertise',
-    desc: '六位创始人各具所长，覆盖战略、内容、运营与技术，共同构建 AIyavaa 的核心竞争力。',
+    desc: '七位创始人各具所长，覆盖战略、内容、运营、生态与技术，共同构建 AIyavaa 的核心竞争力。',
     members: [
       {
         name: '张原天',
@@ -14,8 +14,8 @@ const content = {
         color: 'gold',
         highlights: [
           '新加坡鸿德集团董事长，多国硕博学位，二十余年全球投资与商业实战',
-          '新中经贸科技文教交流协会执行会长，深耕中新两地资本与产业生态',
           'Web3.0 与商业 4.0 研究者与实践者，前瞻布局 AI 时代商业架构',
+          '全球教育公益发起人，千万级资助推动教育普惠与跨境人才培育',
           '总资金逾 200 亿人民币，面向全球的专业投资机构掌舵人',
         ],
       },
@@ -78,13 +78,24 @@ const content = {
           '构建全球合伙人体系与战略联盟',
         ],
       },
+      {
+        name: '康丽',
+        role: '联合创始人兼生态建设',
+        color: 'rose',
+        highlights: [
+          '擅长 AI 平台生态活动、全球资源链接与合伙人机制建设',
+          '统筹 AI 实验室、赛事活动与产业应用场景的 AI 融合落地',
+          '社群协同、用户信任体系构建与跨境生态连接，具备较强资源整合与组织推动能力',
+          '拥有多年教育产业、用户运营与跨境资源整合经验，持续探索 AI 时代用户生态增长与平台协同模型',
+        ],
+      },
     ],
   },
   en: {
     badge: '08 / Founding Team',
     title: 'Core Founding Team',
     subtitle: 'Founding team with deep expertise',
-    desc: 'Six founders with complementary strengths covering strategy, content, operations and technology, collectively building AIyavaa\'s core competitive advantages.',
+    desc: 'Seven founders with complementary strengths covering strategy, content, operations, ecosystem and technology, collectively building AIyavaa\'s core competitive advantages.',
     members: [
       {
         name: 'Zhang Yuantian',
@@ -92,8 +103,8 @@ const content = {
         color: 'gold',
         highlights: [
           'Chairman of Singapore Hongde Group, multi-country master and doctoral degrees, 20+ years of global investment and business',
-          'Executive President of Singapore-China Trade, Technology & Cultural Exchange Association',
           'Web3.0 and Business 4.0 researcher and practitioner, pioneering AI-era business architecture',
+          'Global education philanthropy initiator, with tens of millions in funding to advance education equity and cross-border talent development',
           'Manages a global professional investment institution with over RMB 20 billion in assets',
         ],
       },
@@ -156,6 +167,17 @@ const content = {
           'Building global partner systems and strategic alliances',
         ],
       },
+      {
+        name: 'Kang Li',
+        role: 'Co-Founder & Ecosystem Development',
+        color: 'rose',
+        highlights: [
+          'Expertise in AI platform ecosystem events, global resource connections and partner mechanism design',
+          'Oversees AI Lab, competition events, and AI integration across industry application scenarios',
+          'Community synergy, user trust system building and cross-border ecosystem connectivity with strong resource integration capabilities',
+          'Years of experience in education industry, user operations and cross-border resource integration; continuously exploring AI-era user ecosystem growth and platform collaboration models',
+        ],
+      },
     ],
   },
 };
@@ -171,6 +193,7 @@ export default function Team() {
     teal: { bg: 'from-teal-500/10 to-teal-600/5', border: 'border-teal-400/30', badge: 'bg-teal-500/20 text-teal-300', dot: 'bg-teal-400', text: 'text-teal-300' },
     purple: { bg: 'from-purple-500/10 to-purple-600/5', border: 'border-purple-400/30', badge: 'bg-purple-500/20 text-purple-300', dot: 'bg-purple-400', text: 'text-purple-300' },
     green: { bg: 'from-green-500/10 to-green-600/5', border: 'border-green-400/30', badge: 'bg-green-500/20 text-green-300', dot: 'bg-green-400', text: 'text-green-300' },
+    rose: { bg: 'from-rose-500/10 to-pink-600/5', border: 'border-rose-400/30', badge: 'bg-rose-500/20 text-rose-300', dot: 'bg-rose-400', text: 'text-rose-300' },
   };
 
   return (
@@ -192,9 +215,16 @@ export default function Team() {
             const c = colorMap[member.color] || colorMap.blue;
             return (
               <div key={i} className={`bg-gradient-to-br ${c.bg} border ${c.border} backdrop-blur-xl rounded-2xl p-6`}>
+                {/* Photo placeholder */}
                 <div className="flex items-start gap-4 mb-4">
-                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${c.badge}`}>
-                    <div className={`w-3 h-3 rounded-full ${c.dot}`} />
+                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 border-2 ${c.border} bg-white/5 overflow-hidden`}>
+                    {/* Photo slot — replace src with actual photo URL when available */}
+                    <div className="w-full h-full flex flex-col items-center justify-center gap-0.5">
+                      <svg className="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                      <span className="text-[9px] text-slate-600 font-medium">Photo</span>
+                    </div>
                   </div>
                   <div>
                     <h3 className="text-lg font-black text-white">{member.name}</h3>
