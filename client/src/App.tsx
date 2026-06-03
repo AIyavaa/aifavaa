@@ -7,6 +7,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import InvestorStory from "./pages/InvestorStory";
 import WebsitePrototype from "./pages/WebsitePrototype";
+import AdminPanel from "./pages/AdminPanel";
 
 function Router() {
   return (
@@ -15,6 +16,8 @@ function Router() {
       <Route path={"/"} component={InvestorStory} />
       {/* Platform prototype page */}
       <Route path={"/platform"} component={WebsitePrototype} />
+      {/* Admin panel - access request management */}
+      <Route path={"/admin"} component={AdminPanel} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

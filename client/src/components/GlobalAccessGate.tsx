@@ -1,15 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { trpc } from '@/lib/trpc';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const GLOBAL_UNLOCK_KEY = 'aifavaa_global_unlocked';
 const GLOBAL_REQUESTED_KEY = 'aifavaa_global_requested';
 
+function markUnlocked() {
+  try { localStorage.setItem(GLOBAL_UNLOCK_KEY, 'true'); } catch {}
+}
 function markRequested() {
   try { localStorage.setItem(GLOBAL_REQUESTED_KEY, 'true'); } catch {}
 }
 function isRequested(): boolean {
   try { return localStorage.getItem(GLOBAL_REQUESTED_KEY) === 'true'; } catch { return false; }
+}
+
+// Extract ?unlock=TOKEN from URL
+function getUnlockTokenFromUrl(): string | null {
+  if (typeof window === 'undefined') return null;
+  const params = new URLSearchParams(window.location.search);
+  return params.get('unlock');
 }
 
 const T = {
@@ -28,6 +38,9 @@ const T = {
     errorMsg: '提交失败，请稍后重试。',
     contactHint: '如有紧急需求，请直接联系我们',
     contactEmail: 'contact@aifavaa.com',
+    verifying: '正在验证解锁链接...',
+    verifyError: '解锁链接无效或已过期，请重新申请。',
+    unlocking: '解锁成功，正在加载内容...',
   },
   en: {
     badge: 'Access Required',
@@ -44,6 +57,9 @@ const T = {
     errorMsg: 'Submission failed. Please try again.',
     contactHint: 'For urgent inquiries, contact us directly',
     contactEmail: 'contact@aifavaa.com',
+    verifying: 'Verifying unlock link...',
+    verifyError: 'Invalid or expired unlock link. Please submit a new request.',
+    unlocking: 'Unlocked! Loading content...',
   },
 };
 
@@ -61,6 +77,7 @@ export default function GlobalAccessGate({ onUnlocked }: GlobalAccessGateProps) 
   const [company, setCompany] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [requested, setRequested] = useState(() => isRequested());
+  const [verifyState, setVerifyState] = useState<'idle' | 'verifying' | 'success' | 'error'>('idle');
 
   const requestAccess = trpc.access.request.useMutation({
     onSuccess: () => {
@@ -72,6 +89,34 @@ export default function GlobalAccessGate({ onUnlocked }: GlobalAccessGateProps) 
     },
   });
 
+  const verifyToken = trpc.access.verify.useMutation({
+    onSuccess: () => {
+      setVerifyState('success');
+      markUnlocked();
+      // Short delay so user sees the success message
+      setTimeout(() => {
+        onUnlocked?.();
+        // Clean up the URL token
+        const url = new URL(window.location.href);
+        url.searchParams.delete('unlock');
+        window.history.replaceState({}, '', url.toString());
+      }, 1200);
+    },
+    onError: () => {
+      setVerifyState('error');
+    },
+  });
+
+  // On mount, check if URL has ?unlock=TOKEN
+  useEffect(() => {
+    const token = getUnlockTokenFromUrl();
+    if (token) {
+      setVerifyState('verifying');
+      verifyToken.mutate({ token });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !email.trim()) return;
@@ -79,13 +124,31 @@ export default function GlobalAccessGate({ onUnlocked }: GlobalAccessGateProps) 
     requestAccess.mutate({ sectionId: 'all', name, email, company });
   };
 
-  // Dev unlock shortcut via URL hash (e.g. #unlock=dev2024)
-  if (typeof window !== 'undefined' && window.location.hash.includes('unlock=')) {
-    const token = window.location.hash.split('unlock=')[1];
-    if (token) {
-      try { localStorage.setItem(GLOBAL_UNLOCK_KEY, 'true'); } catch {}
-      onUnlocked?.();
-    }
+  // Show verifying / success / error states
+  if (verifyState === 'verifying') {
+    return (
+      <section className="relative py-24 lg:py-32">
+        <div className="max-w-2xl mx-auto px-4 text-center">
+          <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-500/15 text-3xl mb-6 mx-auto">
+            ⏳
+          </div>
+          <p className="text-white font-semibold">{copy.verifying}</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (verifyState === 'success') {
+    return (
+      <section className="relative py-24 lg:py-32">
+        <div className="max-w-2xl mx-auto px-4 text-center">
+          <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-green-500/15 text-3xl mb-6 mx-auto">
+            ✅
+          </div>
+          <p className="text-white font-semibold">{copy.unlocking}</p>
+        </div>
+      </section>
+    );
   }
 
   return (
@@ -130,6 +193,14 @@ export default function GlobalAccessGate({ onUnlocked }: GlobalAccessGateProps) 
         <div className="relative">
           <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-blue-500/25 via-transparent to-cyan-500/25 pointer-events-none" />
           <div className="relative rounded-2xl border border-white/10 bg-slate-900/80 backdrop-blur-xl p-8 shadow-2xl">
+
+            {/* Invalid token error */}
+            {verifyState === 'error' && (
+              <div className="mb-4 rounded-xl border border-red-400/20 bg-red-400/5 px-4 py-3 text-sm text-red-400">
+                {copy.verifyError}
+              </div>
+            )}
+
             {requested ? (
               <div className="text-center py-4">
                 <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/15 text-4xl">
