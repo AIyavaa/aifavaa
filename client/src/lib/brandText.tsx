@@ -3,9 +3,8 @@ import React from 'react';
 /**
  * Splits a string at every occurrence of "AIFavaa" and returns a React node
  * where each occurrence is rendered with brand-accurate styling:
- *   AI   → white bold
- *   y    → cyan/blue gradient
- *   avaa → white bold
+ *   AI    → white bold
+ *   favaa → cyan/blue gradient
  *
  * Usage:
  *   <p>{brandText('AIFavaa 是一个平台')}</p>
@@ -30,9 +29,8 @@ export function brandText(text: string): React.ReactNode {
                   backgroundClip: 'text',
                 }}
               >
-                y
+                Favaa
               </span>
-              <span className="text-white">avaa</span>
             </span>
           )}
         </React.Fragment>

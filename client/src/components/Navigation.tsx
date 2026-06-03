@@ -16,7 +16,7 @@ const navLinks = {
     { href: '#business', label: '06 商业' },
     { href: '#platform-modules', label: '07 我们是谁' },
     { href: '#team', label: '团队' },
-    { href: '#how-we-do-it', label: '08 怎么实现' },
+    { href: '#how-we-do-it', label: '09 怎么实现' },
   ],
   en: [
     { href: '#hero', label: 'Home' },
@@ -28,7 +28,7 @@ const navLinks = {
     { href: '#business', label: '06 Business' },
     { href: '#platform-modules', label: '07 Who We Are' },
     { href: '#team', label: 'Team' },
-    { href: '#how-we-do-it', label: '08 How We Do It' },
+    { href: '#how-we-do-it', label: '09 How We Do It' },
   ],
 };
 
