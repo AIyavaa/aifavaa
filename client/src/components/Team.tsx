@@ -6,7 +6,7 @@ const content = {
     badge: '08 / 创始团队',
     title: '核心创始团队',
     subtitle: 'Founding team with deep expertise',
-    desc: '七位创始人各具所长，覆盖战略、内容、运营、生态与技术，共同构建 AIyavaa 的核心竞争力。',
+    desc: '六位创始人各具所长，覆盖战略、内容、运营、生态与技术，共同构建 AIyavaa 的核心竞争力。',
     members: [
       {
         name: '张原天',
@@ -78,24 +78,14 @@ const content = {
           '构建全球合伙人体系与战略联盟',
         ],
       },
-      {
-        name: '康丽',
-        role: '联合创始人兼生态建设',
-        color: 'rose',
-        highlights: [
-          '擅长 AI 平台生态活动、全球资源链接与合伙人机制建设',
-          '统筹 AI 实验室、赛事活动与产业应用场景的 AI 融合落地',
-          '社群协同、用户信任体系构建与跨境生态连接，具备较强资源整合与组织推动能力',
-          '拥有多年教育产业、用户运营与跨境资源整合经验，持续探索 AI 时代用户生态增长与平台协同模型',
-        ],
-      },
+
     ],
   },
   en: {
     badge: '08 / Founding Team',
     title: 'Core Founding Team',
     subtitle: 'Founding team with deep expertise',
-    desc: 'Seven founders with complementary strengths covering strategy, content, operations, ecosystem and technology, collectively building AIyavaa\'s core competitive advantages.',
+    desc: "Six founders with complementary strengths covering strategy, content, operations, ecosystem and technology, collectively building AIyavaa's core competitive advantages.",
     members: [
       {
         name: 'Zhang Yuantian',
@@ -167,17 +157,7 @@ const content = {
           'Building global partner systems and strategic alliances',
         ],
       },
-      {
-        name: 'Kang Li',
-        role: 'Co-Founder & Ecosystem Development',
-        color: 'rose',
-        highlights: [
-          'Expertise in AI platform ecosystem events, global resource connections and partner mechanism design',
-          'Oversees AI Lab, competition events, and AI integration across industry application scenarios',
-          'Community synergy, user trust system building and cross-border ecosystem connectivity with strong resource integration capabilities',
-          'Years of experience in education industry, user operations and cross-border resource integration; continuously exploring AI-era user ecosystem growth and platform collaboration models',
-        ],
-      },
+
     ],
   },
 };
