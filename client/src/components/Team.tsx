@@ -85,7 +85,7 @@ const content = {
     badge: '08 / Founding Team',
     title: 'Core Founding Team',
     subtitle: 'Founding team with deep expertise',
-    desc: "Six founders with complementary strengths covering strategy, content, operations, ecosystem and technology, collectively building AIyavaa's core competitive advantages.",
+    desc: "Six founders with complementary strengths covering strategy, content, operations, ecosystem and technology, collectively building AIyavaa core competitive advantages.",
     members: [
       {
         name: 'Zhang Yuantian',

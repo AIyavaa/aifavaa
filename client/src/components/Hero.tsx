@@ -1,9 +1,19 @@
 import { useState, useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const DEMO_VIDEOS = [
-  'https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4',
-  'https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4',
+// Intent decomposition demo steps
+const INTENT_DEMO_ZH = [
+  { layer: '意图解构', label: '理解目标', desc: '创作一首融合古风与电子音乐的短视频背景曲', color: 'text-cyan-300', bg: 'bg-cyan-500/10 border-cyan-400/30' },
+  { layer: '路径匹配', label: '最优模型路由', desc: '调用音乐生成模型 × 视频合成模型 × 风格迁移引擎', color: 'text-blue-300', bg: 'bg-blue-500/10 border-blue-400/30' },
+  { layer: '资产生成', label: '5秒生成', desc: '输出可预览的音视频资产，无需登录', color: 'text-violet-300', bg: 'bg-violet-500/10 border-violet-400/30' },
+  { layer: '确权上链', label: '创作即确权', desc: '智能合约自动上链，建立唯一数字所有权', color: 'text-emerald-300', bg: 'bg-emerald-500/10 border-emerald-400/30' },
+];
+
+const INTENT_DEMO_EN = [
+  { layer: 'Intent Parsing', label: 'Understand Goal', desc: 'Create a short video BGM blending ancient Chinese style with electronic music', color: 'text-cyan-300', bg: 'bg-cyan-500/10 border-cyan-400/30' },
+  { layer: 'Path Routing', label: 'Best Model Match', desc: 'Routes to music generation × video synthesis × style transfer engine', color: 'text-blue-300', bg: 'bg-blue-500/10 border-blue-400/30' },
+  { layer: 'Asset Creation', label: '5-Second Output', desc: 'Preview-ready audio-visual asset — no login required', color: 'text-violet-300', bg: 'bg-violet-500/10 border-violet-400/30' },
+  { layer: 'On-Chain Ownership', label: 'Create = Own', desc: 'Smart contract auto-registers on-chain, establishing unique digital ownership', color: 'text-emerald-300', bg: 'bg-emerald-500/10 border-emerald-400/30' },
 ];
 
 export default function Hero() {
@@ -11,9 +21,11 @@ export default function Hero() {
   const [inputValue, setInputValue] = useState('');
   const [isListening, setIsListening] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [activeStep, setActiveStep] = useState<number | null>(null);
   const recognitionRef = useRef<any>(null);
 
   const zh = language === 'zh';
+  const INTENT_DEMO = zh ? INTENT_DEMO_ZH : INTENT_DEMO_EN;
 
   const handleVoice = () => {
     if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
@@ -44,106 +56,63 @@ export default function Hero() {
   const handleGenerate = () => {
     if (!inputValue.trim()) return;
     setIsGenerating(true);
-    setTimeout(() => setIsGenerating(false), 3000);
+    setActiveStep(0);
+    const interval = setInterval(() => {
+      setActiveStep(prev => {
+        if (prev === null || prev >= INTENT_DEMO.length - 1) {
+          clearInterval(interval);
+          setIsGenerating(false);
+          return INTENT_DEMO.length - 1;
+        }
+        return prev + 1;
+      });
+    }, 700);
   };
-
-  const steps = zh ? [
-    { num: '01', label: '输入需求', desc: '文字或语音，平台理解目标与风格。' },
-    { num: '02', label: '最优路径匹配', desc: '自动调用全网模型、工具与数据。' },
-    { num: '03', label: '5秒生成', desc: '无需登录，先获得可预览结果。' },
-    { num: '04', label: '修改 / 发布', desc: '自然语言修改，发布时进入注册与收益设置。' },
-  ] : [
-    { num: '01', label: 'Input Your Idea', desc: 'Text or voice — the platform understands your goal and style.' },
-    { num: '02', label: 'Best Path Matching', desc: 'Auto-routes through the best global models, tools and data.' },
-    { num: '03', label: '5-Second Generation', desc: 'No login needed — get a previewable result instantly.' },
-    { num: '04', label: 'Edit / Publish', desc: 'Natural language edits; register and set up monetization at publish.' },
-  ];
 
   return (
     <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Video Background Strip - Top */}
-      <div className="absolute inset-x-0 top-0 h-[28%] overflow-hidden pointer-events-none z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/40 to-slate-950 z-10" />
-        <video
-          autoPlay muted loop playsInline
-          className="w-full h-full object-cover opacity-50"
-          src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4"
-        />
-        {/* AI video cards overlay */}
-        <div className="absolute inset-0 z-20 flex items-center gap-3 px-4 overflow-hidden">
-          {[
-            { label: zh ? '城市夜景 · 科技感' : 'City Night · Tech Vibe', time: '0:05' },
-            { label: zh ? '创意工作室 · 动态' : 'Creative Studio · Motion', time: '0:05' },
-            { label: zh ? '品牌广告 · 极简' : 'Brand Ad · Minimal', time: '0:05' },
-            { label: zh ? '互动剧情 · 沉浸' : 'Interactive Story · Immersive', time: '0:05' },
-          ].map((v, i) => (
-            <div key={i} className="flex-shrink-0 w-28 sm:w-36 h-16 sm:h-20 rounded-xl border border-white/20 bg-black/40 backdrop-blur-sm flex flex-col justify-end p-2 overflow-hidden relative">
-              <div className="absolute top-1.5 right-1.5 bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">LIVE</div>
-              <div className="text-white text-[10px] font-semibold leading-tight truncate">{v.label}</div>
-              <div className="text-slate-400 text-[9px]">{v.time}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Video Background Strip - Bottom */}
-      <div className="absolute inset-x-0 bottom-0 h-[22%] overflow-hidden pointer-events-none z-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/40 to-slate-950 z-10" />
-        <video
-          autoPlay muted loop playsInline
-          className="w-full h-full object-cover opacity-40"
-          src="https://videos.pexels.com/video-files/4625472/4625472-uhd_2560_1440_25fps.mp4"
-        />
-        <div className="absolute inset-0 z-20 flex items-center gap-3 px-4 overflow-hidden">
-          {[
-            { label: zh ? '美食探店 · 4K' : 'Food Discovery · 4K', time: '0:05' },
-            { label: zh ? '旅行 Vlog · 航拍' : 'Travel Vlog · Aerial', time: '0:05' },
-            { label: zh ? '科技评测 · 专业' : 'Tech Review · Pro', time: '0:05' },
-            { label: zh ? '音乐 MV · 创意' : 'Music MV · Creative', time: '0:05' },
-          ].map((v, i) => (
-            <div key={i} className="flex-shrink-0 w-28 sm:w-36 h-16 sm:h-20 rounded-xl border border-white/20 bg-black/40 backdrop-blur-sm flex flex-col justify-end p-2 overflow-hidden relative">
-              <div className="absolute top-1.5 right-1.5 bg-cyan-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">AI</div>
-              <div className="text-white text-[10px] font-semibold leading-tight truncate">{v.label}</div>
-              <div className="text-slate-400 text-[9px]">{v.time}</div>
-            </div>
-          ))}
-        </div>
+      {/* Background glow */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px]" />
+        <div className="absolute top-1/3 left-1/4 w-[400px] h-[300px] bg-blue-500/6 rounded-full blur-[100px]" />
+        <div className="absolute top-1/3 right-1/4 w-[400px] h-[300px] bg-violet-500/6 rounded-full blur-[100px]" />
       </div>
 
       {/* Center Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 w-full max-w-3xl mx-auto py-32">
+      <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 w-full max-w-4xl mx-auto py-24 sm:py-32">
+
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-cyan-200 bg-cyan-500/10 border border-cyan-400/20 backdrop-blur-sm mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-          <span>{zh ? '全网首发 · AI 原生视频内容平台' : 'World First · AI-Native Video Content Platform'}</span>
+          <span>{zh ? '全球首个 AI 万能操作系统' : 'World\'s First AI Universal Operating System'}</span>
         </div>
 
         {/* Main Title */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white mb-3">
-          {zh ? (
-            <>AI<span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">yavaa</span></>
-          ) : (
-            <>AI<span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">yavaa</span></>
-          )}
+          AI<span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">yavaa</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl font-semibold text-slate-300 mb-8">
-          {zh ? '开启 AGI 新纪元' : 'Entering the AGI New Era'}
+        <p className="text-base sm:text-lg font-semibold text-slate-300 mb-2">
+          {zh ? 'AI Universal OS · 一句话，驱动一切数字生产力' : 'AI Universal OS · One sentence drives all digital productivity'}
+        </p>
+        <p className="text-sm text-slate-400 mb-8 max-w-xl">
+          {zh
+            ? '基于智能意图解构引擎（IDE），将 AI 创作、数字资产确权、全球市场交易与智能财富管理融为一体。'
+            : 'Powered by the Intelligent Intent Decomposition Engine (IDE) — unifying AI creation, digital asset ownership, global marketplace trading, and intelligent wealth management.'}
         </p>
 
         {/* Input Box */}
-        <div className="w-full max-w-2xl mb-6">
-          <div className="relative flex items-center bg-white/8 border border-white/20 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/10 focus-within:border-cyan-400/50 transition-all">
+        <div className="w-full max-w-2xl mb-8">
+          <div className="relative flex items-center bg-white/8 border border-white/20 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl shadow-cyan-500/10 focus-within:border-cyan-400/50 transition-all">
             <input
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleGenerate()}
-              placeholder={zh ? '描述你想要的视频，AI 帮你生成 5 秒精彩...' : 'Describe your video idea, AI generates a 5-second clip...'}
+              placeholder={zh ? '输入你想要创作的任何内容，AI 智能意图解构引擎为你匹配最优路径...' : 'Enter anything you want to create — the IDE engine routes the optimal path...'}
               className="flex-1 bg-transparent text-white placeholder-slate-500 px-5 py-4 text-sm sm:text-base outline-none"
             />
-            {/* Voice Button */}
             <button
               onClick={handleVoice}
               className={`flex-shrink-0 mx-1 p-3 rounded-xl transition-all ${
@@ -157,45 +126,77 @@ export default function Hero() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
               </svg>
             </button>
-            {/* Generate Button */}
             <button
               onClick={handleGenerate}
               disabled={isGenerating || !inputValue.trim()}
               className="flex-shrink-0 mx-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-bold hover:from-cyan-400 hover:to-blue-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-cyan-500/20"
             >
               {isGenerating
-                ? (zh ? '生成中...' : 'Generating...')
-                : (zh ? '生成视频' : 'Generate')}
+                ? (zh ? '解构中...' : 'Processing...')
+                : (zh ? '立即创作' : 'Create Now')}
             </button>
           </div>
           <p className="text-xs text-slate-500 mt-2 text-center">
             {zh
-              ? '无需登录即可生成 · 调用全网最优 AI 路径 · 5 秒视频即时呈现'
-              : 'No login required · Best AI path matching · 5-second video instantly'}
+              ? '先体验，再注册 · 发布时进入确权与收益系统'
+              : 'Experience first, register later · Enter ownership & earnings system at publish'}
           </p>
         </div>
 
-        {/* Steps: From Idea to Publish */}
+        {/* Intent Decomposition Demo */}
         <div className="w-full max-w-3xl">
-          <div className="flex items-start gap-1 sm:gap-2 justify-center flex-wrap sm:flex-nowrap">
-            {steps.map((s, i) => (
-              <div key={i} className="flex items-start gap-1 sm:gap-2 min-w-0">
-                <div className="flex flex-col items-center min-w-[72px] sm:min-w-[100px] bg-white/6 border border-white/12 rounded-2xl px-3 py-3 text-left">
-                  <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">{s.num}</span>
-                  <span className="text-xs sm:text-sm font-black text-white leading-tight mb-1">{s.label}</span>
-                  <span className="text-[10px] sm:text-xs text-slate-400 leading-snug">{s.desc}</span>
-                </div>
-                {i < steps.length - 1 && (
-                  <div className="flex items-center pt-6 flex-shrink-0">
-                    <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                  </div>
+          <div className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3 text-center">
+            {zh ? '智能意图解构引擎 (IDE) 交互演示' : 'Intelligent Intent Decomposition Engine (IDE) Demo'}
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+            {INTENT_DEMO.map((step, i) => (
+              <div
+                key={i}
+                className={`relative border rounded-xl p-3 text-left transition-all duration-500 ${step.bg} ${
+                  activeStep !== null && i <= activeStep
+                    ? 'opacity-100 scale-100'
+                    : activeStep !== null
+                    ? 'opacity-30 scale-95'
+                    : 'opacity-70 hover:opacity-90'
+                }`}
+              >
+                {activeStep !== null && i <= activeStep && (
+                  <div className="absolute top-2 right-2 w-2 h-2 rounded-full bg-current animate-pulse" style={{ color: 'inherit' }} />
                 )}
+                <div className={`text-[10px] font-black uppercase tracking-widest mb-1 ${step.color}`}>{step.layer}</div>
+                <div className="text-xs font-bold text-white mb-1">{step.label}</div>
+                <div className="text-[10px] text-slate-400 leading-snug">{step.desc}</div>
               </div>
             ))}
           </div>
-          <p className="text-xs text-slate-500 mt-3 text-center">
-            {zh ? '先体验，再注册。用户只在发布、修改、商业化时进入账号与权益系统。' : 'Experience first, register later. Users only enter the account & rights system when publishing, editing, or monetizing.'}
-          </p>
+          {activeStep === INTENT_DEMO.length - 1 && (
+            <div className="mt-4 text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-bold">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                {zh ? '创作完成 · 资产已确权上链 · 可交易 · 可增值' : 'Created · Asset On-Chain · Ready to Trade · Ready to Earn'}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Bottom stats */}
+        <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-2xl">
+          {(zh ? [
+            { value: '92.4%', label: '智能意图识别率' },
+            { value: '<150ms', label: '四层解构单层时延' },
+            { value: '100%', label: '数字资产链上确权' },
+            { value: '10x', label: '数字财富增值效能' },
+          ] : [
+            { value: '92.4%', label: 'Intent Recognition Rate' },
+            { value: '<150ms', label: 'Per-Layer Decomposition Latency' },
+            { value: '100%', label: 'On-Chain Asset Ownership' },
+            { value: '10x', label: 'Digital Wealth Multiplier' },
+          ]).map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="text-xl sm:text-2xl font-black text-white">{stat.value}</div>
+              <div className="text-[10px] sm:text-xs text-slate-400 mt-0.5">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
