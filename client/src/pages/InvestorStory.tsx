@@ -6,7 +6,6 @@ import Architecture from '@/components/Architecture';
 import Competition from '@/components/Competition';
 import WhoUses from '@/components/WhoUses';
 import BusinessModel from '@/components/BusinessModel';
-import PremiumProducts from '@/components/PremiumProducts';
 import PlatformModules from '@/components/PlatformModules';
 import Team from '@/components/Team';
 import HowWeDoIt from '@/components/HowWeDoIt';
@@ -50,13 +49,11 @@ export default function InvestorStory() {
           <WhoUses />
           {/* 06 商业模式 */}
           <BusinessModel />
-          {/* 07 我们是谁 */}
-          <PremiumProducts />
-          {/* 08 平台产品 - 六大核心模块 */}
+          {/* 07 我们是谁 - 六大核心业务模块 */}
           <PlatformModules />
           {/* 创始团队 */}
           <Team />
-          {/* 09 怎么实现 - 合伙人分级/赛事/确权/增值 */}
+          {/* 08 怎么实现 - 合伙人分级/赛事/确权/增值 */}
           <HowWeDoIt />
         </main>
         <Footer />

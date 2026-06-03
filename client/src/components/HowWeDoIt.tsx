@@ -157,7 +157,7 @@ export default function HowWeDoIt() {
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <div className="mb-12 lg:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-cyan-200 bg-cyan-500/10 border border-cyan-400/20 backdrop-blur-sm mb-6">
-            <span>{zh ? '09 / 怎么实现' : '09 / How We Do It'}</span>
+            <span>{zh ? '08 / 怎么实现' : '08 / How We Do It'}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4 max-w-3xl">
             {zh ? '怎么实现' : 'How We Do It'}

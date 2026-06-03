@@ -4,8 +4,8 @@ import { brandText } from '@/lib/brandText';
 
 const content = {
   zh: {
-    badge: '08 / 平台产品',
-    title: '六大核心产品模块',
+    badge: '07 / 我们是谁',
+    title: '六大核心业务模块',
     subtitle: 'AI Universal OS — 一句话，驱动一切数字生产力',
     desc: 'AIyavaa 不是单一工具，而是一个完整的 AI 操作系统生态——从创作到确权，从交易到财富管理，六大模块形成不可分割的闭环。',
     modules: [
@@ -104,8 +104,8 @@ const content = {
     closingDesc: 'AIyavaa 最终形成完整的 AI 生态闭环：创造 → 确权 → 交易 → 财富管理 → 收益',
   },
   en: {
-    badge: '08 / Platform Products',
-    title: 'Six Core Product Modules',
+    badge: '07 / Who We Are',
+    title: 'Six Core Business Modules',
     subtitle: 'AI Universal OS — One sentence drives all digital productivity',
     desc: 'AIyavaa is not a single tool, but a complete AI operating system ecosystem — from creation to ownership, from trading to wealth management, six modules form an inseparable closed loop.',
     modules: [

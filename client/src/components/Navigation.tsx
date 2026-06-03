@@ -14,10 +14,9 @@ const navLinks = {
     { href: '#competition', label: '04 竞争' },
     { href: '#who-uses', label: '05 谁在用' },
     { href: '#business', label: '06 商业' },
-    { href: '#premium', label: '07 我们是谁' },
-    { href: '#platform-modules', label: '08 平台产品' },
+    { href: '#platform-modules', label: '07 我们是谁' },
     { href: '#team', label: '团队' },
-    { href: '#how-we-do-it', label: '09 怎么实现' },
+    { href: '#how-we-do-it', label: '08 怎么实现' },
   ],
   en: [
     { href: '#hero', label: 'Home' },
@@ -27,10 +26,9 @@ const navLinks = {
     { href: '#competition', label: '04 Competition' },
     { href: '#who-uses', label: '05 Who Uses' },
     { href: '#business', label: '06 Business' },
-    { href: '#premium', label: '07 About Us' },
-    { href: '#platform-modules', label: '08 Platform' },
+    { href: '#platform-modules', label: '07 Who We Are' },
     { href: '#team', label: 'Team' },
-    { href: '#how-we-do-it', label: '09 How We Do It' },
+    { href: '#how-we-do-it', label: '08 How We Do It' },
   ],
 };
 
