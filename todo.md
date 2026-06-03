@@ -16,3 +16,11 @@
 - [x] 新增 09 怎么实现（合伙人模式）板块
 - [x] 添加 Logo 展示区块（品牌不同颜色logo图）
 - [x] 整理页面顺序和导航锚点
+
+## 解锁门控功能
+
+- [x] 创建 SectionLock 门控组件（模糊遮罩 + 解锁提示 + 联系我们按钮）
+- [x] 创建 useSectionAccess hook，管理各板块的解锁状态（localStorage 持久化）
+- [x] 在 server/routers.ts 添加 requestAccess 接口，发送解锁申请通知给 owner
+- [x] 将门控应用到 03 架构、05 谁在用、06 商业模式、07 我们是谁、09 怎么实现 五个板块
+- [x] 支持中英双语的解锁提示文案

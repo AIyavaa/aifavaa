@@ -10,6 +10,7 @@ import PlatformModules from '@/components/PlatformModules';
 import Team from '@/components/Team';
 import HowWeDoIt from '@/components/HowWeDoIt';
 import Footer from '@/components/Footer';
+import SectionLock from '@/components/SectionLock';
 
 export default function InvestorStory() {
   return (
@@ -41,20 +42,30 @@ export default function InvestorStory() {
           <Market />
           {/* 02 核心痛点 - 创造/确权/交易/增值四维 */}
           <PainMap />
-          {/* 03 平台架构 - 四层架构 + AI生态闭环 */}
-          <Architecture />
+          {/* 03 平台架构 - 需要解锁 */}
+          <SectionLock sectionId="architecture">
+            <Architecture />
+          </SectionLock>
           {/* 04 竞争分析 - AIFavaa独有优势可视化 */}
           <Competition />
-          {/* 05 谁在用 */}
-          <WhoUses />
-          {/* 06 商业模式 */}
-          <BusinessModel />
-          {/* 07 我们是谁 - 六大核心业务模块 */}
-          <PlatformModules />
+          {/* 05 谁在用 - 需要解锁 */}
+          <SectionLock sectionId="who-uses">
+            <WhoUses />
+          </SectionLock>
+          {/* 06 商业模式 - 需要解锁 */}
+          <SectionLock sectionId="business">
+            <BusinessModel />
+          </SectionLock>
+          {/* 07 我们是谁 - 需要解锁 */}
+          <SectionLock sectionId="platform-modules">
+            <PlatformModules />
+          </SectionLock>
           {/* 创始团队 */}
           <Team />
-          {/* 08 怎么实现 - 合伙人分级/赛事/确权/增值 */}
-          <HowWeDoIt />
+          {/* 09 怎么实现 - 需要解锁 */}
+          <SectionLock sectionId="how-we-do-it">
+            <HowWeDoIt />
+          </SectionLock>
         </main>
         <Footer />
       </div>

@@ -22,6 +22,24 @@ export const appRouter = router({
     }),
   }),
 
+  access: router({
+    // Request access to a locked section
+    request: publicProcedure
+      .input(z.object({
+        sectionId: z.string().min(1).max(64),
+        name: z.string().min(1).max(128),
+        email: z.string().email().max(320),
+        company: z.string().max(256).optional(),
+      }))
+      .mutation(async ({ input }) => {
+        await notifyOwner({
+          title: `🔓 解锁申请：${input.sectionId} — ${input.name}`,
+          content: `板块：${input.sectionId}\n姓名：${input.name}\n邮箱：${input.email}\n公司：${input.company ?? 'N/A'}\n\n请登录管理端审核并决定是否授权。`,
+        });
+        return { success: true };
+      }),
+  }),
+
   consultation: router({
     // Submit a new consultation form
     submit: publicProcedure
