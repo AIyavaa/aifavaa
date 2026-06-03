@@ -6,9 +6,9 @@ import Architecture from '@/components/Architecture';
 import Competition from '@/components/Competition';
 import WhoUses from '@/components/WhoUses';
 import BusinessModel from '@/components/BusinessModel';
-import Roadmap from '@/components/Roadmap';
-import Team from '@/components/Team';
 import PremiumProducts from '@/components/PremiumProducts';
+import PlatformModules from '@/components/PlatformModules';
+import Team from '@/components/Team';
 import HowWeDoIt from '@/components/HowWeDoIt';
 import Footer from '@/components/Footer';
 
@@ -36,28 +36,28 @@ export default function InvestorStory() {
       <div className="relative z-10">
         <Navigation />
         <main className="pt-16 sm:pt-16">
-          {/* 01 Hero - AI 输入框 + 平台标语 */}
+          {/* 首页 - AI 万能操作系统 + 智能意图交互演示 */}
           <Hero />
-          {/* 02 市场机会 */}
+          {/* 01 市场机会 - 四位一体市场数据 */}
           <Market />
-          {/* 03 痛点地图 */}
+          {/* 02 核心痛点 - 创造/确权/交易/增值四维 */}
           <PainMap />
-          {/* 04 平台架构 */}
+          {/* 03 平台架构 - 四层架构 + AI生态闭环 */}
           <Architecture />
-          {/* 05 竞争分析 */}
+          {/* 04 竞争分析 - AIyavaa独有优势可视化 */}
           <Competition />
-          {/* 06 谁在用 */}
+          {/* 05 谁在用 */}
           <WhoUses />
-          {/* 07 商业模式 */}
+          {/* 06 商业模式 */}
           <BusinessModel />
-          {/* 08 发展路径 */}
-          <Roadmap />
-          {/* 09 我们是谁（产品+合伙人） */}
+          {/* 07 我们是谁 */}
           <PremiumProducts />
-          {/* 10 怎么实现（合伙人模式详解） */}
-          <HowWeDoIt />
+          {/* 08 平台产品 - 六大核心模块 */}
+          <PlatformModules />
           {/* 创始团队 */}
           <Team />
+          {/* 09 怎么实现 - 合伙人分级/赛事/确权/增值 */}
+          <HowWeDoIt />
         </main>
         <Footer />
       </div>
