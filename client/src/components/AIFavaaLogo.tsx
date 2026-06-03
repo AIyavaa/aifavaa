@@ -1,6 +1,6 @@
 /**
  * AIFavaa Brand Logo Component
- * Official visual identity: AI mark (geometric A triangle + I bar) | YAVAA wordmark
+ * Official visual identity: AI mark (geometric A triangle + I bar) | FAVAA wordmark
  * Dark variant: white logo on dark background (default for this site)
  * Light variant: dark logo on light background
  */
@@ -25,7 +25,7 @@ export default function AIFavaaLogo({ variant = 'dark', size = 'md', className =
   const dividerColor = variant === 'light' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.35)';
 
   // SVG viewBox: 160 wide x 44 tall
-  // AI mark occupies left ~56px, divider ~8px, YAVAA wordmark ~96px
+  // AI mark occupies left ~56px, divider ~8px, FAVAA wordmark ~96px
   return (
     <svg
       width={s.width}
@@ -88,7 +88,7 @@ export default function AIFavaaLogo({ variant = 'dark', size = 'md', className =
         strokeLinecap="round"
       />
 
-      {/* ── YAVAA Wordmark ───────────────────────────────── */}
+      {/* ── FAVAA Wordmark ───────────────────────────────── */}
       <text
         x="68"
         y="32"
@@ -101,7 +101,7 @@ export default function AIFavaaLogo({ variant = 'dark', size = 'md', className =
         textAnchor="start"
         style={{ textTransform: 'uppercase' }}
       >
-        YAVAA
+        FAVAA
       </text>
     </svg>
   );
