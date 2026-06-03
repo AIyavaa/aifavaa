@@ -1,6 +1,15 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { brandText } from '@/lib/brandText';
 
+const TEAM_PHOTOS: Record<string, string> = {
+  '张原天': '/manus-storage/zhang_yuantian_processed_e1823d92.png',
+  '尹璐': '/manus-storage/yin_lu_processed_54f567f7.png',
+  '黄涛': '/manus-storage/huang_tao_processed_57f0aaa2.png',
+  '丁玉琴': '/manus-storage/ding_yuchen_processed_448bae58.png',
+  '庄珩': '/manus-storage/zhuang_heng_processed_132b3234.png',
+  '张泽国': '/manus-storage/zhang_zeguo_processed_d89601ef.png',
+};
+
 const content = {
   zh: {
     badge: '08 / 创始团队',
@@ -195,16 +204,23 @@ export default function Team() {
             const c = colorMap[member.color] || colorMap.blue;
             return (
               <div key={i} className={`bg-gradient-to-br ${c.bg} border ${c.border} backdrop-blur-xl rounded-2xl p-6`}>
-                {/* Photo placeholder */}
-                <div className="flex items-start gap-4 mb-4">
-                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 border-2 ${c.border} bg-white/5 overflow-hidden`}>
-                    {/* Photo slot — replace src with actual photo URL when available */}
-                    <div className="w-full h-full flex flex-col items-center justify-center gap-0.5">
-                      <svg className="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-                      <span className="text-[9px] text-slate-600 font-medium">Photo</span>
-                    </div>
+                {/* Member photo and info */}
+                <div className="mb-4">
+                  <div className={`w-full aspect-[3/4] rounded-xl overflow-hidden border ${c.border} bg-white/5 mb-3`}>
+                    {TEAM_PHOTOS[member.name] ? (
+                      <img
+                        src={TEAM_PHOTOS[member.name]}
+                        alt={member.name}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex flex-col items-center justify-center gap-1">
+                        <svg className="w-10 h-10 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <span className="text-xs text-slate-600 font-medium">Photo</span>
+                      </div>
+                    )}
                   </div>
                   <div>
                     <h3 className="text-lg font-black text-white">{member.name}</h3>
