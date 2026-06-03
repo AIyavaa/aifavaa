@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Market from '@/components/Market';
@@ -10,9 +11,21 @@ import PlatformModules from '@/components/PlatformModules';
 import Team from '@/components/Team';
 import HowWeDoIt from '@/components/HowWeDoIt';
 import Footer from '@/components/Footer';
-import SectionLock from '@/components/SectionLock';
+import GlobalAccessGate from '@/components/GlobalAccessGate';
+
+const GLOBAL_UNLOCK_KEY = 'aifavaa_global_unlocked';
+
+function isGloballyUnlocked(): boolean {
+  try {
+    return localStorage.getItem(GLOBAL_UNLOCK_KEY) === 'true';
+  } catch {
+    return false;
+  }
+}
 
 export default function InvestorStory() {
+  const [unlocked, setUnlocked] = useState(() => isGloballyUnlocked());
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       {/* Grid background overlay */}
@@ -42,30 +55,26 @@ export default function InvestorStory() {
           <Market />
           {/* 02 核心痛点 - 创造/确权/交易/增值四维 */}
           <PainMap />
-          {/* 03 平台架构 - 需要解锁 */}
-          <SectionLock sectionId="architecture">
-            <Architecture />
-          </SectionLock>
-          {/* 04 竞争分析 - AIFavaa独有优势可视化 */}
-          <Competition />
-          {/* 05 谁在用 - 需要解锁 */}
-          <SectionLock sectionId="who-uses">
-            <WhoUses />
-          </SectionLock>
-          {/* 06 商业模式 - 需要解锁 */}
-          <SectionLock sectionId="business">
-            <BusinessModel />
-          </SectionLock>
-          {/* 07 我们是谁 - 需要解锁 */}
-          <SectionLock sectionId="platform-modules">
-            <PlatformModules />
-          </SectionLock>
-          {/* 创始团队 */}
-          <Team />
-          {/* 09 怎么实现 - 需要解锁 */}
-          <SectionLock sectionId="how-we-do-it">
-            <HowWeDoIt />
-          </SectionLock>
+
+          {/* ── 需要解锁的板块（03~09）── */}
+          {unlocked ? (
+            <>
+              <Architecture />
+              <Competition />
+              <WhoUses />
+              <BusinessModel />
+              <PlatformModules />
+              <Team />
+              <HowWeDoIt />
+            </>
+          ) : (
+            <>
+              {/* 单一全站申请入口，替代所有锁定板块 */}
+              <GlobalAccessGate onUnlocked={() => setUnlocked(true)} />
+              {/* 创始团队始终可见 */}
+              <Team />
+            </>
+          )}
         </main>
         <Footer />
       </div>
