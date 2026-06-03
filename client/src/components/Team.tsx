@@ -10,7 +10,7 @@ const content = {
     members: [
       {
         name: '张原天',
-        role: '董事及主席 · 首席架构师',
+        role: '创始人兼主席 · 首席架构师',
         color: 'gold',
         highlights: [
           '新加坡鸿德集团董事长，多国硕博学位，二十余年全球投资与商业实战',
@@ -20,7 +20,7 @@ const content = {
         ],
       },
       {
-        name: '尹璐 EVA',
+        name: '尹璐',
         role: '创始人兼 CEO · 首席架构师',
         color: 'blue',
         highlights: [
@@ -35,8 +35,8 @@ const content = {
         ],
       },
       {
-        name: '涛哥',
-        role: '联合创始人 · 战略合伙人',
+        name: '黄涛',
+        role: '联合创始人兼 CSO',
         color: 'cyan',
         highlights: [
           '前腾讯战略部"泛娱乐+IP"概念首度普及者，定义行业框架的前瞻视野',
@@ -46,7 +46,7 @@ const content = {
         ],
       },
       {
-        name: '老丁',
+        name: '丁玉琴',
         role: '联合创始人兼 CIO（首席内容与生态官）',
         color: 'teal',
         highlights: [
@@ -57,8 +57,8 @@ const content = {
         ],
       },
       {
-        name: 'Johnson',
-        role: '联合创始人兼 COO',
+        name: '庄珩',
+        role: '联合创始人兼 CPO',
         color: 'purple',
         highlights: [
           'Shopee 核心业务经历，高速增长平台复杂运营实战经验',
@@ -68,8 +68,8 @@ const content = {
         ],
       },
       {
-        name: 'David',
-        role: '联合创始人兼全球运营',
+        name: '张泽国',
+        role: '联合创始人兼 COO',
         color: 'green',
         highlights: [
           '深耕全球市场运营与跨境生态拓展',
@@ -89,7 +89,7 @@ const content = {
     members: [
       {
         name: 'Zhang Yuantian',
-        role: 'Chairman & Chief Architect',
+        role: 'Founder & Chairman · Chief Architect',
         color: 'gold',
         highlights: [
           'Chairman of Singapore Hongde Group, multi-country master and doctoral degrees, 20+ years of global investment and business',
@@ -99,7 +99,7 @@ const content = {
         ],
       },
       {
-        name: 'Eva Yin',
+        name: 'Yin Lu',
         role: 'Founder & CEO · Chief Architect',
         color: 'blue',
         highlights: [
@@ -114,8 +114,8 @@ const content = {
         ],
       },
       {
-        name: 'Tao Ge',
-        role: 'Co-Founder & Strategic Partner',
+        name: 'Huang Tao',
+        role: 'Co-Founder & CSO',
         color: 'cyan',
         highlights: [
           'Former Tencent Strategy Division — first to popularize the "Pan-Entertainment + IP" concept, defining the industry framework',
@@ -125,7 +125,7 @@ const content = {
         ],
       },
       {
-        name: 'Lao Ding',
+        name: 'Ding Yuqin',
         role: 'Co-Founder & CIO (Chief Content & Ecosystem Officer)',
         color: 'teal',
         highlights: [
@@ -136,8 +136,8 @@ const content = {
         ],
       },
       {
-        name: 'Johnson',
-        role: 'Co-Founder & COO',
+        name: 'Zhuang Heng',
+        role: 'Co-Founder & CPO',
         color: 'purple',
         highlights: [
           'Core business experience at Shopee, hands-on management of complex operations on high-growth platforms',
@@ -147,8 +147,8 @@ const content = {
         ],
       },
       {
-        name: 'David',
-        role: 'Co-Founder & Global Operations',
+        name: 'Zhang Zeguo',
+        role: 'Co-Founder & COO',
         color: 'green',
         highlights: [
           'Deep expertise in global market operations and cross-border ecosystem expansion',
