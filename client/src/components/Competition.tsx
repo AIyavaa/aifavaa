@@ -4,9 +4,9 @@ import BrandName from '@/components/BrandName';
 const content = {
   zh: {
     badge: '04 / 竞争分析',
-    title: 'AIyavaa 的独有优势：AI + Wealth + RWA',
+    title: 'AIFavaa 的独有优势：AI + Wealth + RWA',
     subtitle: 'Not a model. Not a design tool. Not a labor marketplace.',
-    desc: 'OpenAI 卖模型，Canva 卖设计，Fiverr 卖劳动力。AIyavaa 卖的是：创造和交易以及管理财富的机会——这是一条从未有人走通的完整闭环。',
+    desc: 'OpenAI 卖模型，Canva 卖设计，Fiverr 卖劳动力。AIFavaa 卖的是：创造和交易以及管理财富的机会——这是一条从未有人走通的完整闭环。',
     tableHeader: '能力维度',
     categories: [
       'AI内容创作能力',
@@ -19,11 +19,11 @@ const content = {
       '完整生态闭环',
     ],
     diff: {
-      title: 'AIyavaa 独有定位：AI + Wealth + RWA 完整资产闭环',
+      title: 'AIFavaa 独有定位：AI + Wealth + RWA 完整资产闭环',
       items: [
-        { title: '✓ 不是模型提供商', desc: 'OpenAI 和 Anthropic 卖模型能力。AIyavaa 是调用所有模型的操作系统——模型是原材料，AIyavaa 是工厂。' },
-        { title: '✓ 不是设计工具', desc: 'Canva 卖设计模板。AIyavaa 让任何人通过一句话创作任何数字内容，并将创作物确权为可交易资产。' },
-        { title: '✓ 不是劳动力市场', desc: 'Fiverr 卖人工服务。AIyavaa 用 AI 替代劳动力，同时建立创作者与品牌之间的智能撮合与分润机制。' },
+        { title: '✓ 不是模型提供商', desc: 'OpenAI 和 Anthropic 卖模型能力。AIFavaa 是调用所有模型的操作系统——模型是原材料，AIFavaa 是工厂。' },
+        { title: '✓ 不是设计工具', desc: 'Canva 卖设计模板。AIFavaa 让任何人通过一句话创作任何数字内容，并将创作物确权为可交易资产。' },
+        { title: '✓ 不是劳动力市场', desc: 'Fiverr 卖人工服务。AIFavaa 用 AI 替代劳动力，同时建立创作者与品牌之间的智能撮合与分润机制。' },
         { title: '✓ 是 AI 时代的资产操作系统', desc: 'AI发现资产 → AI生成资产 → AI分析资产 → AI确权资产 → AI发行资产 → AI交易资产 → AI管理资产。这是一条完整闭环。' },
       ],
     },
@@ -43,9 +43,9 @@ const content = {
   },
   en: {
     badge: '04 / Competition Analysis',
-    title: "AIyavaa's Unique Advantage: AI + Wealth + RWA",
+    title: "AIFavaa's Unique Advantage: AI + Wealth + RWA",
     subtitle: 'Not a model. Not a design tool. Not a labor marketplace.',
-    desc: 'OpenAI sells models. Canva sells design. Fiverr sells labor. AIyavaa sells: the opportunity to create, trade, and manage wealth — a complete loop that no one has ever built.',
+    desc: 'OpenAI sells models. Canva sells design. Fiverr sells labor. AIFavaa sells: the opportunity to create, trade, and manage wealth — a complete loop that no one has ever built.',
     tableHeader: 'Capability Dimension',
     categories: [
       'AI Content Creation',
@@ -58,11 +58,11 @@ const content = {
       'Complete Ecosystem Loop',
     ],
     diff: {
-      title: "AIyavaa's Unique Position: AI + Wealth + RWA Complete Asset Loop",
+      title: "AIFavaa's Unique Position: AI + Wealth + RWA Complete Asset Loop",
       items: [
-        { title: '✓ Not a model provider', desc: 'OpenAI and Anthropic sell model capabilities. AIyavaa is the OS that calls all models — models are raw materials, AIyavaa is the factory.' },
-        { title: '✓ Not a design tool', desc: 'Canva sells design templates. AIyavaa lets anyone create any digital content with one sentence and registers creations as tradeable assets.' },
-        { title: '✓ Not a labor marketplace', desc: 'Fiverr sells human services. AIyavaa replaces labor with AI while building intelligent matching and profit-sharing between creators and brands.' },
+        { title: '✓ Not a model provider', desc: 'OpenAI and Anthropic sell model capabilities. AIFavaa is the OS that calls all models — models are raw materials, AIFavaa is the factory.' },
+        { title: '✓ Not a design tool', desc: 'Canva sells design templates. AIFavaa lets anyone create any digital content with one sentence and registers creations as tradeable assets.' },
+        { title: '✓ Not a labor marketplace', desc: 'Fiverr sells human services. AIFavaa replaces labor with AI while building intelligent matching and profit-sharing between creators and brands.' },
         { title: '✓ The AI-era asset operating system', desc: 'AI Discover → AI Generate → AI Analyze → AI Register → AI Issue → AI Trade → AI Manage. This is a complete, irreplicable loop.' },
       ],
     },
@@ -84,7 +84,7 @@ const content = {
 
 // score: 0=none, 1=weak, 2=medium, 3=strong
 const competitors = [
-  { name: 'AIyavaa', create: 3, ownership: 3, trading: 3, wealth: 3, rwa: 3, alternative: 3, partner: 3, loop: 3, highlight: true },
+  { name: 'AIFavaa', create: 3, ownership: 3, trading: 3, wealth: 3, rwa: 3, alternative: 3, partner: 3, loop: 3, highlight: true },
   { name: 'OpenAI', create: 3, ownership: 0, trading: 0, wealth: 0, rwa: 0, alternative: 0, partner: 0, loop: 0 },
   { name: 'Canva', create: 2, ownership: 0, trading: 1, wealth: 0, rwa: 0, alternative: 0, partner: 0, loop: 0 },
   { name: 'Fiverr', create: 0, ownership: 0, trading: 2, wealth: 0, rwa: 0, alternative: 0, partner: 1, loop: 0 },

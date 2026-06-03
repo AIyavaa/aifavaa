@@ -44,7 +44,7 @@ function createAdminContext(): TrpcContext {
     user: {
       id: 1,
       openId: "admin-user",
-      email: "admin@aiyavaa.com",
+      email: "admin@aifavaa.com",
       name: "Admin User",
       loginMethod: "manus",
       role: "admin",

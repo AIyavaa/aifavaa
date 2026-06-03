@@ -6,8 +6,8 @@ const content = {
   zh: {
     badge: '06 / 商业模式',
     title: '多元商业闭环：创造、确权、交易、增值',
-    subtitle: 'AI Marketplace · AI Asset Chain · AIyavaa Wealth OS',
-    desc: 'AIyavaa 同时具备内容平台、AI资产确权网络、全球交易市场和财富管理操作系统四重属性，收入来源多元，形成不可复制的商业闭环。',
+    subtitle: 'AI Marketplace · AI Asset Chain · AIFavaa Wealth OS',
+    desc: 'AIFavaa 同时具备内容平台、AI资产确权网络、全球交易市场和财富管理操作系统四重属性，收入来源多元，形成不可复制的商业闭环。',
     tabs: [
       {
         id: 'marketplace',
@@ -34,7 +34,7 @@ const content = {
         desc: '中立、不站边的AI资产确权标准体系，类似食品行业的欧盟认证——定义标准、收取认证费、参与收益分配',
         streams: [
           { label: '确权认证费', desc: '创作者为AI资产申请链上确权，按资产类型收取认证费' },
-          { label: '标准授权费', desc: '各AI领域使用AIyavaa确权标准，收取标准授权费' },
+          { label: '标准授权费', desc: '各AI领域使用AIFavaa确权标准，收取标准授权费' },
           { label: '收益分配抽成', desc: '确权资产每次交易，Asset Chain自动抽取固定比例' },
           { label: 'RWA代币化服务', desc: '真实世界资产上链代币化，收取发行与管理服务费' },
         ],
@@ -47,7 +47,7 @@ const content = {
         id: 'wealthos',
         label: 'Wealth OS',
         icon: '💰',
-        title: 'AIyavaa Wealth OS：全球AI财富管理',
+        title: 'AIFavaa Wealth OS：全球AI财富管理',
         desc: '为高净值客户提供AI驱动的全资产管理平台，覆盖传统资产、AI资产、RWA与另类资产的统一管理与增值',
         streams: [
           { label: '资产管理费（AUM）', desc: '按管理资产规模收取年费，目标AUM 10亿美元以上' },
@@ -80,7 +80,7 @@ const content = {
     ],
     altAssets: {
       title: '另类资产中心：市场几乎空白的万亿赛道',
-      desc: '目前几乎没有全球统一的确权、估值、交易和流通平台。以下资产均可在 AIyavaa 确权和交易，打造成可分润、可证券化、可RWA的产品：',
+      desc: '目前几乎没有全球统一的确权、估值、交易和流通平台。以下资产均可在 AIFavaa 确权和交易，打造成可分润、可证券化、可RWA的产品：',
       categories: [
         { label: '私募股权', items: ['未上市公司股份', '私人市场股权（PE）'] },
         { label: '会员网络资产', items: ['企业家会员网络', '医生/律师会员', '家族办公室会员'] },
@@ -94,8 +94,8 @@ const content = {
   en: {
     badge: '06 / Business Model',
     title: 'Multi-Revenue Loop: Create, Own, Trade, Earn',
-    subtitle: 'AI Marketplace · AI Asset Chain · AIyavaa Wealth OS',
-    desc: 'AIyavaa simultaneously operates as a content platform, AI asset ownership network, global trading market, and wealth management OS — multiple revenue streams forming an irreplicable business loop.',
+    subtitle: 'AI Marketplace · AI Asset Chain · AIFavaa Wealth OS',
+    desc: 'AIFavaa simultaneously operates as a content platform, AI asset ownership network, global trading market, and wealth management OS — multiple revenue streams forming an irreplicable business loop.',
     tabs: [
       {
         id: 'marketplace',
@@ -122,7 +122,7 @@ const content = {
         desc: 'A neutral, non-partisan AI asset ownership standard system — similar to EU certification in the food industry: define standards, charge certification fees, participate in revenue distribution',
         streams: [
           { label: 'Ownership Certification Fee', desc: 'Creators apply for on-chain ownership registration for AI assets, charged by asset type' },
-          { label: 'Standard Licensing Fee', desc: 'AI domain players using AIyavaa ownership standards pay standard licensing fees' },
+          { label: 'Standard Licensing Fee', desc: 'AI domain players using AIFavaa ownership standards pay standard licensing fees' },
           { label: 'Transaction Revenue Share', desc: 'Each trade of a registered asset automatically triggers a fixed percentage to Asset Chain' },
           { label: 'RWA Tokenization Service', desc: 'Real-world asset on-chain tokenization: issuance and management service fees' },
         ],
@@ -135,7 +135,7 @@ const content = {
         id: 'wealthos',
         label: 'Wealth OS',
         icon: '💰',
-        title: 'AIyavaa Wealth OS: Global AI Wealth Management',
+        title: 'AIFavaa Wealth OS: Global AI Wealth Management',
         desc: 'Provides HNW clients with an AI-driven total asset management platform covering unified management and appreciation of traditional, AI, RWA, and alternative assets',
         streams: [
           { label: 'AUM Management Fee', desc: 'Annual fee based on assets under management, targeting AUM of $1B+' },
@@ -168,7 +168,7 @@ const content = {
     ],
     altAssets: {
       title: 'Alternative Asset Hub: A Trillion-Dollar Market With Almost No Competition',
-      desc: 'There is currently almost no global unified platform for ownership registration, valuation, trading, and circulation. All of the following assets can be registered and traded on AIyavaa, creating profit-sharing, securitizable, RWA-ready products:',
+      desc: 'There is currently almost no global unified platform for ownership registration, valuation, trading, and circulation. All of the following assets can be registered and traded on AIFavaa, creating profit-sharing, securitizable, RWA-ready products:',
       categories: [
         { label: 'Private Equity', items: ['Unlisted company shares', 'Private market equity (PE)'] },
         { label: 'Membership Network Assets', items: ['Entrepreneur member networks', 'Doctor/Lawyer memberships', 'Family office memberships'] },

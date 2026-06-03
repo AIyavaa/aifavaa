@@ -6,7 +6,7 @@ const content = {
     badge: '08 / 创始团队',
     title: '核心创始团队',
     subtitle: 'Founding team with deep expertise',
-    desc: '六位创始人各具所长，覆盖战略、内容、运营、生态与技术，共同构建 AIyavaa 的核心竞争力。',
+    desc: '六位创始人各具所长，覆盖战略、内容、运营、生态与技术，共同构建 AIFavaa 的核心竞争力。',
     members: [
       {
         name: '张原天',
@@ -30,7 +30,7 @@ const content = {
           '融合新加坡战略视野、东南亚在地化洞察与中国互联网方法论',
           '平台底层架构与技术路线设计',
           '多模型调度与 AI 原生视频生产链路搭建',
-          '推动 AIyavaa 技术体系从原型走向规模化',
+          '推动 AIFavaa 技术体系从原型走向规模化',
           '将前沿 AI 能力转化为可落地的产品体验',
         ],
       },
@@ -42,7 +42,7 @@ const content = {
           '前腾讯战略部"泛娱乐+IP"概念首度普及者，定义行业框架的前瞻视野',
           '360 操盘年利润 10 亿级业务，兼具产业深度与商业化能力',
           '2023 年底开始人工智能投资与战略设计',
-          '为 AIyavaa 提供战略定位、产业资源与 AI 时代商业架构支撑',
+          '为 AIFavaa 提供战略定位、产业资源与 AI 时代商业架构支撑',
         ],
       },
       {
@@ -64,7 +64,7 @@ const content = {
           'Shopee 核心业务经历，高速增长平台复杂运营实战经验',
           '好莱坞短剧投资人，对短视频内容趋势与用户付费心智有超前认知',
           '对 IP 孵化拥有丰富资源',
-          '为 AIyavaa 切入 AI 短剧赛道提供即时加速力',
+          '为 AIFavaa 切入 AI 短剧赛道提供即时加速力',
         ],
       },
       {
@@ -74,7 +74,7 @@ const content = {
         highlights: [
           '深耕全球市场运营与跨境生态拓展',
           '连接东南亚、欧美、中东等多区域资源网络',
-          '推动 AIyavaa 品牌在全球市场的本地化落地',
+          '推动 AIFavaa 品牌在全球市场的本地化落地',
           '构建全球合伙人体系与战略联盟',
         ],
       },
@@ -85,7 +85,7 @@ const content = {
     badge: '08 / Founding Team',
     title: 'Core Founding Team',
     subtitle: 'Founding team with deep expertise',
-    desc: "Six founders with complementary strengths covering strategy, content, operations, ecosystem and technology, collectively building AIyavaa core competitive advantages.",
+    desc: "Six founders with complementary strengths covering strategy, content, operations, ecosystem and technology, collectively building AIFavaa core competitive advantages.",
     members: [
       {
         name: 'Zhang Yuantian',
@@ -109,7 +109,7 @@ const content = {
           'Integrates Singapore strategic vision, SEA localization insights, and China internet methodology',
           'Platform underlying architecture and technical roadmap design',
           'Multi-model scheduling and AI-native video production pipeline',
-          'Driving AIyavaa\'s tech stack from prototype to scale',
+          'Driving AIFavaa\'s tech stack from prototype to scale',
           'Translating cutting-edge AI capabilities into deployable product experiences',
         ],
       },
@@ -121,7 +121,7 @@ const content = {
           'Former Tencent Strategy Division — first to popularize the "Pan-Entertainment + IP" concept, defining the industry framework',
           'Led 360 business units generating over RMB 1 billion in annual profit, combining deep industry expertise with commercialization capability',
           'Began AI investment and strategic design in late 2023',
-          'Provides strategic positioning, industry resources, and AI-era business architecture for AIyavaa',
+          'Provides strategic positioning, industry resources, and AI-era business architecture for AIFavaa',
         ],
       },
       {
@@ -143,7 +143,7 @@ const content = {
           'Core business experience at Shopee, hands-on management of complex operations on high-growth platforms',
           'Hollywood short drama investor with forward-thinking insights on short video trends and user payment psychology',
           'Rich resources in IP incubation',
-          'Provides immediate acceleration for AIyavaa\'s entry into the AI short drama track',
+          'Provides immediate acceleration for AIFavaa\'s entry into the AI short drama track',
         ],
       },
       {
@@ -153,7 +153,7 @@ const content = {
         highlights: [
           'Deep expertise in global market operations and cross-border ecosystem expansion',
           'Connecting resource networks across Southeast Asia, Europe, Americas, and Middle East',
-          'Driving AIyavaa brand localization across global markets',
+          'Driving AIFavaa brand localization across global markets',
           'Building global partner systems and strategic alliances',
         ],
       },

@@ -165,8 +165,8 @@ export default function HowWeDoIt() {
           </h2>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl">
             {brandText(zh
-              ? '听到这件事，你就成为了合伙人。每一个人都是 AIyavaa 生态的共建者与受益者。'
-              : 'The moment you hear about this, you become a partner. Everyone is a co-builder and co-beneficiary of the AIyavaa ecosystem.')}
+              ? '听到这件事，你就成为了合伙人。每一个人都是 AIFavaa 生态的共建者与受益者。'
+              : 'The moment you hear about this, you become a partner. Everyone is a co-builder and co-beneficiary of the AIFavaa ecosystem.')}
           </p>
         </div>
 
@@ -327,13 +327,13 @@ export default function HowWeDoIt() {
               </div>
               <div className="space-y-2.5">
                 {(zh ? [
-                  { step: '01', text: '在 AIyavaa 一键生成 AI 视频内容' },
+                  { step: '01', text: '在 AIFavaa 一键生成 AI 视频内容' },
                   { step: '02', text: '一键分发至抖音、YouTube、TikTok、小红书等全平台' },
-                  { step: '03', text: '流量回流 AIyavaa，形成闭环增长网络' },
+                  { step: '03', text: '流量回流 AIFavaa，形成闭环增长网络' },
                 ] : [
-                  { step: '01', text: 'Generate AI video content with one click on AIyavaa' },
+                  { step: '01', text: 'Generate AI video content with one click on AIFavaa' },
                   { step: '02', text: 'One-click distribution to Douyin, YouTube, TikTok, Xiaohongshu and more' },
-                  { step: '03', text: 'Traffic flows back to AIyavaa, forming a closed-loop growth network' },
+                  { step: '03', text: 'Traffic flows back to AIFavaa, forming a closed-loop growth network' },
                 ]).map((item, i) => (
                   <div key={i} className="flex gap-3 items-start">
                     <span className="text-[10px] font-black text-cyan-400 bg-cyan-500/15 border border-cyan-400/25 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">{item.step}</span>

@@ -1,5 +1,5 @@
 /**
- * BrandName — renders "AIyavaa" with brand-accurate styling:
+ * BrandName — renders "AIFavaa" with brand-accurate styling:
  *   AI   → white, bold
  *   y    → cyan/blue gradient highlight
  *   avaa → white, bold

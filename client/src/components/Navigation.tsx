@@ -3,7 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Link } from 'wouter';
 import { Menu, X } from 'lucide-react';
-import AIyavaaLogo from './AIyavaaLogo';
+import AIFavaaLogo from './AIFavaaLogo';
 
 const navLinks = {
   zh: [
@@ -53,7 +53,7 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
           {/* Logo */}
           <a href="#hero" className="flex items-center" onClick={handleLinkClick}>
-            <AIyavaaLogo variant="dark" size="sm" />
+            <AIFavaaLogo variant="dark" size="sm" />
           </a>
 
           {/* Desktop nav links */}

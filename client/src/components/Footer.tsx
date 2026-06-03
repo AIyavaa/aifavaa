@@ -1,5 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import AIyavaaLogo from './AIyavaaLogo';
+import AIFavaaLogo from './AIFavaaLogo';
 import { brandText } from '@/lib/brandText';
 
 const content = {
@@ -7,13 +7,13 @@ const content = {
     tagline: '全球首个 AI 万能操作系统',
     learnMore: '了解更多',
     contactUs: '联系我们',
-    copyright: '© 2025 AIyavaa. 保留所有权利。',
+    copyright: '© 2025 AIFavaa. 保留所有权利。',
   },
   en: {
     tagline: "World's First AI Universal Operating System",
     learnMore: 'Learn More',
     contactUs: 'Contact Us',
-    copyright: '© 2025 AIyavaa. All rights reserved.',
+    copyright: '© 2025 AIFavaa. All rights reserved.',
   },
 };
 
@@ -30,7 +30,7 @@ export default function Footer() {
         {/* Logo + tagline */}
         <div className="flex flex-col items-center text-center mb-10">
           <div className="mb-4">
-            <AIyavaaLogo variant="dark" size="sm" />
+            <AIFavaaLogo variant="dark" size="sm" />
           </div>
           <p className="text-sm text-slate-400">{brandText(T.tagline)}</p>
         </div>
@@ -56,7 +56,7 @@ export default function Footer() {
           <span>evaforwork@163.com</span>
           <span>WeChat: Yyyyylyll99</span>
           <span>WhatsApp: +65 93463156</span>
-          <span>www.aiyavaa.com</span>
+          <span>www.aifavaa.com</span>
         </div>
 
         {/* Bottom bar */}

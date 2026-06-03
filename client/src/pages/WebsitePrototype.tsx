@@ -21,14 +21,14 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import AIyavaaLogo from "@/components/AIyavaaLogo";
+import AIFavaaLogo from "@/components/AIFavaaLogo";
 import { brandText } from '@/lib/brandText';
 
 // ─── i18n ────────────────────────────────────────────────────────────────────
 
 const t = {
   zh: {
-    brand: "AIyavaa",
+    brand: "AIFavaa",
     brandSub: "网站原型",
     nav: {
       home: "首页",
@@ -42,12 +42,12 @@ const t = {
       eyebrow: "AI 视频生态平台",
       h1: "想法即现实",
       h1sub: "人人都是 AIGC 视频创作者",
-      desc: "AIyavaa，帮你把想法变成作品，把作品变成价值。",
-      cta1: "进入 AIyavaa",
+      desc: "AIFavaa，帮你把想法变成作品，把作品变成价值。",
+      cta1: "进入 AIFavaa",
       cta2: "查看平台",
       narrativeEyebrow: "首页主叙事",
       narrativeTitle: "平台是底座，内容是抓手，社群是飞轮。",
-      narrativeDesc: "官网不是说明书，而是一条被设计过的理解路径：先让人认同你，再理解你，最后进入属于自己的 AIyavaa。",
+      narrativeDesc: "官网不是说明书，而是一条被设计过的理解路径：先让人认同你，再理解你，最后进入属于自己的 AIFavaa。",
       signalsEyebrow: "首页关键信息",
       signals: [
         ["平台身份", "创作、交易、交付与规则平台"],
@@ -69,13 +69,13 @@ const t = {
     },
     platform: {
       eyebrow: "平台",
-      title: "AIyavaa 是 AI 视频时代的创作、交易、交付与规则平台。",
+      title: "AIFavaa 是 AI 视频时代的创作、交易、交付与规则平台。",
       desc: "连接用户、创作者、品牌与合作伙伴，让 AI 视频从能生成走向能成交、能交付、能持续进化。",
       cta1: "查看创作者入口",
       cta2: "了解更多",
       bandEyebrow: "三中心 + 三中台",
       bandTitle: "平台不是工具集合，而是行业组织系统。",
-      bandDesc: "三中心负责人与交易关系，三中台负责能力与秩序。两者结合，AIyavaa 才会从工具层升级为平台层。",
+      bandDesc: "三中心负责人与交易关系，三中台负责能力与秩序。两者结合，AIFavaa 才会从工具层升级为平台层。",
       centers: "三中心",
       midPlatforms: "三中台",
       centerItems: [
@@ -99,7 +99,7 @@ const t = {
     users: {
       eyebrow: "用户",
       title: "发现更适合你的 AI 视频世界",
-      desc: "看你想看的，发现更懂你的内容。基于兴趣标签与观看偏好，AIyavaa 帮你找到更适合你的 AI 视频，也让你参与改编、互动与共创。",
+      desc: "看你想看的，发现更懂你的内容。基于兴趣标签与观看偏好，AIFavaa 帮你找到更适合你的 AI 视频，也让你参与改编、互动与共创。",
       feedEyebrow: "AI 视频内容流",
       feedTitle: "各类 AI 内容视频，按你的兴趣被重新组织。",
       feedDesc: "不是无差别内容流，而是基于风格、题材、人物、情绪、品牌偏好与观看路径形成的个性化 AI 视频世界。",
@@ -157,8 +157,8 @@ const t = {
     investors: {
       eyebrow: "投资人",
       title: "看见当下价值，也看见未来路径",
-      desc: "从平台架构、生态布局到资产沉淀，了解 AIyavaa 的长期价值。这里看到的不是某个工具，而是一个会持续长大的平台生态。",
-      currentEyebrow: "当前 AIyavaa",
+      desc: "从平台架构、生态布局到资产沉淀，了解 AIFavaa 的长期价值。这里看到的不是某个工具，而是一个会持续长大的平台生态。",
+      currentEyebrow: "当前 AIFavaa",
       currentTitle: "先看平台结构，再看投资价值。",
       currentDesc: "应该先看平台架构与生态布局，再了解平台价值与未来扩张路径。",
       currentCards: [
@@ -185,10 +185,10 @@ const t = {
       ],
     },
     personas: {
-      users: { title: "用户", lead: "发现更适合你的 AI 视频世界", desc: "看你想看的，发现更懂你的内容。基于兴趣标签与观看偏好，AIyavaa 帮你找到更适合你的 AI 视频，也让你参与改编、互动与共创。", cta: "进入内容世界", chips: ["兴趣推荐", "热门短剧", "互动观看", "改编共创"] },
+      users: { title: "用户", lead: "发现更适合你的 AI 视频世界", desc: "看你想看的，发现更懂你的内容。基于兴趣标签与观看偏好，AIFavaa 帮你找到更适合你的 AI 视频，也让你参与改编、互动与共创。", cta: "进入内容世界", chips: ["兴趣推荐", "热门短剧", "互动观看", "改编共创"] },
       creators: { title: "创作者", lead: "表达自己，也连接市场", desc: "在这里创作、上架、接单、组队与合作，让表达不只停留在作品，也延伸到订单、关系与长期价值。", cta: "进入创作者中心", chips: ["创作工具", "作品上架", "商业订单", "组队协作"] },
       partners: { title: "生态合作伙伴", lead: "让能力被接入，让合作被发起", desc: "把你的模型、工具、合作方向、需求与创意提案接入平台，发起共创、组队与协作。不是申请合作，而是加入生态。", cta: "进入生态合作入口", chips: ["模型接入", "工具合作", "共创提案", "需求发布"] },
-      investors: { title: "合作伙伴", lead: "加入生态，共同成长", desc: "从平台架构、生态布局到资产沉淀，了解 AIyavaa 的长期价值。加入的不是某个工具，而是一个会持续长大的平台生态。", cta: "了解合作方式", chips: ["平台价值", "生态架构", "关键资产", "合作逻辑"] },
+      investors: { title: "合作伙伴", lead: "加入生态，共同成长", desc: "从平台架构、生态布局到资产沉淀，了解 AIFavaa 的长期价值。加入的不是某个工具，而是一个会持续长大的平台生态。", cta: "了解合作方式", chips: ["平台价值", "生态架构", "关键资产", "合作逻辑"] },
     },
     products: [
       { key: "drama", title: "AI 短剧生产工作台", desc: "结构诊断、中英双向原生化、分镜直出、爆款评分与标准化 SOP。", tags: ["剧本诊断", "原生改写", "分镜输出", "爆款评分"] },
@@ -198,7 +198,7 @@ const t = {
     ],
   },
   en: {
-    brand: "AIyavaa",
+    brand: "AIFavaa",
     brandSub: "Website Prototype",
     nav: {
       home: "Home",
@@ -212,12 +212,12 @@ const t = {
       eyebrow: "AI Video Ecosystem Platform",
       h1: "Imagination Made Real",
       h1sub: "Everyone is an AIGC video creator",
-      desc: "AIyavaa turns your ideas into works, and your works into value.",
-      cta1: "Enter AIyavaa",
+      desc: "AIFavaa turns your ideas into works, and your works into value.",
+      cta1: "Enter AIFavaa",
       cta2: "View Platform",
       narrativeEyebrow: "Home Narrative",
       narrativeTitle: "Platform is the foundation. Content is the hook. Community is the flywheel.",
-      narrativeDesc: "The website is not a manual — it's a designed path of understanding: first earn trust, then build comprehension, then guide each visitor into their own AIyavaa.",
+      narrativeDesc: "The website is not a manual — it's a designed path of understanding: first earn trust, then build comprehension, then guide each visitor into their own AIFavaa.",
       signalsEyebrow: "Key Signals",
       signals: [
         ["Platform Identity", "Creation, transaction, delivery & governance platform"],
@@ -225,7 +225,7 @@ const t = {
         ["Future Logic", "Not fixed features — evolves continuously around people"],
         ["Core Belief", "Turn ideas into works, and works into value"],
       ],
-      personaEyebrow: "Who is AIyavaa for?",
+      personaEyebrow: "Who is AIFavaa for?",
       personaTitle: "The platform serves four core roles.",
       productEyebrow: "Service Matrix",
       productTitle: "Four directions, each built around different scenarios and audiences.",
@@ -239,13 +239,13 @@ const t = {
     },
     platform: {
       eyebrow: "Platform",
-      title: "AIyavaa is the creation, transaction, delivery and governance platform for the AI video era.",
+      title: "AIFavaa is the creation, transaction, delivery and governance platform for the AI video era.",
       desc: "Connecting users, creators, brands and partners — moving AI video from 'can generate' to 'can transact, deliver and continuously evolve'.",
       cta1: "View Creator Portal",
       cta2: "Learn More",
       bandEyebrow: "Three Centers + Three Middle Platforms",
       bandTitle: "The platform is not a toolset — it is an industry organization system.",
-      bandDesc: "Three Centers manage people and transaction relationships. Three Middle Platforms manage capabilities and order. Together, AIyavaa upgrades from tool layer to platform layer.",
+      bandDesc: "Three Centers manage people and transaction relationships. Three Middle Platforms manage capabilities and order. Together, AIFavaa upgrades from tool layer to platform layer.",
       centers: "Three Centers",
       midPlatforms: "Three Middle Platforms",
       centerItems: [
@@ -269,7 +269,7 @@ const t = {
     users: {
       eyebrow: "Users",
       title: "Discover an AI Video World Shaped by Your Interests",
-      desc: "Watch what you want, discover content that truly understands you. Based on interest tags and viewing preferences, AIyavaa helps you find AI videos that fit you — and lets you participate in remixing, interaction and co-creation.",
+      desc: "Watch what you want, discover content that truly understands you. Based on interest tags and viewing preferences, AIFavaa helps you find AI videos that fit you — and lets you participate in remixing, interaction and co-creation.",
       feedEyebrow: "AI Video Feed",
       feedTitle: "All kinds of AI video content, reorganized around your interests.",
       feedDesc: "Not an undifferentiated content stream — a personalized AI video world built on style, genre, character, emotion, brand preference and viewing path.",
@@ -327,10 +327,10 @@ const t = {
     investors: {
       eyebrow: "Investors",
       title: "See Today's Value. See Tomorrow's Path.",
-      desc: "From platform logic and product matrix to asset accumulation — understand AIyavaa's long-term investability. What you see here is not a single product, but a platform that will keep growing.",
-      currentEyebrow: "Current AIyavaa",
+      desc: "From platform logic and product matrix to asset accumulation — understand AIFavaa's long-term investability. What you see here is not a single product, but a platform that will keep growing.",
+      currentEyebrow: "Current AIFavaa",
       currentTitle: "Understand the platform structure first, then the investment value.",
-      currentDesc: "The investor third-level page should not lead with features — it should first show the current AIyavaa website structure, platform value, product matrix and future expansion path.",
+      currentDesc: "The investor third-level page should not lead with features — it should first show the current AIFavaa website structure, platform value, product matrix and future expansion path.",
       currentCards: [
         ["Website Structure", "Home / Platform / Products / Solutions / Community / Investors", ["Structure", "Overview"]],
         ["Platform Value", "Creation, transaction, delivery, governance & long-term entry point", ["Platform", "Value"]],
@@ -355,10 +355,10 @@ const t = {
       ],
     },
     personas: {
-      users: { title: "Users", lead: "Discover an AI Video World Shaped by Your Interests", desc: "Watch what you want, discover content that truly understands you. AIyavaa helps you find AI videos that fit you — and lets you participate in remixing, interaction and co-creation.", cta: "Enter Content World", chips: ["Interest Recommendations", "Trending Dramas", "Interactive Viewing", "Remix & Co-create"] },
+      users: { title: "Users", lead: "Discover an AI Video World Shaped by Your Interests", desc: "Watch what you want, discover content that truly understands you. AIFavaa helps you find AI videos that fit you — and lets you participate in remixing, interaction and co-creation.", cta: "Enter Content World", chips: ["Interest Recommendations", "Trending Dramas", "Interactive Viewing", "Remix & Co-create"] },
       creators: { title: "Creators", lead: "Express Yourself. Connect with the Market.", desc: "Create, list, take orders, team up and collaborate here. Let your expression extend into orders, relationships and long-term value.", cta: "Enter Creator Center", chips: ["Creative Tools", "List Works", "Commercial Orders", "Team Collaboration"] },
       partners: { title: "Ecosystem Partners", lead: "Connect Capabilities. Launch Collaborations.", desc: "Integrate your models, tools, collaboration directions and proposals into the platform. Launch co-creation and collaboration. Join the ecosystem.", cta: "Enter Partnership Portal", chips: ["Model Integration", "Tool Partnership", "Co-creation Proposals", "Publish Demands"] },
-      investors: { title: "Partners", lead: "Join the Ecosystem. Grow Together.", desc: "From platform architecture and ecosystem layout to asset accumulation — understand AIyavaa's long-term value. Not joining a single tool, but a growing platform ecosystem.", cta: "Explore Partnership", chips: ["Platform Value", "Ecosystem Architecture", "Key Assets", "Partnership Logic"] },
+      investors: { title: "Partners", lead: "Join the Ecosystem. Grow Together.", desc: "From platform architecture and ecosystem layout to asset accumulation — understand AIFavaa's long-term value. Not joining a single tool, but a growing platform ecosystem.", cta: "Explore Partnership", chips: ["Platform Value", "Ecosystem Architecture", "Key Assets", "Partnership Logic"] },
     },
     products: [
       { key: "drama", title: "AI Short Drama Production Workbench", desc: "Structure diagnosis, bidirectional native localization, storyboard generation, viral scoring and standardized SOP.", tags: ["Script Diagnosis", "Native Rewriting", "Storyboard Output", "Viral Scoring"] },
@@ -449,7 +449,7 @@ function Header({ route, setRoute, lang }: { route: string; setRoute: (r: string
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
       <div className="mx-auto flex min-h-[74px] w-full max-w-[1440px] items-center justify-between gap-4 px-4 md:px-6 xl:px-8">
         <button onClick={() => setRoute("home")} className="flex items-center">
-          <AIyavaaLogo variant="dark" size="md" />
+          <AIFavaaLogo variant="dark" size="md" />
         </button>
 
         <nav className="hidden items-center gap-2 xl:flex">
@@ -857,7 +857,7 @@ function InvestorsPage({ lang }: { lang: Lang }) {
 
 // ─── Root ─────────────────────────────────────────────────────────────────────
 
-export default function AIyavaaWebsitePrototype() {
+export default function AIFavaaWebsitePrototype() {
   const [route, setRoute] = useState("home");
   const { language } = useLanguage();
   const lang = language as Lang;

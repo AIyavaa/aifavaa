@@ -47,8 +47,8 @@ export const translations = {
     architectureSubtitle: '平台 + 规则引擎 = 生态系统的核心竞争力',
 
     // Competition
-    competitionTitle: '竞争分析：为什么是 AIyavaa',
-    competitionSubtitle: '对标全球顶级平台，AIyavaa 的独特优势',
+    competitionTitle: '竞争分析：为什么是 AIFavaa',
+    competitionSubtitle: '对标全球顶级平台，AIFavaa 的独特优势',
 
     // Business Model
     businessTitle: '商业模式：四个收入来源',
@@ -84,9 +84,9 @@ export const translations = {
     globalResources: '跨界资源',
 
     // Consultation
-    consultationTitle: '加入 AIyavaa 投资者社群',
+    consultationTitle: '加入 AIFavaa 投资者社群',
     consultationSubtitle: "Let's build the AI video ecosystem together",
-    consultationDescription: '如果您对 AIyavaa 的投资机会感兴趣，或想了解更多关于平台的信息，请填写下方表单。我们的团队会在 24 小时内与您联系。',
+    consultationDescription: '如果您对 AIFavaa 的投资机会感兴趣，或想了解更多关于平台的信息，请填写下方表单。我们的团队会在 24 小时内与您联系。',
     name: '姓名',
     email: '邮箱',
     phone: '电话',
@@ -166,8 +166,8 @@ export const translations = {
     architectureSubtitle: 'Platform + Rule Engine = Core Competitiveness of Ecosystem',
 
     // Competition
-    competitionTitle: 'Competitive Analysis: Why AIyavaa',
-    competitionSubtitle: 'Benchmarking global top platforms, AIyavaa\'s unique advantages',
+    competitionTitle: 'Competitive Analysis: Why AIFavaa',
+    competitionSubtitle: 'Benchmarking global top platforms, AIFavaa\'s unique advantages',
 
     // Business Model
     businessTitle: 'Business Model: Four Revenue Streams',
@@ -203,9 +203,9 @@ export const translations = {
     globalResources: 'Global Resources',
 
     // Consultation
-    consultationTitle: 'Join AIyavaa Investor Community',
+    consultationTitle: 'Join AIFavaa Investor Community',
     consultationSubtitle: "Let's build the AI video ecosystem together",
-    consultationDescription: 'If you are interested in investment opportunities at AIyavaa or want to learn more about the platform, please fill out the form below. Our team will contact you within 24 hours.',
+    consultationDescription: 'If you are interested in investment opportunities at AIFavaa or want to learn more about the platform, please fill out the form below. Our team will contact you within 24 hours.',
     name: 'Name',
     email: 'Email',
     phone: 'Phone',

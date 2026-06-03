@@ -43,7 +43,7 @@ export default function InvestorStory() {
           <PainMap />
           {/* 03 平台架构 - 四层架构 + AI生态闭环 */}
           <Architecture />
-          {/* 04 竞争分析 - AIyavaa独有优势可视化 */}
+          {/* 04 竞争分析 - AIFavaa独有优势可视化 */}
           <Competition />
           {/* 05 谁在用 */}
           <WhoUses />

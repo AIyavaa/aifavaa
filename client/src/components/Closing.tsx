@@ -3,7 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const content = {
   zh: {
     badge: '11 / 投资论点',
-    title: '为什么是现在？为什么是 AIyavaa？',
+    title: '为什么是现在？为什么是 AIFavaa？',
     reasons: [
       { label: '市场时机', desc: 'AI 模型成熟、视频消费爆发、创作者供给增长、品牌预算迁移——四股力量同时汇聚。' },
       { label: '团队', desc: '创始人具备跨境创业经验、内容制作专业能力、高速增长平台运营经验与 AI 战略视野。' },
@@ -25,7 +25,7 @@ const content = {
   },
   en: {
     badge: '11 / Investment Thesis',
-    title: 'Why Now? Why AIyavaa?',
+    title: 'Why Now? Why AIFavaa?',
     reasons: [
       { label: 'Market Timing', desc: 'AI models are mature, video consumption is exploding, creator supply is growing, and brand budgets are migrating — all four forces are converging.' },
       { label: 'Team', desc: 'Founders with cross-border startup experience, content production expertise, high-growth platform operations, and AI strategy vision.' },

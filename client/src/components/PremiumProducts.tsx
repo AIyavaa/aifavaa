@@ -6,7 +6,7 @@ const content = {
     badge: '07 / 我们是谁',
     title: '我们是谁',
     subtitle: 'AI Universal OS — Six Core Modules',
-    desc: '我们是平台——全球首个 AI 万能操作系统。从创作到确权，从交易到财富管理，AIyavaa 打通 AI 时代的完整价值链。',
+    desc: '我们是平台——全球首个 AI 万能操作系统。从创作到确权，从交易到财富管理，AIFavaa 打通 AI 时代的完整价值链。',
     products: [
       {
         icon: '🎨',
@@ -48,7 +48,7 @@ const content = {
         icon: '🔐',
         title: 'AI Asset Registry + AI Deal Marketplace',
         benchmark: 'AI 资产确权中心 · 全球项目交易市场',
-        desc: '用户在任何平台用 AI 生成内容后，选择 AIyavaa 确权功能，自动生成时间戳、区块链登记、作者认证、收益追踪——这就是你在 AI 时代的全球资产。',
+        desc: '用户在任何平台用 AI 生成内容后，选择 AIFavaa 确权功能，自动生成时间戳、区块链登记、作者认证、收益追踪——这就是你在 AI 时代的全球资产。',
         features: [
           '支持：图片、视频、音乐、APP、游戏、小说等全类型 AI 资产',
           'AI 自动判定原创性，生成唯一确权证书',
@@ -58,9 +58,9 @@ const content = {
       },
       {
         icon: '🤖',
-        title: 'AI Agent Marketplace · AIyavaa 智能体市场',
+        title: 'AI Agent Marketplace · AIFavaa 智能体市场',
         benchmark: '对标：苹果 App Store',
-        desc: '类似苹果 App Store 的 AI 员工市场。未来每个商人都可以在 AIyavaa 拥有自己的 AI 员工团队，按需订阅，随时上岗。',
+        desc: '类似苹果 App Store 的 AI 员工市场。未来每个商人都可以在 AIFavaa 拥有自己的 AI 员工团队，按需订阅，随时上岗。',
         features: [
           '财务 AI · 法律 AI · HR AI · 营销 AI · 股票 AI',
           '教育培训 AI · 顾问 AI · 客服 AI · 数据分析 AI',
@@ -70,9 +70,9 @@ const content = {
       },
       {
         icon: '💰',
-        title: 'AIyavaa Wealth Copilot · AI 财富管理',
+        title: 'AIFavaa Wealth Copilot · AI 财富管理',
         benchmark: 'AI Wealth Brain · 全球首个 AI 财富管理操作系统',
-        desc: '打造 AI 时代的财富管理基础设施平台。AIyavaa Wealth OS 解决方案，让每个人都拥有私人级别的 AI 财富大脑。',
+        desc: '打造 AI 时代的财富管理基础设施平台。AIFavaa Wealth OS 解决方案，让每个人都拥有私人级别的 AI 财富大脑。',
         features: [
           '全球首个 AI Wealth Operating System（AI 财富管理操作系统）',
           'AI 财富大脑：资产全景、风险分析、收益预测、现金流管理',
@@ -86,7 +86,7 @@ const content = {
     badge: '07 / Who We Are',
     title: 'Who We Are',
     subtitle: 'AI Universal OS — Six Core Modules',
-    desc: 'We are the platform — the world\'s first AI Universal Operating System. From creation to ownership, from trading to wealth management, AIyavaa connects the complete value chain of the AI era.',
+    desc: 'We are the platform — the world\'s first AI Universal Operating System. From creation to ownership, from trading to wealth management, AIFavaa connects the complete value chain of the AI era.',
     products: [
       {
         icon: '🎨',
@@ -128,7 +128,7 @@ const content = {
         icon: '🔐',
         title: 'AI Asset Registry + AI Deal Marketplace',
         benchmark: 'AI Asset Ownership Center · Global Project Trading Market',
-        desc: 'After generating content with AI on any platform, select AIyavaa ownership — automatically generate timestamp, blockchain registration, author certification, revenue tracking. This is your global AI asset.',
+        desc: 'After generating content with AI on any platform, select AIFavaa ownership — automatically generate timestamp, blockchain registration, author certification, revenue tracking. This is your global AI asset.',
         features: [
           'Supports: images, videos, music, apps, games, novels and all AI asset types',
           'AI auto-verifies originality, generates unique ownership certificate',
@@ -140,7 +140,7 @@ const content = {
         icon: '🤖',
         title: 'AI Agent Marketplace',
         benchmark: 'vs. Apple App Store',
-        desc: 'An AI employee marketplace like Apple App Store. In the future, every business owner can have their own AI employee team on AIyavaa — subscribe on demand, deploy anytime.',
+        desc: 'An AI employee marketplace like Apple App Store. In the future, every business owner can have their own AI employee team on AIFavaa — subscribe on demand, deploy anytime.',
         features: [
           'Finance AI · Legal AI · HR AI · Marketing AI · Stock AI',
           'Education AI · Advisor AI · Customer Service AI · Data Analysis AI',
@@ -150,9 +150,9 @@ const content = {
       },
       {
         icon: '💰',
-        title: 'AIyavaa Wealth Copilot',
+        title: 'AIFavaa Wealth Copilot',
         benchmark: 'AI Wealth Brain · World\'s First AI Wealth Management OS',
-        desc: 'Building the wealth management infrastructure platform for the AI era. AIyavaa Wealth OS gives everyone access to private-level AI wealth intelligence.',
+        desc: 'Building the wealth management infrastructure platform for the AI era. AIFavaa Wealth OS gives everyone access to private-level AI wealth intelligence.',
         features: [
           "World's first AI Wealth Operating System (AI Wealth OS)",
           'AI Wealth Brain: asset panorama, risk analysis, return forecast, cash flow management',

@@ -5,7 +5,7 @@ const content = {
     badge: '03 / 系统架构',
     title: '四位一体架构：全球首个 AI 万能操作系统',
     subtitle: 'Create · Own · Trade · Earn — Complete AI Ecosystem',
-    desc: 'AIyavaa 不是单一工具，而是覆盖 AI 创作、数字资产确权、全球市场交易与智能财富管理的完整操作系统。四层架构形成不可复制的生态闭环。',
+    desc: 'AIFavaa 不是单一工具，而是覆盖 AI 创作、数字资产确权、全球市场交易与智能财富管理的完整操作系统。四层架构形成不可复制的生态闭环。',
     layers: [
       {
         num: '01',
@@ -50,7 +50,7 @@ const content = {
         num: '04',
         icon: '💰',
         tag: 'Earn',
-        title: 'AIyavaa Wealth OS',
+        title: 'AIFavaa Wealth OS',
         subtitle: '全球AI财富管理操作系统',
         desc: '为高净值客户提供AI驱动的全资产管理平台，覆盖传统资产、AI资产、RWA真实世界资产与另类资产的统一管理与增值。',
         features: ['AI资产全景视图与智能分析', 'RWA真实世界资产代币化', '另类资产中心（私募/IP/数字媒体）', 'AI客户经理效率10x提升'],
@@ -61,16 +61,16 @@ const content = {
       },
     ],
     loop: {
-      title: 'AIyavaa 完整 AI 生态闭环',
+      title: 'AIFavaa 完整 AI 生态闭环',
       steps: ['创造 Create', '确权 Own', '交易 Trade', '财富管理 Wealth Manage', '收益 Earn'],
-      desc: '五步完整闭环，形成不可复制的网络效应。每一步都在 AIyavaa 平台内完成，数据、资产、收益全程可追溯。',
+      desc: '五步完整闭环，形成不可复制的网络效应。每一步都在 AIFavaa 平台内完成，数据、资产、收益全程可追溯。',
     },
   },
   en: {
     badge: '03 / System Architecture',
     title: 'Four-in-One Architecture: The World\'s First AI Universal OS',
     subtitle: 'Create · Own · Trade · Earn — Complete AI Ecosystem',
-    desc: 'AIyavaa is not a single tool — it is a complete operating system covering AI creation, digital asset ownership, global marketplace trading, and intelligent wealth management. The four-layer architecture forms an irreplicable ecosystem loop.',
+    desc: 'AIFavaa is not a single tool — it is a complete operating system covering AI creation, digital asset ownership, global marketplace trading, and intelligent wealth management. The four-layer architecture forms an irreplicable ecosystem loop.',
     layers: [
       {
         num: '01',
@@ -115,7 +115,7 @@ const content = {
         num: '04',
         icon: '💰',
         tag: 'Earn',
-        title: 'AIyavaa Wealth OS',
+        title: 'AIFavaa Wealth OS',
         subtitle: 'Global AI Wealth Management OS',
         desc: 'Provides HNW clients with an AI-driven total asset management platform, covering unified management and appreciation of traditional assets, AI assets, RWA real-world assets, and alternative assets.',
         features: ['AI asset panoramic view and intelligent analysis', 'RWA real-world asset tokenization', 'Alternative Asset Hub (PE / IP / Digital Media)', 'AI relationship manager efficiency 10x improvement'],
@@ -126,9 +126,9 @@ const content = {
       },
     ],
     loop: {
-      title: 'AIyavaa Complete AI Ecosystem Loop',
+      title: 'AIFavaa Complete AI Ecosystem Loop',
       steps: ['Create', 'Own', 'Trade', 'Wealth Manage', 'Earn'],
-      desc: 'A complete five-step loop forming irreplicable network effects. Every step is completed within the AIyavaa platform — data, assets, and earnings are fully traceable throughout.',
+      desc: 'A complete five-step loop forming irreplicable network effects. Every step is completed within the AIFavaa platform — data, assets, and earnings are fully traceable throughout.',
     },
   },
 };

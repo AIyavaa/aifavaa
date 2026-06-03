@@ -1,11 +1,11 @@
 /**
- * AIyavaa Brand Logo Component
+ * AIFavaa Brand Logo Component
  * Official visual identity: AI mark (geometric A triangle + I bar) | YAVAA wordmark
  * Dark variant: white logo on dark background (default for this site)
  * Light variant: dark logo on light background
  */
 
-interface AIyavaaLogoProps {
+interface AIFavaaLogoProps {
   /** 'dark' = white logo on dark bg (default), 'light' = dark logo on light bg */
   variant?: 'dark' | 'light';
   /** Size scaling: 'sm' | 'md' | 'lg' */
@@ -13,7 +13,7 @@ interface AIyavaaLogoProps {
   className?: string;
 }
 
-export default function AIyavaaLogo({ variant = 'dark', size = 'md', className = '' }: AIyavaaLogoProps) {
+export default function AIFavaaLogo({ variant = 'dark', size = 'md', className = '' }: AIFavaaLogoProps) {
   const scales = {
     sm: { width: 96, height: 28, fontSize: 13, letterSpacing: '0.22em' },
     md: { width: 120, height: 34, fontSize: 16, letterSpacing: '0.22em' },
@@ -33,7 +33,7 @@ export default function AIyavaaLogo({ variant = 'dark', size = 'md', className =
       viewBox="0 0 160 44"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="AIyavaa"
+      aria-label="AIFavaa"
       className={`select-none ${className}`}
     >
       {/* ── AI Mark ─────────────────────────────────────── */}

@@ -5,7 +5,7 @@ const content = {
     badge: '01 / 市场机会',
     title: '四位一体：万亿美元的数字资产新纪元',
     subtitle: 'Create · Own · Trade · Earn — The New Digital Asset Era',
-    desc: 'AI 能力成熟、数字资产确权需求爆发、全球交易市场空白、财富管理数字化转型——四股力量同时出现，AIyavaa 是唯一覆盖全链条的平台。',
+    desc: 'AI 能力成熟、数字资产确权需求爆发、全球交易市场空白、财富管理数字化转型——四股力量同时出现，AIFavaa 是唯一覆盖全链条的平台。',
     opportunities: [
       {
         icon: '🎨',
@@ -53,16 +53,16 @@ const content = {
       },
     ],
     summary: {
-      title: '总结：AIyavaa 覆盖的市场总规模',
+      title: '总结：AIFavaa 覆盖的市场总规模',
       value: '$132T+',
-      desc: '从AI内容创作到数字资产确权，从全球交易市场到智能财富管理，AIyavaa 是唯一覆盖 Create → Own → Trade → Earn 完整链条的平台。',
+      desc: '从AI内容创作到数字资产确权，从全球交易市场到智能财富管理，AIFavaa 是唯一覆盖 Create → Own → Trade → Earn 完整链条的平台。',
     },
   },
   en: {
     badge: '01 / Market Opportunity',
     title: 'Four-in-One: The Trillion-Dollar Digital Asset New Era',
     subtitle: 'Create · Own · Trade · Earn — The New Digital Asset Era',
-    desc: 'AI capability maturity, digital asset ownership demand explosion, global trading market vacuum, and wealth management digital transformation — four forces converging simultaneously. AIyavaa is the only platform covering the full chain.',
+    desc: 'AI capability maturity, digital asset ownership demand explosion, global trading market vacuum, and wealth management digital transformation — four forces converging simultaneously. AIFavaa is the only platform covering the full chain.',
     opportunities: [
       {
         icon: '🎨',
@@ -110,9 +110,9 @@ const content = {
       },
     ],
     summary: {
-      title: 'Total Addressable Market for AIyavaa',
+      title: 'Total Addressable Market for AIFavaa',
       value: '$132T+',
-      desc: 'From AI content creation to digital asset ownership, from global trading markets to intelligent wealth management, AIyavaa is the only platform covering the complete Create → Own → Trade → Earn chain.',
+      desc: 'From AI content creation to digital asset ownership, from global trading markets to intelligent wealth management, AIFavaa is the only platform covering the complete Create → Own → Trade → Earn chain.',
     },
   },
 };

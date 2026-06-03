@@ -35,8 +35,8 @@ export default function LogoBrand() {
 
         <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/3 backdrop-blur-xl">
           <img
-            src="/manus-storage/aiyavaa-logo-variants_1dcb0626.png"
-            alt="AIyavaa Brand Logo Variants"
+            src="/manus-storage/aifavaa-logo-variants_1dcb0626.png"
+            alt="AIFavaa Brand Logo Variants"
             className="w-full h-auto object-contain"
           />
         </div>
