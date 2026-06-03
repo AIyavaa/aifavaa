@@ -5,13 +5,13 @@ const content = {
     badge: '品牌标识',
     title: '品牌视觉系统',
     subtitle: 'Brand Identity System',
-    desc: 'AI 独立标识，象征智能与未来；YAVAA 承载品牌名，简洁、国际化、易识别。黑白金三色体系，适配全球多元场景。',
+    desc: 'AI 独立标识，象征智能与未来；FAVAA 承载品牌名，简洁、国际化、易识别。黑白金三色体系，适配全球多元场景。',
   },
   en: {
     badge: 'Brand Identity',
     title: 'Brand Visual System',
     subtitle: 'Brand Identity System',
-    desc: 'The AI mark stands alone as a symbol of intelligence and the future. YAVAA carries the brand name — clean, international, and instantly recognizable. A black, white, and gold color system adapts to diverse global contexts.',
+    desc: 'The AI mark stands alone as a symbol of intelligence and the future. FAVAA carries the brand name — clean, international, and instantly recognizable. A black, white, and gold color system adapts to diverse global contexts.',
   },
 };
 
