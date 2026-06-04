@@ -30,7 +30,7 @@ const content = {
       },
       {
         name: '尹璐',
-        role: '创始人兼 CEO · 首席架构师',
+        role: '创始人兼 CEO',
         color: 'blue',
         highlights: [
           '跨文化创业者，管理咨询背景',
