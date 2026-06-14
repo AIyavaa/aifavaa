@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AIspacehub 内部执行 SOP 版｜未来 AI 投资家挑战赛</title>
+  <style>
+:root{
+  --bg:#f6f7fb;
+  --panel:#ffffff;
+  --ink:#1f2937;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --brand:#223A5E;
+  --brand2:#3567A8;
+  --accent:#D6A84F;
+  --soft:#EEF4FF;
+  --green:#0F766E;
+  --red:#B42318;
+  --orange:#B45309;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+}
+.hero{
+  background:linear-gradient(135deg,#13213A 0%,#223A5E 45%,#3567A8 100%);
+  color:#fff;
+  padding:56px 7vw 42px;
+}
+.hero .eyebrow{
+  color:#F3D890;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:13px;
+}
+.hero h1{
+  margin:12px 0 14px;
+  font-size:38px;
+  line-height:1.2;
+  max-width:1180px;
+}
+.hero p{
+  max-width:1080px;
+  color:#E5ECF8;
+  font-size:17px;
+}
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:22px;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  border:1px solid rgba(255,255,255,.28);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  border-radius:999px;
+  padding:7px 12px;
+  font-size:13px;
+}
+.nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  padding:10px 7vw;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.nav a{
+  text-decoration:none;
+  color:var(--brand);
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:13px;
+  font-weight:600;
+}
+.nav a:hover{background:var(--soft)}
+main{padding:30px 7vw 70px}
+section{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:28px;
+  margin:22px 0;
+  box-shadow:0 10px 30px rgba(15,23,42,.04);
+}
+h2{
+  margin:0 0 16px;
+  color:var(--brand);
+  font-size:26px;
+  line-height:1.35;
+}
+h3{
+  margin:22px 0 12px;
+  color:#26364f;
+  font-size:19px;
+}
+h4{margin:16px 0 8px;color:#374151}
+.lead{font-size:18px;color:#374151}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:16px;
+}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+}
+.card.soft{background:var(--soft)}
+.card.gold{background:#FFFBEB;border-color:#F4D58D}
+.card.green{background:#ECFDF5;border-color:#A7F3D0}
+.card.red{background:#FEF3F2;border-color:#FECACA}
+.card h3,.card h4{margin-top:0}
+.span-3{grid-column:span 3}
+.span-4{grid-column:span 4}
+.span-5{grid-column:span 5}
+.span-6{grid-column:span 6}
+.span-7{grid-column:span 7}
+.span-8{grid-column:span 8}
+.span-12{grid-column:span 12}
+.kpi{
+  font-size:28px;
+  color:var(--brand2);
+  font-weight:800;
+  margin-bottom:4px;
+}
+.small{font-size:13px;color:var(--muted)}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:14px 0;
+  overflow:hidden;
+  border-radius:14px;
+  font-size:14px;
+}
+th{
+  background:#F1F5F9;
+  color:#1f2937;
+  text-align:left;
+  font-weight:800;
+}
+td,th{padding:12px 13px;border:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#FAFAFA}
+.flow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  margin:16px 0;
+}
+.node{
+  background:#fff;
+  border:1px solid #C7D7FE;
+  color:#1E3A8A;
+  border-radius:14px;
+  padding:12px 14px;
+  font-weight:700;
+}
+.arrow{color:var(--accent);font-weight:900;font-size:20px}
+.timeline{
+  position:relative;
+  margin:14px 0 0;
+  padding-left:20px;
+  border-left:3px solid #D6E4FF;
+}
+.tl-item{
+  position:relative;
+  margin:0 0 18px;
+  padding:0 0 0 18px;
+}
+.tl-item:before{
+  content:"";
+  position:absolute;
+  left:-27px;
+  top:7px;
+  width:12px;height:12px;
+  background:var(--brand2);
+  border:3px solid #fff;
+  border-radius:50%;
+  box-shadow:0 0 0 2px #D6E4FF;
+}
+.badge{
+  display:inline-block;
+  background:#E0E7FF;
+  color:#1E3A8A;
+  font-weight:800;
+  padding:3px 9px;
+  border-radius:999px;
+  font-size:12px;
+  margin-right:6px;
+}
+.warning{
+  border-left:5px solid var(--red);
+  background:#FEF3F2;
+  padding:14px 16px;
+  border-radius:12px;
+}
+.ok{
+  border-left:5px solid var(--green);
+  background:#ECFDF5;
+  padding:14px 16px;
+  border-radius:12px;
+}
+.callout{
+  border-left:5px solid var(--accent);
+  background:#FFFBEB;
+  padding:14px 16px;
+  border-radius:12px;
+}
+.checklist li{margin:6px 0}
+.footer{
+  color:var(--muted);
+  text-align:center;
+  padding:28px;
+  font-size:13px;
+}
+@media(max-width:900px){
+  .hero h1{font-size:28px}
+  .span-3,.span-4,.span-5,.span-6,.span-7,.span-8{grid-column:span 12}
+  section{padding:20px}
+  .nav{position:static}
+}
+@media print{
+  .nav{display:none}
+  section{break-inside:avoid;box-shadow:none}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">Internal SOP</div>
+  <h1>AIspacehub 内部执行 SOP 版｜未来 AI 投资家挑战赛</h1>
+  <p>面向 AIspacehub 内部执行团队的 SOP 版本，明确 Eva、小袁、康丽的职责边界、活动前中后流程、物料清单、数据看板、合规检查与 7 天行动清单。</p>
+  <div class="meta">
+    <span class="pill">AIspacehub 负责人：Eva</span>
+    <span class="pill">商务对接：小袁</span>
+    <span class="pill">活动运营：康丽</span>
+    <span class="pill">合作方：uSmart / 郭总团队</span>
+    <span class="pill">周期：6 个月</span>
+  </div>
+</header>
+<nav class="nav">
+<a href="#command">指挥图</a>
+<a href="#raci">RACI</a>
+<a href="#workstreams">工作流</a>
+<a href="#sop-before">活动前</a>
+<a href="#sop-during">活动中</a>
+<a href="#sop-after">活动后</a>
+<a href="#materials">物料</a>
+<a href="#data">数据</a>
+<a href="#compliance">合规</a>
+<a href="#next7">7天清单</a>
+</nav>
+<main>
+
+<section id="command">
+  <h2>1. 内部执行总指挥图</h2>
+  <div class="grid">
+    <div class="card gold span-4"><h3>Eva</h3><p><b>AIspacehub 负责人 / 项目总负责人</b></p><p>负责项目方向、关键资源、协会背书、与郭总/uSmart 高层沟通、重大渠道站台。</p></div>
+    <div class="card soft span-4"><h3>小袁</h3><p><b>商务对接人</b></p><p>负责与 uSmart 市场、渠道、财务、合规对接，推进合作政策、结算、链接、物料与工作群。</p></div>
+    <div class="card green span-4"><h3>康丽</h3><p><b>活动运营负责人</b></p><p>负责线下活动、直播执行、报名表、社群维护、签到、物料、活动复盘和执行排期。</p></div>
+  </div>
+  <div class="callout"><b>内部原则：</b>Eva 定方向与关键资源，小袁管商务闭环，康丽管活动落地；所有金融内容和宣传话术必须经过 uSmart 合规确认后发布。</div>
+</section>
+
+<section id="raci">
+  <h2>2. RACI 分工表</h2>
+  <table>
+    <tr><th>工作模块</th><th>Eva</th><th>小袁</th><th>康丽</th><th>uSmart</th></tr>
+    <tr><td>合作方向与总方案</td><td>A/R</td><td>C</td><td>I</td><td>C/A</td></tr>
+    <tr><td>商务政策与渠道分润</td><td>A</td><td>R</td><td>I</td><td>A/R</td></tr>
+    <tr><td>首场闭门沙龙邀约</td><td>A/R</td><td>C</td><td>R</td><td>C</td></tr>
+    <tr><td>活动流程与现场执行</td><td>A</td><td>C</td><td>R</td><td>R/C</td></tr>
+    <tr><td>宣传海报与报名页</td><td>A</td><td>C</td><td>R</td><td>C/审核</td></tr>
+    <tr><td>专属 Referral Link / QR Code</td><td>I</td><td>R 跟进</td><td>I</td><td>A/R</td></tr>
+    <tr><td>课程与直播内容</td><td>A/C</td><td>C</td><td>R 执行</td><td>A/R</td></tr>
+    <tr><td>参赛社群运营</td><td>A</td><td>C</td><td>R</td><td>R/C</td></tr>
+    <tr><td>数据核对与月度结算</td><td>A</td><td>R</td><td>C</td><td>A/R</td></tr>
+    <tr><td>合规审核</td><td>I</td><td>R 提交</td><td>R 提交物料</td><td>A/R</td></tr>
+  </table>
+  <p class="small">说明：A = 最终负责，R = 执行负责，C = 参与讨论，I = 被通知。</p>
+</section>
+
+<section id="workstreams">
+  <h2>3. 六大执行工作流</h2>
+  <div class="grid">
+    <div class="card span-4"><h3>商务工作流</h3><ul><li>合作 MOU</li><li>独家权益</li><li>赞助与奖品</li><li>渠道政策</li><li>月度结算</li></ul></div>
+    <div class="card span-4"><h3>活动工作流</h3><ul><li>闭门沙龙</li><li>校园宣讲</li><li>月度直播</li><li>颁奖典礼</li><li>高端饭局</li></ul></div>
+    <div class="card span-4"><h3>内容工作流</h3><ul><li>课程大纲</li><li>宣传海报</li><li>直播预告</li><li>榜单海报</li><li>活动回顾</li></ul></div>
+    <div class="card span-4"><h3>渠道工作流</h3><ul><li>私校</li><li>中介</li><li>商会</li><li>宝妈群</li><li>创业者社群</li></ul></div>
+    <div class="card span-4"><h3>转化工作流</h3><ul><li>报名页</li><li>专属链接</li><li>开户链接</li><li>入金指引</li><li>客户经理跟进</li></ul></div>
+    <div class="card span-4"><h3>合规工作流</h3><ul><li>话术库</li><li>风险提示</li><li>物料审核</li><li>数据脱敏</li><li>兼职合规</li></ul></div>
+  </div>
+</section>
+
+<section id="sop-before">
+  <h2>4. 活动前 SOP</h2>
+  <div class="flow">
+    <div class="node">确定主题</div><div class="arrow">→</div>
+    <div class="node">确认人群</div><div class="arrow">→</div>
+    <div class="node">锁定场地/直播间</div><div class="arrow">→</div>
+    <div class="node">uSmart 提供合规 PPT</div><div class="arrow">→</div>
+    <div class="node">发布招募</div><div class="arrow">→</div>
+    <div class="node">建群与物料准备</div>
+  </div>
+  <table>
+    <tr><th>事项</th><th>负责人</th><th>截止时间</th></tr>
+    <tr><td>活动主题确认</td><td>Eva + uSmart</td><td>T-10 天</td></tr>
+    <tr><td>讲师确认</td><td>小袁跟进 uSmart</td><td>T-10 天</td></tr>
+    <tr><td>场地/直播间确认</td><td>康丽</td><td>T-9 天</td></tr>
+    <tr><td>宣传海报与报名表</td><td>康丽</td><td>T-7 天</td></tr>
+    <tr><td>专属 Referral Link / QR Code</td><td>小袁跟进 uSmart</td><td>T-7 天</td></tr>
+    <tr><td>合规审核</td><td>小袁提交，uSmart 审核</td><td>T-5 天</td></tr>
+    <tr><td>活动群与欢迎语</td><td>康丽</td><td>T-3 天</td></tr>
+    <tr><td>参会名单与签到表</td><td>康丽</td><td>T-1 天</td></tr>
+  </table>
+</section>
+
+<section id="sop-during">
+  <h2>5. 活动中 SOP</h2>
+  <table>
+    <tr><th>时间</th><th>环节</th><th>负责人</th><th>关键动作</th></tr>
+    <tr><td>0-10 分钟</td><td>签到入场</td><td>康丽</td><td>扫码签到、进群、领取资料</td></tr>
+    <tr><td>10-15 分钟</td><td>主持开场</td><td>康丽 / 主持人</td><td>介绍活动定位和嘉宾</td></tr>
+    <tr><td>15-25 分钟</td><td>AIspacehub 项目介绍</td><td>Eva</td><td>讲清楚教育属性、项目价值和大赛主线</td></tr>
+    <tr><td>25-55 分钟</td><td>AI 投资趋势分享</td><td>uSmart 讲师</td><td>专业分享，避免硬销与收益承诺</td></tr>
+    <tr><td>55-65 分钟</td><td>大赛规则说明</td><td>uSmart + 康丽</td><td>解释报名、开户、入金、奖项、风险提示</td></tr>
+    <tr><td>65-80 分钟</td><td>现场报名与开户协助</td><td>uSmart 客户经理</td><td>一对一答疑，协助扫码注册</td></tr>
+    <tr><td>80-90 分钟</td><td>Q&A + 合影</td><td>双方</td><td>收集素材，确认后续跟进</td></tr>
+  </table>
+</section>
+
+<section id="sop-after">
+  <h2>6. 活动后 SOP</h2>
+  <div class="flow">
+    <div class="node">导出签到/报名数据</div><div class="arrow">→</div>
+    <div class="node">按渠道打标签</div><div class="arrow">→</div>
+    <div class="node">uSmart 跟进注册开户</div><div class="arrow">→</div>
+    <div class="node">康丽维护社群</div><div class="arrow">→</div>
+    <div class="node">3 天内发布回顾</div><div class="arrow">→</div>
+    <div class="node">7 天转化复盘</div>
+  </div>
+  <table>
+    <tr><th>时间</th><th>动作</th><th>负责人</th></tr>
+    <tr><td>T+1 天</td><td>发送感谢信息、课程链接、开户链接</td><td>康丽 + uSmart 客户经理</td></tr>
+    <tr><td>T+3 天</td><td>发布活动回顾文章 / 短视频</td><td>康丽</td></tr>
+    <tr><td>T+7 天</td><td>统计报名、注册、开户、入金数据</td><td>小袁 + uSmart</td></tr>
+    <tr><td>T+14 天</td><td>二次触达未开户用户</td><td>康丽 + uSmart 客户经理</td></tr>
+    <tr><td>T+30 天</td><td>复盘活动转化与渠道质量</td><td>Eva + 小袁 + 康丽 + uSmart</td></tr>
+  </table>
+</section>
+
+<section id="materials">
+  <h2>7. 物料清单</h2>
+  <table>
+    <tr><th>物料</th><th>负责人</th><th>状态</th></tr>
+    <tr><td>项目主视觉海报</td><td>康丽 + 设计</td><td>待制作</td></tr>
+    <tr><td>大赛规则长图</td><td>康丽 + uSmart</td><td>待制作</td></tr>
+    <tr><td>报名二维码海报</td><td>康丽</td><td>待制作</td></tr>
+    <tr><td>uSmart 开户流程图</td><td>uSmart</td><td>待提供</td></tr>
+    <tr><td>课程介绍页</td><td>康丽</td><td>待制作</td></tr>
+    <tr><td>奖项体系图</td><td>康丽</td><td>待制作</td></tr>
+    <tr><td>月度排行榜模板</td><td>uSmart + 康丽</td><td>待制作</td></tr>
+    <tr><td>直播预告海报</td><td>康丽</td><td>按月制作</td></tr>
+    <tr><td>风险提示与免责声明</td><td>uSmart 合规</td><td>待审核</td></tr>
+  </table>
+</section>
+
+<section id="data">
+  <h2>8. 数据看板模板</h2>
+  <table>
+    <tr><th>渠道</th><th>报名</th><th>进群</th><th>注册</th><th>开户</th><th>入金</th><th>交易</th><th>备注</th></tr>
+    <tr><td>私校 A</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>中介 B</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>商会 C</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>宝妈社群 D</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>创业者社群 E</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+</section>
+
+<section id="compliance">
+  <h2>9. 合规检查清单</h2>
+  <div class="grid">
+    <div class="card green span-6">
+      <h3>发布前必须确认</h3>
+      <ul class="checklist">
+        <li>是否有收益承诺或暗示稳赚？</li>
+        <li>是否有具体个股买入/卖出建议？</li>
+        <li>是否明确投资风险？</li>
+        <li>是否经过 uSmart 合规审核？</li>
+        <li>是否避免面向不适合人群公开招揽？</li>
+        <li>排行榜是否脱敏或获得授权？</li>
+      </ul>
+    </div>
+    <div class="card red span-6">
+      <h3>绝对不能出现</h3>
+      <ul class="checklist">
+        <li>稳赚不赔、保证收益、开户就赚。</li>
+        <li>内部牛股、跟着冠军买就赚钱。</li>
+        <li>非持牌人员进行个性化投资建议。</li>
+        <li>诱导满仓、杠杆、高频交易。</li>
+        <li>用补贴包装规避学生或外籍人员工作限制。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="next7">
+  <h2>10. 下一步 7 天内部执行清单</h2>
+  <table>
+    <tr><th>优先级</th><th>动作</th><th>负责人</th><th>输出物</th></tr>
+    <tr><td>P0</td><td>确认本方案与对 uSmart 提案版本</td><td>Eva</td><td>最终版方案</td></tr>
+    <tr><td>P0</td><td>拉项目工作群</td><td>小袁</td><td>AIspacehub × uSmart 工作群</td></tr>
+    <tr><td>P0</td><td>向 uSmart 确认赞助、奖品、权益、渠道政策</td><td>小袁</td><td>商务政策表</td></tr>
+    <tr><td>P1</td><td>锁定首场闭门沙龙时间、场地、名单</td><td>Eva + 康丽</td><td>活动排期与邀约名单</td></tr>
+    <tr><td>P1</td><td>制作首场活动海报、报名表、签到表</td><td>康丽</td><td>活动物料包</td></tr>
+    <tr><td>P1</td><td>要求 uSmart 提供讲师介绍、PPT、开户链接</td><td>小袁</td><td>讲师资料 + Link/QR Code</td></tr>
+    <tr><td>P2</td><td>建立社群欢迎语、FAQ、风险提示模板</td><td>康丽</td><td>社群运营包</td></tr>
+    <tr><td>P2</td><td>建立数据看板模板</td><td>小袁 + 康丽</td><td>渠道数据表</td></tr>
+  </table>
+</section>
+
+</main>
+<div class="footer">本文件为内部讨论与合作沟通版本。金融相关内容、活动规则、宣传话术及用户数据使用方式，均需以 uSmart 合规/法务最终审核为准。</div>
+</body>
+</html>
