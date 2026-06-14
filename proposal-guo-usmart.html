@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>给郭总 / uSmart 的合作提案版｜未来 AI 投资家挑战赛</title>
+  <style>
+:root{
+  --bg:#f6f7fb;
+  --panel:#ffffff;
+  --ink:#1f2937;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --brand:#223A5E;
+  --brand2:#3567A8;
+  --accent:#D6A84F;
+  --soft:#EEF4FF;
+  --green:#0F766E;
+  --red:#B42318;
+  --orange:#B45309;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+}
+.hero{
+  background:linear-gradient(135deg,#13213A 0%,#223A5E 45%,#3567A8 100%);
+  color:#fff;
+  padding:56px 7vw 42px;
+}
+.hero .eyebrow{
+  color:#F3D890;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:13px;
+}
+.hero h1{
+  margin:12px 0 14px;
+  font-size:38px;
+  line-height:1.2;
+  max-width:1180px;
+}
+.hero p{
+  max-width:1080px;
+  color:#E5ECF8;
+  font-size:17px;
+}
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:22px;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  border:1px solid rgba(255,255,255,.28);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  border-radius:999px;
+  padding:7px 12px;
+  font-size:13px;
+}
+.nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  padding:10px 7vw;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.nav a{
+  text-decoration:none;
+  color:var(--brand);
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:13px;
+  font-weight:600;
+}
+.nav a:hover{background:var(--soft)}
+main{padding:30px 7vw 70px}
+section{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:28px;
+  margin:22px 0;
+  box-shadow:0 10px 30px rgba(15,23,42,.04);
+}
+h2{
+  margin:0 0 16px;
+  color:var(--brand);
+  font-size:26px;
+  line-height:1.35;
+}
+h3{
+  margin:22px 0 12px;
+  color:#26364f;
+  font-size:19px;
+}
+h4{margin:16px 0 8px;color:#374151}
+.lead{font-size:18px;color:#374151}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:16px;
+}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+}
+.card.soft{background:var(--soft)}
+.card.gold{background:#FFFBEB;border-color:#F4D58D}
+.card.green{background:#ECFDF5;border-color:#A7F3D0}
+.card.red{background:#FEF3F2;border-color:#FECACA}
+.card h3,.card h4{margin-top:0}
+.span-3{grid-column:span 3}
+.span-4{grid-column:span 4}
+.span-5{grid-column:span 5}
+.span-6{grid-column:span 6}
+.span-7{grid-column:span 7}
+.span-8{grid-column:span 8}
+.span-12{grid-column:span 12}
+.kpi{
+  font-size:28px;
+  color:var(--brand2);
+  font-weight:800;
+  margin-bottom:4px;
+}
+.small{font-size:13px;color:var(--muted)}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:14px 0;
+  overflow:hidden;
+  border-radius:14px;
+  font-size:14px;
+}
+th{
+  background:#F1F5F9;
+  color:#1f2937;
+  text-align:left;
+  font-weight:800;
+}
+td,th{padding:12px 13px;border:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#FAFAFA}
+.flow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  margin:16px 0;
+}
+.node{
+  background:#fff;
+  border:1px solid #C7D7FE;
+  color:#1E3A8A;
+  border-radius:14px;
+  padding:12px 14px;
+  font-weight:700;
+}
+.arrow{color:var(--accent);font-weight:900;font-size:20px}
+.timeline{
+  position:relative;
+  margin:14px 0 0;
+  padding-left:20px;
+  border-left:3px solid #D6E4FF;
+}
+.tl-item{
+  position:relative;
+  margin:0 0 18px;
+  padding:0 0 0 18px;
+}
+.tl-item:before{
+  content:"";
+  position:absolute;
+  left:-27px;
+  top:7px;
+  width:12px;height:12px;
+  background:var(--brand2);
+  border:3px solid #fff;
+  border-radius:50%;
+  box-shadow:0 0 0 2px #D6E4FF;
+}
+.badge{
+  display:inline-block;
+  background:#E0E7FF;
+  color:#1E3A8A;
+  font-weight:800;
+  padding:3px 9px;
+  border-radius:999px;
+  font-size:12px;
+  margin-right:6px;
+}
+.warning{
+  border-left:5px solid var(--red);
+  background:#FEF3F2;
+  padding:14px 16px;
+  border-radius:12px;
+}
+.ok{
+  border-left:5px solid var(--green);
+  background:#ECFDF5;
+  padding:14px 16px;
+  border-radius:12px;
+}
+.callout{
+  border-left:5px solid var(--accent);
+  background:#FFFBEB;
+  padding:14px 16px;
+  border-radius:12px;
+}
+.checklist li{margin:6px 0}
+.footer{
+  color:var(--muted);
+  text-align:center;
+  padding:28px;
+  font-size:13px;
+}
+@media(max-width:900px){
+  .hero h1{font-size:28px}
+  .span-3,.span-4,.span-5,.span-6,.span-7,.span-8{grid-column:span 12}
+  section{padding:20px}
+  .nav{position:static}
+}
+@media print{
+  .nav{display:none}
+  section{break-inside:avoid;box-shadow:none}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">uSmart Partnership Proposal</div>
+  <h1>给郭总 / uSmart 的合作提案版｜未来 AI 投资家挑战赛</h1>
+  <p>面向 uSmart 决策层的合作提案版本，重点突出 uSmart 的独家权益、客户获取价值、品牌曝光、资源投入、商务政策与需确认事项。</p>
+  <div class="meta">
+    <span class="pill">AIspacehub 负责人：Eva</span>
+    <span class="pill">商务对接：小袁</span>
+    <span class="pill">活动运营：康丽</span>
+    <span class="pill">合作方：uSmart / 郭总团队</span>
+    <span class="pill">周期：6 个月</span>
+  </div>
+</header>
+<nav class="nav">
+<a href="#summary">提案摘要</a>
+<a href="#value">合作价值</a>
+<a href="#positioning">项目定位</a>
+<a href="#audience">目标客群</a>
+<a href="#rights">独家权益</a>
+<a href="#funnel">转化漏斗</a>
+<a href="#sponsorship">赞助资源</a>
+<a href="#policy">商务政策</a>
+<a href="#timeline">推进节奏</a>
+<a href="#ask">确认问题</a>
+</nav>
+<main>
+
+<section id="summary">
+  <h2>1. 给郭总 / uSmart 的合作提案摘要</h2>
+  <p class="lead">本提案建议由 uSmart 作为“未来 AI 投资家挑战赛”的独家金融技术合作伙伴与冠名赞助方，借助 AIspacehub 在新加坡华语教育、私校、留学生、新移民、陪读家长、商会与创业者社群中的组织力，联合打造一个持续 6 个月、可转化、可追踪、可复用的 AI 投资教育与实盘挑战 IP。</p>
+  <div class="callout"><b>对 uSmart 的核心价值：</b>不是一次活动赞助，而是一个低成本、高信任、高转化、可持续运营的本地华语客户获取工程。</div>
+</section>
+
+<section id="value">
+  <h2>2. uSmart 为什么值得参与</h2>
+  <div class="grid">
+    <div class="card soft span-3"><div class="kpi">精准</div><b>新加坡本地华语客群</b><p class="small">留学生、家长、新移民、陪读家长、企业家、创业者。</p></div>
+    <div class="card soft span-3"><div class="kpi">可信</div><b>教育组织背书</b><p class="small">以 AIspacehub / 协会身份组织，降低金融平台获客阻力。</p></div>
+    <div class="card soft span-3"><div class="kpi">持续</div><b>6 个月活动周期</b><p class="small">每月直播、榜单、颁奖、社群运营，不是单次曝光。</p></div>
+    <div class="card soft span-3"><div class="kpi">可量化</div><b>数据闭环</b><p class="small">报名、注册、开户、入金、交易、留存均可追踪。</p></div>
+  </div>
+</section>
+
+<section id="positioning">
+  <h2>3. 项目定位</h2>
+  <table>
+    <tr><th>项目</th><th>内容</th></tr>
+    <tr><td>项目名称</td><td>未来 AI 投资家挑战赛 Future AI Investor Challenge</td></tr>
+    <tr><td>主题</td><td>面向未来 AI 时代的投资逻辑</td></tr>
+    <tr><td>主办</td><td>AIspacehub / 新加坡教育文化促进会</td></tr>
+    <tr><td>独家冠名 / 赞助</td><td>uSmart</td></tr>
+    <tr><td>赛程</td><td>7 月 1 日 - 12 月 31 日，共 6 个月</td></tr>
+    <tr><td>参赛条件</td><td>通过专属链接注册、开户，并完成双方确认的有效入金门槛</td></tr>
+    <tr><td>内容形式</td><td>录播课、月度直播、线下沙龙、排行榜、获奖分享、年度颁奖</td></tr>
+    <tr><td>项目目标</td><td>品牌共建、市场教育、用户增长、客户获取、长期社群沉淀</td></tr>
+  </table>
+</section>
+
+<section id="audience">
+  <h2>4. 可触达客群与场景</h2>
+  <table>
+    <tr><th>客群</th><th>触达场景</th><th>uSmart 机会</th></tr>
+    <tr><td>私校留学生</td><td>迎新会、校园讲座、投资挑战赛</td><td>年轻用户开户、长期客户生命周期</td></tr>
+    <tr><td>留学生家长</td><td>家长群、闭门直播、亲子教育活动</td><td>家庭资产配置、海外账户服务需求</td></tr>
+    <tr><td>新移民 / 陪读家长</td><td>宝妈社群、新移民社群、本地生活讲座</td><td>高信任场景下的金融服务转化</td></tr>
+    <tr><td>商会企业家</td><td>商会饭局、闭门沙龙、主题午餐会</td><td>高净值客户与企业主资源</td></tr>
+    <tr><td>AI 创业者</td><td>AI Founder 群、SuperAI 资源、科技社群</td><td>高认知、高活跃、高传播用户</td></tr>
+  </table>
+</section>
+
+<section id="rights">
+  <h2>5. uSmart 独家权益设计</h2>
+  <table>
+    <tr><th>权益类别</th><th>具体内容</th></tr>
+    <tr><td>品牌权益</td><td>“未来 AI 投资家挑战赛”独家金融技术合作伙伴 / 独家冠名赞助方露出</td></tr>
+    <tr><td>内容权益</td><td>uSmart 分析师作为月度直播与线下沙龙主讲嘉宾</td></tr>
+    <tr><td>渠道权益</td><td>所有报名页、课程页、社群公告配置 uSmart 专属注册链接 / QR Code</td></tr>
+    <tr><td>客户权益</td><td>通过 AIspacehub 渠道注册、开户、入金用户进入 uSmart 客户经理服务链路</td></tr>
+    <tr><td>数据权益</td><td>按月获得渠道数据复盘，追踪报名、注册、开户、入金、交易等表现</td></tr>
+    <tr><td>内容共创</td><td>联合发布 AI 投资月报、获奖者复盘、年度成果报告</td></tr>
+    <tr><td>高端活动</td><td>共同参与商会闭门饭局、年度颁奖典礼、华尔街连线特别直播</td></tr>
+  </table>
+</section>
+
+<section id="funnel">
+  <h2>6. 用户转化漏斗</h2>
+  <div class="flow">
+    <div class="node">AIspacehub 线下/线上触达</div><div class="arrow">→</div>
+    <div class="node">报名活动/领取课程</div><div class="arrow">→</div>
+    <div class="node">进入参赛社群</div><div class="arrow">→</div>
+    <div class="node">uSmart 专属链接注册</div><div class="arrow">→</div>
+    <div class="node">KYC 开户</div><div class="arrow">→</div>
+    <div class="node">有效入金</div><div class="arrow">→</div>
+    <div class="node">交易活跃/客户经理服务</div>
+  </div>
+  <table>
+    <tr><th>阶段</th><th>建议跟踪指标</th><th>说明</th></tr>
+    <tr><td>触达</td><td>曝光量、阅读量、活动到场数</td><td>衡量渠道覆盖力</td></tr>
+    <tr><td>线索</td><td>报名人数、进群人数、课程领取人数</td><td>衡量兴趣用户池</td></tr>
+    <tr><td>注册</td><td>uSmart 注册数</td><td>由专属链接 / QR Code 追踪</td></tr>
+    <tr><td>开户</td><td>KYC 通过数</td><td>定义为有效开户基础</td></tr>
+    <tr><td>入金</td><td>有效入金人数与金额</td><td>建议作为核心结算指标之一</td></tr>
+    <tr><td>交易</td><td>交易人数、交易活跃、留存</td><td>衡量客户质量</td></tr>
+  </table>
+</section>
+
+<section id="sponsorship">
+  <h2>7. 建议 uSmart 提供的合作资源</h2>
+  <table>
+    <tr><th>资源类型</th><th>建议内容</th></tr>
+    <tr><td>现金赞助</td><td>覆盖整体项目运营、内容制作、活动执行、渠道启动成本</td></tr>
+    <tr><td>奖品赞助</td><td>月度奖、季度奖、年度大奖，包括现金券、电子产品、购物卡、课程权益等</td></tr>
+    <tr><td>开户权益</td><td>注册奖励、入金权益、交易权益码、活动专属礼包</td></tr>
+    <tr><td>讲师资源</td><td>分析师、投教讲师、客户经理、市场负责人参与直播与线下活动</td></tr>
+    <tr><td>技术支持</td><td>专属渠道码、后台数据统计、排行榜生成、参赛规则支持</td></tr>
+    <tr><td>合规支持</td><td>金融内容、宣传物料、直播话术、活动规则审核</td></tr>
+  </table>
+</section>
+
+<section id="policy">
+  <h2>8. 需与 uSmart 明确的商务政策</h2>
+  <table>
+    <tr><th>政策项</th><th>建议确认内容</th></tr>
+    <tr><td>独家合作期限</td><td>本次大赛 6 个月 + 优先续约权</td></tr>
+    <tr><td>有效开户定义</td><td>KYC 通过 + 首次入金是否同时满足</td></tr>
+    <tr><td>有效入金定义</td><td>最低入金门槛、保留时间、是否需完成交易</td></tr>
+    <tr><td>渠道奖励</td><td>按有效开户、有效入金、交易活跃或阶梯目标结算</td></tr>
+    <tr><td>存量客户保护期</td><td>建议 6-12 个月，用于保护 AIspacehub 渠道贡献</td></tr>
+    <tr><td>二级渠道</td><td>由 AIspacehub 统一管理私校、中介、KOL、社群主激励</td></tr>
+    <tr><td>数据核对周期</td><td>建议每月结算上月数据</td></tr>
+  </table>
+</section>
+
+<section id="timeline">
+  <h2>9. 合作推进时间表</h2>
+  <div class="timeline">
+    <div class="tl-item"><span class="badge">第 1 周</span><b>确认合作框架</b><br>明确独家权益、赞助范围、渠道政策、负责人。</div>
+    <div class="tl-item"><span class="badge">第 2 周</span><b>准备首场闭门沙龙</b><br>uSmart 提供讲师、PPT、开户链接；AIspacehub 邀请核心渠道。</div>
+    <div class="tl-item"><span class="badge">7 月</span><b>大赛启动</b><br>正式发布报名通道，启动首场公开宣讲。</div>
+    <div class="tl-item"><span class="badge">8-10 月</span><b>规模化运营</b><br>月度直播、榜单发布、私校与商会渠道放大。</div>
+    <div class="tl-item"><span class="badge">11-12 月</span><b>年度冲刺与颁奖</b><br>总结客户增长、交易活跃和品牌传播成果。</div>
+  </div>
+</section>
+
+<section id="ask">
+  <h2>10. 建议向郭总确认的 8 个关键问题</h2>
+  <ol class="checklist">
+    <li>uSmart 是否愿意作为本项目独家金融技术合作伙伴与冠名赞助方？</li>
+    <li>可提供的现金赞助、奖品赞助、开户权益和交易权益范围？</li>
+    <li>有效开户、有效入金、交易活跃的具体定义？</li>
+    <li>对 AIspacehub 的渠道激励政策如何设置？</li>
+    <li>是否支持二级渠道专属二维码和分渠道数据追踪？</li>
+    <li>是否可安排固定讲师参与每月直播与重点线下活动？</li>
+    <li>金融内容、宣传物料和排行榜发布的合规审核流程是怎样？</li>
+    <li>是否同意设置 6-12 个月渠道保护期与月度结算机制？</li>
+  </ol>
+</section>
+
+</main>
+<div class="footer">本文件为内部讨论与合作沟通版本。金融相关内容、活动规则、宣传话术及用户数据使用方式，均需以 uSmart 合规/法务最终审核为准。</div>
+</body>
+</html>
